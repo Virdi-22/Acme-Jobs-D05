@@ -1,0 +1,22 @@
+provider.request.form.label.title = Título
+provider.request.form.label.moment = Momento
+provider.request.form.label.deadline = Fecha de finalización
+provider.request.form.label.text = Texto
+provider.request.form.label.reward = Recompensa
+provider.request.form.label.ticker = Teletipo
+provider.request.form.button.return = Volver
+
+provider.request.list.label.moment = Momento
+provider.request.list.label.title = Título
+provider.request.list.label.ticker = Identificador
+provider.request.list.label.reward = Recompensa
+
+provider.request.error.inFuture = El tiempo de finalizacion debe ser una semana mas tarde del momento actual
+provider.request.error.existing = Este teletipo esta en uso
+provider.request.error.EUR= El dinero debe estar en el formato adecuado
+provider.request.error.must-accept = Debe confirmar rellenando el cuadro
+
+provider.request.form.label.checkbox = Crear una peticion
+
+provider.request.form.button.create = Crear
+provider.request.form.button.return = Volver

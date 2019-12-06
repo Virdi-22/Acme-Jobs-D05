@@ -1,0 +1,25 @@
+administrator.dashboard.form.title.application-statuses = Estadísticas
+
+administrator.dashboard.form.label.total = Número total
+
+administrator.dashboard.form.label.announcements = Estadísticas sobre Anuncios
+administrator.dashboard.form.label.company-records = Estadísticas sobre Compañías
+administrator.dashboard.form.label.investor-records = Estadísticas sobre Inversores
+	
+administrator.dashboard.form.label.reward-active-requests = Estadísticas sobre Peticiones activas
+administrator.dashboard.form.label.reward-active-offers = Estadísticas sobre Ofertas activas
+
+administrator.dashboard.form.label.minimum = Valor mínimo
+administrator.dashboard.form.label.maximun = Valor máximo
+administrator.dashboard.form.label.average = Media ponderada
+administrator.dashboard.form.label.standard-deviation = Desviación típica
+
+administrator.dashboard.form.company-record.status = Número de archivos de compañía por sector
+administrator.dashboard.form.investor-record.status = Número de archivos de inversores por sector
+
+administrator.dashboard.form.label.jobs = Estadísticas sobre Trabajos
+administrator.dashboard.form.label.average-by-employer = Media ponderada por Empleado
+administrator.dashboard.form.label.applications = Estadísticas sobre Aplicaciones
+administrator.dashboard.form.label.average-by-worker = Media ponderada por Trabajador
+administrator.dashboard.form.job.status = Número de trabajos por estado
+administrator.dashboard.form.application.status = Número de aplicaciones por estado

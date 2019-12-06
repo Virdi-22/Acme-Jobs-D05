@@ -1,0 +1,14 @@
+employer.job.list.label.reference = Referencia
+employer.job.list.label.deadline = Fecha de finalización
+employer.job.list.label.title = Título
+
+employer.job.form.label.reference = Referencia
+employer.job.form.label.title = Título
+employer.job.form.label.deadline = Fecha de finalización
+employer.job.form.label.salary = Salario
+employer.job.form.label.moreInfo = Más información (opcional)
+employer.job.form.label.description = Descripción
+
+employer.job.form.button.linkDuties = Obligaciones
+
+employer.job.form.button.return = Volver

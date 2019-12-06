@@ -1,0 +1,31 @@
+<%@page language="java"%>
+
+<%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
+
+<acme:form>
+	<acme:form-textbox code="administrator.comercialBanner.form.label.slogan" path="slogan"/>
+	<acme:form-textbox code="administrator.comercialBanner.form.label.creditCardNumber" path="creditCardNumber"/>
+	<acme:form-textbox code="administrator.comercialBanner.form.label.holder" path="holder"/>
+	<acme:form-textbox code="administrator.comercialBanner.form.label.brand" path="brand"/>
+	<acme:form-textbox placeholder="MM/YYYY" code="administrator.comercialBanner.form.label.expirationDate" path="expirationDate"/>
+	<acme:form-url code="administrator.comercialBanner.form.label.target" path="target"/>
+
+	<acme:form-submit test="${command == 'show' }"
+		code= "administrator.comercialBanner.form.button.update"
+		action= "/administrator/comercial-banner/update"/>
+	<acme:form-submit test="${command == 'show' }"
+		code= "administrator.comercialBanner.form.button.delete"
+		action= "/administrator/comercial-banner/delete"/>
+	<acme:form-submit test="${command == 'create' }"
+		code= "administrator.comercialBanner.form.button.create"
+		action= "/administrator/comercial-banner/create"/>
+	<acme:form-submit test="${command == 'update' }"
+		code= "administrator.comercialBanner.form.button.update"
+		action= "/administrator/comercial-banner/update"/>
+	<acme:form-submit test="${command == 'delete' }"
+		code= "administrator.comercialBanner.form.button.delete"
+		action= "/administrator/comercial-banner/delete"/>
+		
+	<acme:form-return code="administrator.comercialBanner.form.button.return"/>
+</acme:form>

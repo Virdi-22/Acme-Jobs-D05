@@ -1,0 +1,10 @@
+auditor.duty.list.label.title = Title
+auditor.duty.list.label.description = Description
+
+auditor.duty.list.button.return = Return
+
+auditor.duty.form.label.title = Title
+auditor.duty.form.label.description = Description
+auditor.duty.form.label.percentage = Percentage
+
+auditor.duty.form.button.return = Return

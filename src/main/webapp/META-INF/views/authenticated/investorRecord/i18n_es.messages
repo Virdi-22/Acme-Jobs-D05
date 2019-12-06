@@ -1,0 +1,10 @@
+authenticated.investor-record.list.label.name = Nombre
+authenticated.investor-record.list.label.sector = Sector
+authenticated.investor-record.list.label.stars = Estrellas
+
+authenticated.investor-record.form.label.name = Nombre
+authenticated.investor-record.form.label.stars = Estrellas
+authenticated.investor-record.form.label.sector = Sector
+authenticated.investor-record.form.label.text = Texto
+	
+authenticated.investor-record.form.button.return = Volver

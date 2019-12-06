@@ -1,0 +1,29 @@
+##LIST
+administrator.challenge.list.label.title = Título
+administrator.challenge.list.label.deadline = Fecha final
+administrator.challenge.list.label.description = Descripción
+
+##FORM
+administrator.challenge.form.label.title = Título
+administrator.challenge.form.label.deadline = Fecha de finalización
+administrator.challenge.form.label.description = Descripción
+administrator.challenge.form.label.bronzeGoal = Meta Bronce
+administrator.challenge.form.label.bronzeReward = Recompensa Bronce
+administrator.challenge.form.label.silverGoal = Meta Plata
+administrator.challenge.form.label.silverReward = Recompensa Plata
+administrator.challenge.form.label.goldGoal = Meta Oro
+administrator.challenge.form.label.goldReward = Recompensa Oro
+
+##VALIDATIONS
+administrator.challenge.error.inFuture = La fecha de finalización debe estar en el futuro
+administrator.challenge.error.EURbronzeReward = La meta de bronce debe estar en la zona EURO
+administrator.challenge.error.EURsilverReward = La meta de plata debe estar en la zona EURO
+administrator.challenge.error.EURgoldReward = La meta de oro debe estar en la zona EURO
+administrator.challenge.error.silverMoreThanBronze = La recompensa de plata debe ser mayor que la de bronce
+administrator.challenge.error.goldMoreThanSilver = La recompensa de oro debe ser mayor que la de plata
+
+##BUTTONS
+administrator.challenge.form.button.create = Crear
+administrator.challenge.form.button.update = Actualizar
+administrator.challenge.form.button.delete = Eliminar
+administrator.challenge.form.button.return = Volver

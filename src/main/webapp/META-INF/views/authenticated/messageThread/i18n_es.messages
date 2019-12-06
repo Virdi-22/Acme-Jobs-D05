@@ -1,0 +1,11 @@
+authenticated.messageThread.list.label.moment = Momento
+authenticated.messageThread.list.label.title = Título
+
+authenticated.messageThread.form.label.title = Título
+authenticated.messageThread.form.label.moment = Momento
+
+authenticated.messageThread.form.contextData1 = Usuarios involucrados
+
+authenticated.messageThread.form.button.linkMessages = Mensajes
+
+authenticated.messageThread.form.button.return = Volver

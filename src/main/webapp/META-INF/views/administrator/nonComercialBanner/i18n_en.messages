@@ -1,0 +1,12 @@
+administrator.nonComercialBanner.form.label.slogan = Slogan
+administrator.nonComercialBanner.form.label.jingle = Jingle
+administrator.nonComercialBanner.form.label.target = Target
+administrator.nonComercialBanner.form.button.return = Return
+
+administrator.nonComercialBanner.list.label.slogan = Slogan
+administrator.nonComercialBanner.list.label.jingle = Jingle
+
+administrator.nonComercialBanner.form.button.update = Update
+administrator.nonComercialBanner.form.button.delete = Delete
+administrator.nonComercialBanner.form.button.create = Create
+administrator.nonComercialBanner.form.button.update = Update

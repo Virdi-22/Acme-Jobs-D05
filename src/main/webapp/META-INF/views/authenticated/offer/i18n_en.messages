@@ -1,0 +1,17 @@
+authenticated.offer.list.label.ticker = Ticker
+authenticated.offer.list.label.title = Title
+authenticated.offer.list.label.description = Description
+authenticated.offer.list.label.deadline = Deadline
+
+authenticated.offer.form.label.ticker = Ticker
+authenticated.offer.form.label.title = Title
+authenticated.offer.form.label.description = Description
+authenticated.offer.form.label.minMoney = Minimum salary
+authenticated.offer.form.label.maxMoney = Maximum salary
+authenticated.offer.form.label.creationMoment = Creation moment
+authenticated.offer.form.label.deadline = Deadline
+
+authenticated.offer.form.label.checkbox = Create offer
+
+authenticated.offer.form.button.create = Create
+authenticated.offer.form.button.return = Return

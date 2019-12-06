@@ -1,0 +1,150 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+# master.banner.welcome #######################################################
+
+master.banner.background = #583ce5 
+
+# master.welcome ##############################################################
+
+master.welcome.title = Welcome!
+master.welcome.text = \
+	Welcome to Acme Jobs! Never before has it bee easier to get your \
+	project up and running!
+
+# master.menu #################################################################
+
+master.menu.home = Home
+master.menu.sign-up = Sign up
+master.menu.sign-in = Sign in
+master.menu.sign-out = Sign out
+
+# master.menu.anonymous #######################################################
+
+master.menu.anonymous = Anonymous
+master.manu.anonymous.company-record.list = Company Records
+master.manu.anonymous.company-record.list-top = Top Company Records
+master.menu.anonymous.investor-record.list = Investor Records
+master.menu.anonymous.investor-record.list-top = Top Investor Records
+master.menu.anonymous.announcement.list = Announcements
+
+# master.menu.authenticated ###################################################
+
+master.menu.authenticated = Authenticated
+master.menu.authenticated.announcement.list = Announcements
+master.menu.authenticated.company-record.list = Company Records
+master.menu.authenticated.investor-record.list = Investor Records
+master.menu.authenticated.request.list = Requests
+master.menu.authenticated.offer.list = Offers
+master.menu.authenticated.challenge.list = Challenges
+master.menu.authenticated.job.list = Active Jobs
+master.menu.authenticated.message-thread.list = Message Threads
+
+# master.menu.administrator ###################################################
+
+master.menu.administrator = Administrator
+master.menu.administrator.challenge.list = Challenges
+master.menu.administrator.challenge.create = Create Challenge
+master.menu.administrator.user-accounts = User accounts
+master.menu.administrator.announcement.list = Announcements
+master.menu.administrator.announcement.create = Create Announcements
+master.menu.administrator.comercialBanner.list = Comercial Banner
+master.menu.administrator.comercialBanner.create = Create Comercial Banner
+master.menu.administrator.nonComercialBanner.list = NonComercial Banner
+master.menu.administrator.nonComercialBanner.create = Create NonComercial Banner
+master.menu.administrator.investor-record.list = Investor Records
+master.menu.administrator.investor-record.create = Create Investor Record
+master.menu.administrator.company-record.list = Company Records
+master.menu.administrator.company-record.create = Create Company Record
+master.menu.administrator.configuration.show = Configuration
+master.menu.administrator.dashboard = Dashboard
+master.menu.administrator.shutdown = Shut down
+
+# master.menu.provider ########################################################
+
+master.menu.provider = Provider
+master.menu.provider.favourite-link = Favourite link
+master.menu.provider.request.list = Requests
+master.menu.provider.request.create = Create Request
+
+# master.menu.consumer ##########################################################
+
+master.menu.consumer = Consumer
+master.menu.consumer.favourite-link = Favourite link
+master.menu.consumer.offer.list = Offers
+master.menu.consumer.offer.create = Create Offer
+
+# master.menu.employer #########################################################
+
+master.menu.employer = Employer
+master.menu.employer.job.list-mine = List my jobs
+master.menu.employer.application.list = List my job's applications
+
+# master.menu.worker #########################################################
+
+master.menu.worker = Worker
+master.menu.worker.application.list = My applications
+
+# master.menu.auditor #########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.job.list-auditored = List auditored jobs
+master.menu.auditor.job.list-not-auditored = List not auditored jobs
+
+# master.menu.sponsor #########################################################
+
+master.menu.sponsor = Sponsor
+master.menu.sponsor.comercialBanner.list-mine = List my Comercial Banners
+master.menu.sponsor.nonNomercialBanner.list-mine = List my Non Commercial Banners
+
+# master.menu.user-account ####################################################
+
+master.menu.user-account = Account
+master.menu.user-account.general-data = General data
+master.menu.user-account.provider = Provider data
+master.menu.user-account.become-provider = Become a provider
+master.menu.user-account.consumer = Consumer data
+master.menu.user-account.become-consumer = Become a consumer
+
+# master.footer ###############################################################
+
+master.footer.title.about = About us
+master.footer.label.company = Company
+master.footer.label.license = License
+master.footer.title.social = Social
+master.footer.label.linked-in = Linked-In
+master.footer.label.twitter = Twitter
+master.footer.title.languages = Languages
+master.footer.label.english = English
+master.footer.label.spanish = Spanish
+
+# master.company ##############################################################
+
+master.company.title = La compañía
+master.company.text = \
+	Acme Jobs, Inc. is a fictitious fictitious company that provides a \
+	starter project for the students of the Design and Testing subject of the \
+	Software Engineering Curriculum of the University of Sevilla.
+master.company.name = Acme Jobs, Inc.
+master.company.address = Number Street, City, State, Country
+master.company.phone = +000 123 456
+master.company.email = contact@acme.com
+
+# master.license ##############################################################
+
+master.license.title = License
+master.license.text = \
+	You may use this system free of charge, as long as you carefully observe the \
+	existing applicable laws.  Please, note that we do not share any information \
+	about you with any other company.  We only use three cookies, namely: \
+	"JSESSIONID" to identify your work session, "remember" to let you authenticate \
+	automatically for a maximum of 31 days, and "language" to store your language \
+	preferences. Additionally, we store an item called "returnStack" in your browser's \
+	local storage to keep track of the document to which some buttons must return.

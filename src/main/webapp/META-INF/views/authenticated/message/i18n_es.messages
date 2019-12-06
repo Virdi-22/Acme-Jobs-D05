@@ -1,0 +1,14 @@
+authenticated.message.form.label.title = Título
+authenticated.message.form.label.body = Cuerpo
+authenticated.message.form.label.tags = Etiquetas
+authenticated.message.form.label.moment = Momento
+
+authenticated.message.form.contextData1 = Usuario
+authenticated.message.form.contextData2 = En relación a la cadena
+
+authenticated.message.form.button.return = Volver
+
+authenticated.message.list.label.title = Título
+authenticated.message.list.label.tags = Etiquetas
+
+authenticated.message.list.button.return = Volver

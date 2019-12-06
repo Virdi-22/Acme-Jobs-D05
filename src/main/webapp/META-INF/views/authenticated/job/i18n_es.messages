@@ -1,0 +1,14 @@
+authenticated.job.list.label.reference = Referencia
+authenticated.job.list.label.deadline = Fecha de finalización
+authenticated.job.list.label.title = Título
+
+authenticated.job.form.label.reference = Referencia
+authenticated.job.form.label.title = Título
+authenticated.job.form.label.deadline = Fecha de finalización
+authenticated.job.form.label.salary = Salario
+authenticated.job.form.label.moreInfo = Más información
+authenticated.job.form.label.description = Descripción
+
+authenticated.job.form.button.linkDuties = Obligaciones
+
+authenticated.job.form.button.return = Volver

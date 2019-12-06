@@ -1,0 +1,4 @@
+administrator.spam-configuration.form.label.spam-words-listing = Spam Words
+administrator.spam-configuration.form.label.spam-threshold = Spam Threshold
+administrator.configuration.form.button.update = Update
+administrator.spam-configuration.form.button.return = Return

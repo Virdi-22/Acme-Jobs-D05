@@ -1,0 +1,17 @@
+authenticated.offer.list.label.ticker = Identificador
+authenticated.offer.list.label.title = Título
+authenticated.offer.list.label.description = Descripción
+authenticated.offer.list.label.deadline = Fecha de finalización
+
+authenticated.offer.form.label.ticker = Identificador
+authenticated.offer.form.label.title = Título
+authenticated.offer.form.label.description = Descripción
+authenticated.offer.form.label.minMoney = Salario mínimo
+authenticated.offer.form.label.maxMoney = Salario máximo
+authenticated.offer.form.label.creationMoment = Momento de creación
+authenticated.offer.form.label.deadline = Fecha de finalización
+
+authenticated.offer.form.label.checkbox = Crear oferta
+
+authenticated.offer.form.button.create = Crear
+authenticated.offer.form.button.return = Volver

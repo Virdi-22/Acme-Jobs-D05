@@ -1,0 +1,14 @@
+authenticated.message.form.label.title = Title
+authenticated.message.form.label.body = Body
+authenticated.message.form.label.tags = Tags
+authenticated.message.form.label.moment = Moment
+
+authenticated.message.form.contextData1 = User
+authenticated.message.form.contextData2 = Regarding message thread
+
+authenticated.message.form.button.return = Return
+
+authenticated.message.list.label.title = Title
+authenticated.message.list.label.tags = Tags
+
+authenticated.message.list.button.return = Return

@@ -1,0 +1,24 @@
+consumer.offer.list.label.ticker = Ticker
+consumer.offer.list.label.title = Title
+consumer.offer.list.label.description = Description
+consumer.offer.list.label.deadline = Deadline
+
+consumer.offer.form.label.ticker = Ticker
+consumer.offer.form.label.title = Title
+consumer.offer.form.label.description = Description
+consumer.offer.form.label.minMoney = Minimum salary
+consumer.offer.form.label.maxMoney = Maximum salary
+consumer.offer.form.label.creationMoment = Creation moment
+consumer.offer.form.label.deadline = Deadline
+
+consumer.offer.error.inFuture = The deadline must be at least one week ahead
+consumer.offer.error.existing = This ticker is already used
+consumer.offer.error.EURminMoney = Money must be expressed in EURO zone
+consumer.offer.error.EURmaxMoney = Money must be expressed in EURO zone
+consumer.offer.error.maxMoreThanMin = The maximum salary must be more than the minimum
+consumer.offer.error.must-accept = Must confirm by checking the checkbox
+
+consumer.offer.form.label.checkbox = Create offer
+
+consumer.offer.form.button.create = Create
+consumer.offer.form.button.return = Return

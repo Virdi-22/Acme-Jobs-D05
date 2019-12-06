@@ -1,0 +1,27 @@
+##LIST
+consumer.offer.list.label.ticker = Teletipo
+consumer.offer.list.label.title = Título
+consumer.offer.list.label.description = Descripción
+consumer.offer.list.label.deadline = Fecha de finalización
+
+##FORM
+consumer.offer.form.label.ticker = Identificador
+consumer.offer.form.label.title = Título
+consumer.offer.form.label.description = Descripción
+consumer.offer.form.label.minMoney = Salario mínimo
+consumer.offer.form.label.maxMoney = Salario máximo
+consumer.offer.form.label.creationMoment = Momento de creación
+consumer.offer.form.label.deadline = Fecha de finalización
+consumer.offer.form.label.checkbox = Crear oferta
+
+##VALIDATIONS
+consumer.offer.error.inFuture = La fecha de finalización tiene que estar en el futuro
+consumer.offer.error.existing = El teletipo ya está en uso
+consumer.offer.error.EURminMoney = El dinero debe estar en la zona EURO
+consumer.offer.error.EURmaxMoney = El dinero debe estar en la zona EURO
+consumer.offer.error.maxMoreThanMin = El salario máximo debe ser mayor que el mínimo
+consumer.offer.error.must-accept = Debe marcar la casilla
+
+##BUTTONS
+consumer.offer.form.button.create = Crear
+consumer.offer.form.button.return = Volver

@@ -1,0 +1,14 @@
+authenticated.auditRecord.list.label.creationMoment = Creation Moment
+authenticated.auditRecord.list.label.title = Title
+authenticated.auditRecord.list.label.body = Body
+
+authenticated.auditRecord.list.button.return = Return
+
+authenticated.auditRecord.contextData1 = Regarding job with reference
+
+authenticated.auditRecord.form.label.title = Title
+authenticated.auditRecord.form.label.status = Status
+authenticated.auditRecord.form.label.creationMoment = Creation Moment
+authenticated.auditRecord.form.label.body = Body
+
+authenticated.auditRecord.form.button.return = Return

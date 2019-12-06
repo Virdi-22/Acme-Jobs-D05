@@ -1,0 +1,17 @@
+anonymous.companyRecord.form.label.companyName = Nombre de la compañía
+anonymous.companyRecord.form.label.sector = Sector
+anonymous.companyRecord.form.label.ceoName = Nombre del CEO
+anonymous.companyRecord.form.label.activitiesDescription = Actividades
+anonymous.companyRecord.form.label.webSite = Página web
+anonymous.companyRecord.form.label.contactPhone = Teléfono de contacto
+anonymous.companyRecord.form.label.contactEmail = Email
+anonymous.companyRecord.form.label.stars = Estrellas
+anonymous.companyRecord.form.label.incorporated = Sociedad inscrita
+
+anonymous.companyRecord.form.button.return = Volver
+
+anonymous.companyRecord.list.label.companyName = Nombre de la compañía
+anonymous.companyRecord.list.label.webSite = Página web
+anonymous.companyRecord.list.label.contactPhone = Teléfono de contacto
+anonymous.companyRecord.list.label.contactEmail = Email
+anonymous.companyRecord.list.label.stars = Estrellas

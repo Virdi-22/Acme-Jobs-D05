@@ -1,0 +1,12 @@
+sponsor.comercialBanner.form.label.slogan = Slogan
+sponsor.comercialBanner.form.label.creditCardNumber = Credit Card Number
+sponsor.comercialBanner.form.label.target = Target
+sponsor.comercialBanner.form.label.holder = Holder
+sponsor.comercialBanner.form.label.brand = Brand
+sponsor.comercialBanner.form.label.expirationDate = Expiration Date
+sponsor.banner.error.date = The format for the expiration date is not vali(ex: MM/YYYY)
+sponsor.comercialbanner.error.inFuture = The expiration date must be in future to be valid
+sponsor.comercialBanner.form.button.return = Return
+
+sponsor.comercialBanner.list.label.slogan = Slogan
+sponsor.comercialBanner.list.label.creditCard = Credit Card

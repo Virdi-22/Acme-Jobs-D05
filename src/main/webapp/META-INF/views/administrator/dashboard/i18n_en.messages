@@ -1,0 +1,24 @@
+administrator.dashboard.form.label.total = Total number
+
+administrator.dashboard.form.label.announcements = Announcements Statistics
+administrator.dashboard.form.label.company-records = Company Records Statistics
+administrator.dashboard.form.label.investor-records = Investor Records Statistics
+	
+administrator.dashboard.form.label.reward-active-requests = Active Request Statistics
+administrator.dashboard.form.label.reward-active-offers = Active Offers Statistics
+
+administrator.dashboard.form.label.minimum = Minimum value
+administrator.dashboard.form.label.maximun = Maximum value
+administrator.dashboard.form.label.average = Average
+administrator.dashboard.form.label.standard-deviation = Standard deviation
+
+administrator.dashboard.form.title.application-statuses = Status
+administrator.dashboard.form.company-record.status = Company Record's status
+administrator.dashboard.form.investor-record.status = Investor Record's status
+
+administrator.dashboard.form.label.jobs = Jobs Statistics
+administrator.dashboard.form.label.average-by-employer = Average by employer
+administrator.dashboard.form.label.applications = Applications Statistics
+administrator.dashboard.form.label.average-by-worker = Average by worker
+administrator.dashboard.form.job.status = Job's status
+administrator.dashboard.form.application.status = Application's status
