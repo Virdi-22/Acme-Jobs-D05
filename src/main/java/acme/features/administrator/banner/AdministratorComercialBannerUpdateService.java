@@ -45,7 +45,7 @@ public class AdministratorComercialBannerUpdateService implements AbstractUpdate
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "target", "slogan", "creditCardNumber", "expirationDate", "holder", "brand");
+		request.unbind(entity, model, "target", "slogan", "holder", "brand");
 
 	}
 
@@ -72,7 +72,7 @@ public class AdministratorComercialBannerUpdateService implements AbstractUpdate
 		if (!errors.hasErrors("expirationDate")) {
 			calendar = new GregorianCalendar();
 			minimumDeadline = calendar.getTime();
-			String[] fecha = entity.getExpirationDate().split("/");
+			String[] fecha = entity.getSponsor().getCreditCard().getExpirationDate().split("/");
 			String date = fecha[0].trim() + "/" + fecha[1].trim() + "/01 00:00";
 			Date deadline = new Date(date);
 			boolean isInFuture = deadline.after(minimumDeadline);

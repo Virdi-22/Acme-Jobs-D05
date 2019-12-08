@@ -99,8 +99,6 @@
         `target` varchar(255),
         `sponsor_id` integer not null,
         `brand` varchar(255),
-        `credit_card_number` varchar(255),
-        `expiration_date` varchar(255),
         `holder` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
@@ -134,6 +132,15 @@
         `user_account_id` integer,
         `company` varchar(255),
         `sector` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `credit_card` (
+       `id` integer not null,
+        `version` integer not null,
+        `credit_card_number` varchar(255),
+        `expiration_date` varchar(255),
+        `holder` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -246,8 +253,8 @@
        `id` integer not null,
         `version` integer not null,
         `user_account_id` integer,
-        `credit_card_number` varchar(255),
         `organization_name` varchar(255),
+        `credit_card_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -414,6 +421,11 @@ create index IDXq82g0jb2mlplkxoma94rvovh8 on `_request` (`ticker`);
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `sponsor` 
+       add constraint `FK28mvxtnmfjcwiw34vs8ryqkpa` 
+       foreign key (`credit_card_id`) 
+       references `credit_card` (`id`);
 
     alter table `sponsor` 
        add constraint FK_20xk0ev32hlg96kqynl6laie2 
