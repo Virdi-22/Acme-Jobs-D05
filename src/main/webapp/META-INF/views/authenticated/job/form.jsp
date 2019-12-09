@@ -9,9 +9,9 @@
 	<acme:form-moment code="authenticated.job.form.label.deadline" path="deadline"/>
 	<acme:form-money code="authenticated.job.form.label.salary" path="salary"/>
 	<acme:form-url code="authenticated.job.form.label.moreInfo" path="moreInfo"/>
-	<acme:form-textarea code="authenticated.job.form.label.description" path="jobDescription"/>
+	<acme:form-textarea code="authenticated.job.form.label.description" path="description"/>
 	
-	<acme:form-submit method="get" code="authenticated.job.form.button.linkDuties" action="/authenticated/duty/list-by-descriptor?descriptorId=${descriptorId}"/>
+	<acme:form-submit method="get" code="authenticated.job.form.button.linkDuties" action="/authenticated/duty/list-by-job?jobId=${jobId}"/>
 	
 	<acme:form-return code="authenticated.job.form.button.return"/>
 </acme:form>

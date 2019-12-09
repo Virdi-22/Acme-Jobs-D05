@@ -7,4 +7,10 @@ employer.duty.form.label.title = Título
 employer.duty.form.label.description = Descripción
 employer.duty.form.label.percentage = Porcentaje
 
+employer.duty.error.percentage = La carga del trabajo no debe ser más del 100%
+
+employer.duty.form.button.update = Actualizar
+employer.duty.form.button.create = Crear
+employer.duty.form.button.delete = Eliminar
+
 employer.duty.form.button.return = Volver

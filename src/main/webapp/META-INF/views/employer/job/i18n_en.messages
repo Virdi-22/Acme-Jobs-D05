@@ -9,6 +9,16 @@ employer.job.form.label.salary = Salary
 employer.job.form.label.moreInfo = More Info (optional)
 employer.job.form.label.description = Description
 
+employer.job.error.reference = There exists a job with that reference already
+employer.job.error.inFuture = The deadline must be in future
+employer.job.error.salary = Salary must be specified in EURO
+
+employer.job.form.button.update = Update
+employer.job.form.button.delete = Delete
+employer.job.form.button.create = Create
+
+employer.job.form.button.create-duty = Create a Duty
+
 employer.job.form.button.linkDuties = Duties
 
 employer.job.form.button.return = Return
