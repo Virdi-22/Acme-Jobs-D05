@@ -9,9 +9,9 @@
 	<acme:form-moment code="auditor.job.form.label.deadline" path="deadline"/>
 	<acme:form-money code="auditor.job.form.label.salary" path="salary"/>
 	<acme:form-url code="auditor.job.form.label.moreInfo" path="moreInfo"/>
-	<acme:form-textarea code="auditor.job.form.label.description" path="jobDescription"/>
+	<acme:form-textarea code="auditor.job.form.label.description" path="description"/>
 	
-	<acme:form-submit method="get" code="auditor.job.form.button.linkDuties" action="/auditor/duty/list-by-descriptor?descriptorId=${descriptorId}"/>
+	<acme:form-submit method="get" code="auditor.job.form.button.linkDuties" action="/auditor/duty/list-by-job?jobId=${jobId}"/>
 	
 	<acme:form-submit method="get" code="auditor.job.form.button.linkToAuditRecords" action="/authenticated/audit-record/list-by-job?jobId=${jobId}"/>
 	
