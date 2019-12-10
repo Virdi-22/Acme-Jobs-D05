@@ -56,6 +56,7 @@ public class Job extends DomainEntity {
 	@Valid
 	private Money				salary;
 
+	@NotBlank
 	@Column(length = 1024)
 	private String				description;
 

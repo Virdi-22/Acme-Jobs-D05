@@ -2,15 +2,12 @@
 package acme.features.employer.job;
 
 import java.util.Calendar;
-import java.util.Collection;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.configurations.Configuration;
-import acme.entities.duties.Duty;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
@@ -50,6 +47,7 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert model != null;
 
 		request.unbind(entity, model, "reference", "title", "deadline", "salary", "description", "moreInfo");
+		model.setAttribute("jobId", request.getModel().getInteger("id"));
 	}
 
 	@Override
@@ -70,6 +68,8 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert entity != null;
 		assert errors != null;
 
+		request.getModel().setAttribute("jobId", entity.getId());
+
 		String reference = entity.getReference();
 		Calendar calendar;
 		Date minimumDeadline;
@@ -77,10 +77,14 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 
 		boolean otherWithSameReference, isInFuture, isEUR;
 
+		// Checking the reference
+
 		if (!errors.hasErrors("reference")) {
 			otherWithSameReference = this.repository.findOneByReference(reference) != null;
 			errors.state(request, otherWithSameReference, "reference", "employer.job.error.reference");
 		}
+
+		// Checking the deadline
 
 		if (!errors.hasErrors("deadline")) {
 			calendar = new GregorianCalendar();
@@ -88,6 +92,8 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 			isInFuture = entity.getDeadline().after(minimumDeadline);
 			errors.state(request, isInFuture, "deadline", "employer.job.error.inFuture");
 		}
+
+		// Checking the salary
 
 		if (!errors.hasErrors("salary")) {
 			isEUR = salary.getCurrency().equals("EUR") || salary.getCurrency().equals("€");
@@ -97,58 +103,7 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 
 	@Override
 	public void update(final Request<Job> request, final Job entity) {
-
-		boolean hasDescription = false;
-		boolean allDuties100 = false;
-		boolean isSpam = true;
-
-		if (!entity.isFinalMode()) {
-
-			// Checking the description
-
-			String description = entity.getDescription();
-			int jobId = entity.getId();
-			int workload = 0;
-
-			if (description != null && description != "") {
-				hasDescription = true;
-
-				// Checking the workload
-
-				Collection<Duty> dutiesPerJob = this.repository.findAllDutiesByJobId(jobId);
-
-				if (!dutiesPerJob.isEmpty()) {
-					for (Duty d : dutiesPerJob) {
-						workload = workload + d.getPercentage();
-					}
-				}
-				if (workload == 100) {
-					allDuties100 = true;
-				}
-			}
-
-			// Checking the spam
-
-			Configuration configuration = this.repository.findConfiguration();
-			String spam = configuration.getSpamWordsListing();
-
-			// For reference, title, description and moreInfo
-
-			CharSequence referenceSequence = entity.getReference().subSequence(0, entity.getReference().length());
-			CharSequence titleSequence = entity.getTitle().subSequence(0, entity.getTitle().length());
-			CharSequence descriptionSequence = entity.getDescription().subSequence(0, entity.getDescription().length());
-			CharSequence moreInfo = entity.getMoreInfo().subSequence(0, entity.getMoreInfo().length());
-
-			isSpam = spam.contains(referenceSequence) && spam.contains(titleSequence) && spam.contains(descriptionSequence) && spam.contains(moreInfo);
-
-		}
-
-		// Setting job's final mode
-
-		if (hasDescription && allDuties100 && !isSpam) {
-			entity.setFinalMode(true);
-		}
-
+		assert request != null;
 		this.repository.save(entity);
 
 	}

@@ -1,8 +1,6 @@
 
 package acme.features.employer.duty;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -70,50 +68,11 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 		assert entity != null;
 		assert errors != null;
 
-		boolean isWorkloadOk;
-		int jobId;
-		int workload = 0;
-		Job job;
-		Collection<Duty> dutiesPerJob;
-
-		jobId = request.getModel().getInteger("jobId");
-		job = this.repository.findOneJobById(jobId);
-		dutiesPerJob = this.repository.findManyByJobId(jobId);
-
-		if (!errors.hasErrors("percentage")) {
-			if (!dutiesPerJob.isEmpty()) {
-				for (Duty d : dutiesPerJob) {
-					workload = workload + d.getPercentage();
-				}
-			}
-			isWorkloadOk = workload + entity.getPercentage() == 100;
-			errors.state(request, isWorkloadOk, "percentage", "employer.duty.error.percentage");
-		}
 	}
 
 	@Override
 	public void create(final Request<Duty> request, final Duty entity) {
 		assert request != null;
-
-		int jobId;
-		int workload = 0;
-		Job job;
-		Collection<Duty> dutiesPerJob;
-
-		jobId = request.getModel().getInteger("jobId");
-		job = this.repository.findOneJobById(jobId);
-		dutiesPerJob = this.repository.findManyByJobId(jobId);
-
-		if (!dutiesPerJob.isEmpty()) {
-			for (Duty d : dutiesPerJob) {
-				workload = workload + d.getPercentage();
-			}
-		}
-		if (workload == 100) {
-			job.setFinalMode(true);
-		} else {
-			job.setFinalMode(false);
-		}
 
 		this.repository.save(entity);
 
