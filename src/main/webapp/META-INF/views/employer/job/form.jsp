@@ -3,18 +3,26 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<acme:form readonly="false">
+<acme:form>
 	<acme:form-textbox code="employer.job.form.label.reference" path="reference"/>
 	<acme:form-textbox code="employer.job.form.label.title" path="title"/>
 	<acme:form-moment code="employer.job.form.label.deadline" path="deadline"/>
 	<acme:form-money code="employer.job.form.label.salary" path="salary"/>
 	<acme:form-url code="employer.job.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-textarea code="employer.job.form.label.description" path="description"/>
-	
+	<jstl:if test="${command != 'create'}">
+		<acme:form-textbox code="employer.job.form.label.finalMode" path="finalMode" readonly="true"/>
+	</jstl:if>
 	<jstl:if test="${finalMode == 'false'}">
 		<acme:form-submit test="${command == 'show'}"
+			code="employer.job.form.button.publish"
+			action="/employer/job/publish"/>
+			<acme:form-submit test="${command == 'show'}"
 			code="employer.job.form.button.update"
 			action="/employer/job/update"/>
+		<acme:form-submit test="${command == 'publish'}"
+			code="employer.job.form.button.publish"
+			action="/employer/job/publish"/>
 	</jstl:if>
 	<acme:form-submit test="${command == 'show'}"
 		code="employer.job.form.button.delete"

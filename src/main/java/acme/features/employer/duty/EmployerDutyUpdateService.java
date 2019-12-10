@@ -1,13 +1,10 @@
 
 package acme.features.employer.duty;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.duties.Duty;
-import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -68,53 +65,11 @@ public class EmployerDutyUpdateService implements AbstractUpdateService<Employer
 		assert entity != null;
 		assert errors != null;
 
-		boolean isWorkloadOk;
-		int jobId;
-		int workload = 0;
-		Job job;
-		Collection<Duty> dutiesPerJob;
-
-		jobId = request.getModel().getInteger("jobId");
-		job = this.repository.findOneJobById(jobId);
-		dutiesPerJob = this.repository.findManyByJobId(jobId);
-		dutiesPerJob.remove(entity);
-
-		if (!errors.hasErrors("percentage")) {
-			if (!dutiesPerJob.isEmpty()) {
-				for (Duty d : dutiesPerJob) {
-					workload = workload + d.getPercentage();
-				}
-			}
-			isWorkloadOk = workload + entity.getPercentage() <= 100;
-			errors.state(request, isWorkloadOk, "percentage", "employer.duty.error.percentage");
-		}
-
 	}
 
 	@Override
 	public void update(final Request<Duty> request, final Duty entity) {
 		assert request != null;
-
-		int jobId;
-		int workload = 0;
-		Job job;
-		Collection<Duty> dutiesPerJob;
-
-		jobId = request.getModel().getInteger("jobId");
-		job = this.repository.findOneJobById(jobId);
-		dutiesPerJob = this.repository.findManyByJobId(jobId);
-		dutiesPerJob.remove(entity);
-
-		if (!dutiesPerJob.isEmpty()) {
-			for (Duty d : dutiesPerJob) {
-				workload = workload + d.getPercentage();
-			}
-		}
-		if (workload + entity.getPercentage() == 100) {
-			job.setFinalMode(true);
-		} else {
-			job.setFinalMode(false);
-		}
 
 		this.repository.save(entity);
 	}
