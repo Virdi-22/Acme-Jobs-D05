@@ -2,6 +2,7 @@ employer.application.list.label.reference = Referencia
 employer.application.list.label.creationMoment = Fecha de creación
 employer.application.list.label.status = Estado
 
+
 employer.application.form.label.reference = Referencia
 employer.application.form.label.jobInfo = Más información sobre el trabajo en:
 employer.application.form.label.creationMoment = Fecha de creación

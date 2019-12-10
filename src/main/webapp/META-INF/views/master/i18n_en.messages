@@ -87,6 +87,7 @@ master.menu.employer = Employer
 master.menu.employer.job.list-mine = List my jobs
 master.menu.employer.application.list = List my job's applications
 
+
 # master.menu.worker #########################################################
 
 master.menu.worker = Worker
