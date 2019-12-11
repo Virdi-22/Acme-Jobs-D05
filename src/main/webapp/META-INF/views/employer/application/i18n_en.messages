@@ -11,4 +11,7 @@ employer.application.form.label.skills = Skills
 employer.application.form.label.qualifications = Qualifications
 employer.application.form.label.referenceToJob = Regarding job with reference
 
+employer.application.form.button.accept = Accept Application
+employer.application.form.button.reject = Reject Application
+
 employer.application.form.button.return = Return
