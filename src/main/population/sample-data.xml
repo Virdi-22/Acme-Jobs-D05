@@ -373,6 +373,11 @@
 		<property name="userAccount" ref="sponsor2UserAccount"></property>
 	</bean>
 	
+	<!-- Request to become an auditor -->
+	<bean name="requestAuditor1" class="acme.entities.requestAuditors.RequestAuditor">
+		<property name="userAccount" ref="sponsor2UserAccount"/>
+	</bean>
+	
 	<!-- Comercial Banners -->
 	
 	<bean  id="comercialBanner01" class="acme.entities.banners.ComercialBanner">

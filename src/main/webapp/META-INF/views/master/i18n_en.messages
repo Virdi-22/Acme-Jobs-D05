@@ -67,6 +67,8 @@ master.menu.administrator.configuration.show = Configuration
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.shutdown = Shut down
 
+master.menu.user-account.auditor-requests = Auditor requests
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider
@@ -98,6 +100,9 @@ master.menu.worker.application.list = My applications
 master.menu.auditor = Auditor
 master.menu.auditor.job.list-auditored = List auditored jobs
 master.menu.auditor.job.list-not-auditored = List not auditored jobs
+
+master.menu.user-account.become-auditor = Become an auditor
+master.menu.user-account.auditor = Auditor data
 
 # master.menu.sponsor #########################################################
 

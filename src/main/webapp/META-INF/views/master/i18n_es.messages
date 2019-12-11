@@ -68,6 +68,8 @@ master.menu.administrator.configuration.show = Configuraciones
 master.menu.administrator.dashboard = Panel de Estadísticas
 master.menu.administrator.shutdown = Parar el sistema
 
+master.menu.user-account.auditor-requests = Peticiones de auditor
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
@@ -99,6 +101,9 @@ master.menu.worker.application.list = Mis solicitudes
 master.menu.auditor = Auditor
 master.menu.auditor.job.list-auditored = Listar trabajos auditorados
 master.menu.auditor.job.list-not-auditored = Listar trabajos no auditorados
+
+master.menu.user-account.become-auditor = Petición para auditor
+master.menu.user-account.auditor = Datos de auditor
 
 # master.menu.sponsor #########################################################
 
