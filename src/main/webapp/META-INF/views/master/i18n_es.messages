@@ -86,6 +86,7 @@ master.menu.consumer.offer.create = Crear Oferta
 
 master.menu.employer = Empleado
 master.menu.employer.job.list-mine = Mis trabajos
+master.menu.employer.job.create = Crear un trabajo
 master.menu.employer.application.list = Solicitudes a mis trabajos
 
 # master.menu.worker #########################################################
@@ -113,6 +114,10 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+master.menu.user-account.worker = Datos de trabajador
+master.menu.user-account.become-worker = Hazte trabajador
+master.menu.user-account.employer = Datos de empleador
+master.menu.user-account.become-employer = Hazte empleador
 
 ﻿# master.footer ###############################################################
 

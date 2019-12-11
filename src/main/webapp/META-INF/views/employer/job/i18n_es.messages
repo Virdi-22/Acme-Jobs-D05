@@ -8,6 +8,20 @@ employer.job.form.label.deadline = Fecha de finalización
 employer.job.form.label.salary = Salario
 employer.job.form.label.moreInfo = Más información (opcional)
 employer.job.form.label.description = Descripción
+employer.job.form.label.finalMode = Modo Final
+
+employer.job.error.reference = Ya existe un trabajo con esa referencia
+employer.job.error.inFuture = La fecha de finalización debe estar en el futuro
+employer.job.error.salary = El salario debe estar especificado en EURO
+
+employer.job.form.button.update = Actualizar
+employer.job.form.button.delete = Eliminar
+employer.job.form.button.create = Crear
+
+employer.job.form.button.create-duty = Crea una Obligación
+employer.job.form.button.publish = Publicar
+
+employer.job.error.finalModeTest = Para publicar un trabajo, debe tener una descripción y una carga de trabajo del 100%
 
 employer.job.form.button.linkDuties = Obligaciones
 
