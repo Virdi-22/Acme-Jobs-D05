@@ -27,6 +27,6 @@ public class CreditCard extends DomainEntity {
 	private String				expirationDate;
 
 	@NotBlank
-	private String				holder;
+	private String				brand;
 
 }

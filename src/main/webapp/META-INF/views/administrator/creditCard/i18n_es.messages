@@ -1,0 +1,14 @@
+administrator.creditCard.form.label.creditCardNumber = Número de la tarjeta de crédito
+administrator.creditCard.form.label.expirationDate = Fecha de caducidad
+administrator.creditCard.form.label.brand = Marca
+acme.validation.creditCard.expirationDate.pattern = Invalid pattern, must be MM/YYYY
+administrator.creditCard.inFuture = The expiration date must be in future to be valid
+administrator.creditCard.form.button.return = Return
+
+administrator.creditCard.list.label.creditCardNumber = Credit Card Number
+administrator.creditCard.list.label.expirationDate = Expiration Date
+
+administrator.creditCard.form.button.update = Update
+administrator.creditCard.form.button.delete = Delete
+administrator.creditCard.form.button.create = Create
+administrator.creditCard.form.button.update = Update

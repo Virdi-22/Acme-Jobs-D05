@@ -58,6 +58,9 @@
 			<acme:menu-suboption code="master.menu.administrator.company-record.list"  action="/administrator/company-record/list"/>
 			<acme:menu-suboption code="master.menu.administrator.company-record.create"  action="/administrator/company-record/create"/>
 			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.credit-card.list"  action="/administrator/credit-card/list"/>
+			<acme:menu-suboption code="master.menu.administrator.credit-card.create"  action="/administrator/credit-card/create"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.configuration.show" action="/administrator/configuration/show"/>
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>

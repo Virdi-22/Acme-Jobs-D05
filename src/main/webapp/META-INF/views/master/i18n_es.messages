@@ -67,6 +67,8 @@ master.menu.administrator.company-record.create = Crear Compañía
 master.menu.administrator.configuration.show = Configuraciones
 master.menu.administrator.dashboard = Panel de Estadísticas
 master.menu.administrator.shutdown = Parar el sistema
+master.menu.administrator.credit-card.list = Tarjetas de crédito
+master.menu.administrator.credit-card.create = Crear trajeta de crédito
 
 # master.menu.provider ########################################################
 
