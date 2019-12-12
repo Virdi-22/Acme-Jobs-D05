@@ -92,6 +92,7 @@ master.menu.employer.application.list = List my job's applications
 
 master.menu.worker = Worker
 master.menu.worker.application.list = My applications
+master.menu.worker.job.list = Available jobs
 
 # master.menu.auditor #########################################################
 

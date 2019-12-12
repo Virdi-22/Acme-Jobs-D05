@@ -93,6 +93,7 @@ master.menu.employer.application.list = Solicitudes a mis trabajos
 
 master.menu.worker = Trabajador
 master.menu.worker.application.list = Mis solicitudes
+master.menu.worker.job.list = Trabajos disponibles
 
 # master.menu.auditor #########################################################
 
