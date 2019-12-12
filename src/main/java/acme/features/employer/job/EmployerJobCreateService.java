@@ -77,10 +77,14 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 
 		boolean otherWithSameReference, isInFuture, isEUR;
 
+		// Checking the reference
+
 		if (!errors.hasErrors("reference")) {
 			otherWithSameReference = this.repository.findOneByReference(reference) == null;
 			errors.state(request, otherWithSameReference, "reference", "employer.job.error.reference");
 		}
+
+		// Checking the deadline
 
 		if (!errors.hasErrors("deadline")) {
 			calendar = new GregorianCalendar();
@@ -88,6 +92,8 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 			isInFuture = entity.getDeadline().after(minimumDeadline);
 			errors.state(request, isInFuture, "deadline", "employer.job.error.inFuture");
 		}
+
+		// Checking the salary
 
 		if (!errors.hasErrors("salary")) {
 			isEUR = salary.getCurrency().equals("EUR") || salary.getCurrency().equals("€");
@@ -98,7 +104,7 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 
 	@Override
 	public void create(final Request<Job> request, final Job entity) {
-
+		assert request != null;
 		this.repository.save(entity);
 
 	}
