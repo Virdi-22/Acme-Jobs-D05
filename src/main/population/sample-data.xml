@@ -374,8 +374,11 @@
 	</bean>
 	
 	<!-- Request to become an auditor -->
-	<bean name="requestAuditor1" class="acme.entities.requestAuditors.RequestAuditor">
-		<property name="userAccount" ref="sponsor2UserAccount"/>
+	<bean name="auditorRequest1" class="acme.entities.auditorRequests.AuditorRequest">
+		<property name="firm" value="Firm 01"/>
+		<property name="statement" value="A good statement"/>
+		<property name="status" value="Pending"/>
+		<property name="userAccount" ref="employer2UserAccount"/>
 	</bean>
 	
 	<!-- Comercial Banners -->

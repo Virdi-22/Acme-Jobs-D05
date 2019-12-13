@@ -16,9 +16,9 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="authenticated.requestAuditor.form.label.firm" path="firm"/>
-	<acme:form-textarea code="authenticated.requestAuditor.form.label.responsibilityStatement" path="responsibilityStatement"/>
+	<br/><acme:form-textbox code="authenticated.auditorRequest.form.label.firm" path="firm"/>
+	<acme:form-textarea code="authenticated.auditorRequest.form.label.responsibilityStatement" path="statement"/>
 	
-	<acme:form-submit test="${command == 'create'}" code="authenticated.requestAuditor.form.button.create" action="/authenticated/request-auditor/create"/>
-	<acme:form-return code="authenticated.requestAuditor.form.button.return"/>
+	<acme:form-submit test="${command == 'create'}" code="authenticated.auditorRequest.form.button.create" action="/authenticated/auditor-request/create"/>
+	<acme:form-return code="authenticated.auditorRequest.form.button.return"/>
 </acme:form>

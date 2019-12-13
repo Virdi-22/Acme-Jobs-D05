@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.requestAuditor;
+package acme.features.authenticated.auditorRequest;
 
 import javax.annotation.PostConstruct;
 
@@ -7,19 +7,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.entities.requestAuditors.RequestAuditor;
+import acme.entities.auditorRequests.AuditorRequest;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("/authenticated/request-auditor/")
-public class AuthenticatedRequestAuditorController extends AbstractController<Authenticated, RequestAuditor> {
+@RequestMapping("/authenticated/auditor-request/")
+public class AuthenticatedAuditorRequestController extends AbstractController<Authenticated, AuditorRequest> {
 
 	// Internal state ---------------------------------------------------------------------------
 
 	@Autowired
-	private AuthenticatedRequestAuditorCreateService createService;
+	private AuthenticatedAuditorRequestCreateService createService;
 
 
 	// Constructors -----------------------------------------------------------------------------

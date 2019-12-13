@@ -1,12 +1,14 @@
 
-package acme.entities.requestAuditors;
+package acme.entities.auditorRequests;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
-import acme.entities.roles.Auditor;
 import acme.framework.entities.DomainEntity;
 import acme.framework.entities.UserAccount;
 import lombok.Getter;
@@ -15,11 +17,22 @@ import lombok.Setter;
 @Entity
 @Setter
 @Getter
-public class RequestAuditor extends DomainEntity {
+public class AuditorRequest extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes ----------------------------------------------------
+
+	@NotBlank
+	private String				firm;
+
+	@NotBlank
+	@Column(length = 1024)
+	private String				statement;
+
+	@NotBlank
+	@Pattern(regexp = "^Accepted|Pending|Rejected$")
+	private String				status;
 
 	// Relationships -------------------------------------------------
 
@@ -27,9 +40,5 @@ public class RequestAuditor extends DomainEntity {
 	@Valid
 	@OneToOne
 	private UserAccount			userAccount;
-
-	@Valid
-	@OneToOne(optional = true)
-	private Auditor				auditor;
 
 }

@@ -27,6 +27,10 @@
        drop 
        foreign key FK_clqcq9lyspxdxcp6o4f3vkelj;
 
+    alter table `auditor_request` 
+       drop 
+       foreign key `FKe7pjjdlehi2gl4wqda0druv4g`;
+
     alter table `authenticated` 
        drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
@@ -71,14 +75,6 @@
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
 
-    alter table `request_auditor` 
-       drop 
-       foreign key `FK6a462vrps6u2mkgpid1nysqtt`;
-
-    alter table `request_auditor` 
-       drop 
-       foreign key `FKa6m3imjvm1a1xjc0u4o4dxmks`;
-
     alter table `sponsor` 
        drop 
        foreign key FK_20xk0ev32hlg96kqynl6laie2;
@@ -98,6 +94,8 @@
     drop table if exists `audit_record`;
 
     drop table if exists `auditor`;
+
+    drop table if exists `auditor_request`;
 
     drop table if exists `authenticated`;
 
@@ -130,8 +128,6 @@
     drop table if exists `offer`;
 
     drop table if exists `provider`;
-
-    drop table if exists `request_auditor`;
 
     drop table if exists `sponsor`;
 

@@ -1,0 +1,9 @@
+authenticated.auditorRequest.form.title.create = Request to become an auditor
+
+authenticated.auditorRequest.form.label.firm = Firm
+authenticated.auditorRequest.form.label.responsibilityStatement = Responsibility statement
+
+authenticated.auditorRequest.error.alreadyRequested = You have already requested an auditor role
+
+authenticated.auditorRequest.form.button.create = Request
+authenticated.auditorRequest.form.button.return = Return

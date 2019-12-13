@@ -3,5 +3,8 @@ authenticated.auditor.form.title.update = Auditor data
 authenticated.auditor.form.label.firm = Firm
 authenticated.auditor.form.label.responsibilityStatement = Responsibility statement
 
+authenticated.auditor.error.isCreated = You have requested the role already.
+
+authenticated.auditor.form.button.create = Create
 authenticated.auditor.form.button.update = Update
 authenticated.auditor.form.button.return = Return

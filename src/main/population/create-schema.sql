@@ -58,6 +58,16 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `auditor_request` (
+       `id` integer not null,
+        `version` integer not null,
+        `firm` varchar(255),
+        `statement` varchar(1024),
+        `status` varchar(255),
+        `user_account_id` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `authenticated` (
        `id` integer not null,
         `version` integer not null,
@@ -235,14 +245,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `request_auditor` (
-       `id` integer not null,
-        `version` integer not null,
-        `auditor_id` integer,
-        `user_account_id` integer,
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `sponsor` (
        `id` integer not null,
         `version` integer not null,
@@ -353,6 +355,11 @@ create index IDXq82g0jb2mlplkxoma94rvovh8 on `_request` (`ticker`);
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
+    alter table `auditor_request` 
+       add constraint `FKe7pjjdlehi2gl4wqda0druv4g` 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
     alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 
        foreign key (`user_account_id`) 
@@ -405,16 +412,6 @@ create index IDXq82g0jb2mlplkxoma94rvovh8 on `_request` (`ticker`);
 
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
-       foreign key (`user_account_id`) 
-       references `user_account` (`id`);
-
-    alter table `request_auditor` 
-       add constraint `FK6a462vrps6u2mkgpid1nysqtt` 
-       foreign key (`auditor_id`) 
-       references `auditor` (`id`);
-
-    alter table `request_auditor` 
-       add constraint `FKa6m3imjvm1a1xjc0u4o4dxmks` 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
