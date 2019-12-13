@@ -48,9 +48,6 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 		assert model != null;
 
 		request.unbind(entity, model, "reference", "title", "deadline", "salary", "description", "moreInfo", "finalMode");
-		model.setAttribute("jobId", entity.getId());
-		model.setAttribute("reference", entity.getReference());
-		model.setAttribute("finalMode", entity.isFinalMode());
 	}
 
 	@Override

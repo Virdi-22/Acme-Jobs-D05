@@ -8,12 +8,15 @@ import java.util.GregorianCalendar;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.CheckSpam;
+import acme.entities.configurations.Configuration;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.datatypes.Money;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
@@ -28,7 +31,20 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 	@Override
 	public boolean authorise(final Request<Job> request) {
 		assert request != null;
-		return true;
+
+		boolean result;
+		int jobId;
+		Job job;
+		Employer employer;
+		Principal principal;
+
+		jobId = request.getModel().getInteger("id");
+		job = this.repository.findOneJobById(jobId);
+		employer = job.getEmployer();
+		principal = request.getPrincipal();
+		result = job.isFinalMode() || !job.isFinalMode() && employer.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
 	}
 
 	@Override
@@ -68,14 +84,21 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert entity != null;
 		assert errors != null;
 
-		request.getModel().setAttribute("jobId", entity.getId());
-
 		String reference = entity.getReference();
 		Calendar calendar;
 		Date minimumDeadline;
 		Money salary = entity.getSalary();
 
-		boolean otherWithSameReference, isInFuture, isEUR;
+		boolean otherWithSameReference, isInFuture, isEUR, isSpam;
+
+		// Checking if it's spam
+
+		if (!errors.hasErrors()) {
+			Configuration configuration = this.repository.findConfiguration();
+			String text = entity.getReference() + "," + entity.getTitle() + "," + entity.getDescription() + "," + entity.getMoreInfo();
+			isSpam = CheckSpam.checkSpam(configuration, text);
+			errors.state(request, !isSpam, "*", "employer.job.error.spam");
+		}
 
 		// Checking the reference
 
@@ -88,6 +111,7 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 
 		if (!errors.hasErrors("deadline")) {
 			calendar = new GregorianCalendar();
+			calendar.add(Calendar.DAY_OF_WEEK, 7);
 			minimumDeadline = calendar.getTime();
 			isInFuture = entity.getDeadline().after(minimumDeadline);
 			errors.state(request, isInFuture, "deadline", "employer.job.error.inFuture");
