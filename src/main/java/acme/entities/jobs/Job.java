@@ -42,7 +42,7 @@ public class Job extends DomainEntity {
 	@NotBlank
 	@Length(min = 5, max = 10)
 
-	@Pattern(regexp = "(?:^[A-Z,0-9]{4}-[A-Z,0-9]{4}$)")
+	@Pattern(regexp = "(?:^[A-Z,0-9]{4}-[A-Z,0-9]{4}$)", message = "{acme.validation.job.reference.pattern}")
 	private String				reference;
 
 	@NotBlank
