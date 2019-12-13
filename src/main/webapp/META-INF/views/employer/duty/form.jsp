@@ -4,7 +4,7 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form readonly="false">
-	<acme:form-textbox code="employer.duty.form.label.title" path="title"/>
+	<br/><acme:form-textbox code="employer.duty.form.label.title" path="title"/>
 	<acme:form-textarea code="employer.duty.form.label.description" path="description"/>
 	<acme:form-textbox code="employer.duty.form.label.percentage" path="percentage"/>
 	

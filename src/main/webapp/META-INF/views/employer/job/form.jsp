@@ -4,7 +4,7 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="employer.job.form.label.reference" path="reference"/>
+	<br/><acme:form-textbox code="employer.job.form.label.reference" path="reference"/>
 	<acme:form-textbox code="employer.job.form.label.title" path="title"/>
 	<acme:form-moment code="employer.job.form.label.deadline" path="deadline"/>
 	<acme:form-money code="employer.job.form.label.salary" path="salary"/>
@@ -38,10 +38,10 @@
 		action="/employer/job/delete"/>
 		
 	<jstl:if test="${finalMode == 'false'}">
-		<acme:form-submit test="${command != 'create'}" method="get" code="employer.job.form.button.create-duty" action="/employer/duty/create?jobId=${jobId}"/>
+		<acme:form-submit test="${command != 'create'}" method="get" code="employer.job.form.button.create-duty" action="/employer/duty/create?jobId=${id}"/>
 	</jstl:if>
 	
-	<acme:form-submit test="${command != 'create'}" method="get" code="employer.job.form.button.linkDuties" action="/employer/duty/list-by-job?jobId=${jobId}"/>
+	<acme:form-submit test="${command != 'create'}" method="get" code="employer.job.form.button.linkDuties" action="/employer/duty/list-by-job?jobId=${id}"/>
 	
 	<acme:form-return code="employer.job.form.button.return"/>
 </acme:form>

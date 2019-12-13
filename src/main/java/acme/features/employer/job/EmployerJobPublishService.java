@@ -1,18 +1,17 @@
 
 package acme.features.employer.job;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.CheckSpam;
 import acme.entities.configurations.Configuration;
-import acme.entities.duties.Duty;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
@@ -28,7 +27,19 @@ public class EmployerJobPublishService implements AbstractUpdateService<Employer
 	public boolean authorise(final Request<Job> request) {
 		assert request != null;
 
-		return true;
+		boolean result;
+		int jobId;
+		Job job;
+		Employer employer;
+		Principal principal;
+
+		jobId = request.getModel().getInteger("id");
+		job = this.repository.findOneJobById(jobId);
+		employer = job.getEmployer();
+		principal = request.getPrincipal();
+		result = job.isFinalMode() || !job.isFinalMode() && employer.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
 	}
 
 	@Override
@@ -66,8 +77,6 @@ public class EmployerJobPublishService implements AbstractUpdateService<Employer
 	@Override
 	public void validate(final Request<Job> request, final Job entity, final Errors errors) {
 
-		request.getModel().setAttribute("jobId", entity.getId());
-
 		boolean allDuties100 = false;
 		boolean isSpam = true;
 
@@ -77,36 +86,24 @@ public class EmployerJobPublishService implements AbstractUpdateService<Employer
 
 			// Checking the workload
 
-			int workload = 0;
+			int workload;
 			int jobId;
 
 			jobId = entity.getId();
+			workload = this.repository.findSumPercentageDutiesByJobId(jobId);
 
-			Collection<Duty> dutiesPerJob = this.repository.findAllDutiesByJobId(jobId);
-
-			if (!dutiesPerJob.isEmpty()) {
-				for (Duty d : dutiesPerJob) {
-					workload = workload + d.getPercentage();
-				}
-			}
-			if (workload == 100) {
-				allDuties100 = true;
-			}
+			allDuties100 = workload == 100;
 		}
 
 		// Checking the spam
 
 		Configuration configuration = this.repository.findConfiguration();
-		String spam = configuration.getSpamWordsListing();
 
 		// For reference, title, description and moreInfo
 
-		CharSequence referenceSequence = entity.getReference().subSequence(0, entity.getReference().length());
-		CharSequence titleSequence = entity.getTitle().subSequence(0, entity.getTitle().length());
-		CharSequence descriptionSequence = entity.getDescription().subSequence(0, entity.getDescription().length());
-		CharSequence moreInfo = entity.getMoreInfo().subSequence(0, entity.getMoreInfo().length());
+		String text = entity.getReference() + "," + entity.getTitle() + "," + entity.getDescription() + "," + entity.getMoreInfo();
 
-		isSpam = spam.contains(referenceSequence) && spam.contains(titleSequence) && spam.contains(descriptionSequence) && spam.contains(moreInfo);
+		isSpam = CheckSpam.checkSpam(configuration, text);
 
 		// The error if setting to final mode is not possible
 
@@ -114,7 +111,7 @@ public class EmployerJobPublishService implements AbstractUpdateService<Employer
 			entity.setFinalMode(false);
 		}
 
-		errors.state(request, !isSpam && allDuties100, "finalMode", "employer.job.error.finalModeTest");
+		errors.state(request, !isSpam && allDuties100, "*", "employer.job.error.finalModeTest");
 
 	}
 

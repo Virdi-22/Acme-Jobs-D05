@@ -33,7 +33,7 @@ public class Duty extends DomainEntity {
 	@Column(length = 1024)
 	private String				description;
 
-	@Range(min = 0, max = 100)
+	@Range(min = 1, max = 100)
 	private int					percentage;
 
 	// Relationships ------------------------------------------------------------
