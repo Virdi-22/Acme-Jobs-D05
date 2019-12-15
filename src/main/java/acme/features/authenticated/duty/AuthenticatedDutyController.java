@@ -20,17 +20,17 @@ public class AuthenticatedDutyController extends AbstractController<Authenticate
 	// Internal state --------------------------------------------------------------
 
 	@Autowired
-	private AuthenticatedDutyListByDescriptorService	listByDescriptorService;
+	private AuthenticatedDutyListByJobService	listByJobService;
 
 	@Autowired
-	private AuthenticatedDutyShowService				showService;
+	private AuthenticatedDutyShowService		showService;
 
 
 	// Constructors ----------------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {
-		super.addCustomCommand(CustomCommand.LIST_BY_DESCRIPTOR, BasicCommand.LIST, this.listByDescriptorService);
+		super.addCustomCommand(CustomCommand.LIST_BY_JOB, BasicCommand.LIST, this.listByJobService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 	}
 

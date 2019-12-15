@@ -13,7 +13,7 @@ import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedDutyListByDescriptorService implements AbstractListService<Authenticated, Duty> {
+public class AuthenticatedDutyListByJobService implements AbstractListService<Authenticated, Duty> {
 
 	// Internal state ------------------------------------------------------------------
 
@@ -42,10 +42,10 @@ public class AuthenticatedDutyListByDescriptorService implements AbstractListSer
 		assert request != null;
 
 		Collection<Duty> result;
-		int descriptorId;
+		int jobId;
 
-		descriptorId = request.getModel().getInteger("descriptorId");
-		result = this.repository.findManyByDescriptorId(descriptorId);
+		jobId = request.getModel().getInteger("jobId");
+		result = this.repository.findManyByJobId(jobId);
 
 		return result;
 	}

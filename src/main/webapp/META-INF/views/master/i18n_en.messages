@@ -67,6 +67,8 @@ master.menu.administrator.configuration.show = Configuration
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.shutdown = Shut down
 
+master.menu.user-account.auditor-requests = Auditor requests
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider
@@ -85,6 +87,7 @@ master.menu.consumer.offer.create = Create Offer
 
 master.menu.employer = Employer
 master.menu.employer.job.list-mine = List my jobs
+master.menu.employer.job.create = Create a Job
 master.menu.employer.application.list = List my job's applications
 
 # master.menu.worker #########################################################
@@ -97,6 +100,9 @@ master.menu.worker.application.list = My applications
 master.menu.auditor = Auditor
 master.menu.auditor.job.list-auditored = List auditored jobs
 master.menu.auditor.job.list-not-auditored = List not auditored jobs
+
+master.menu.user-account.become-auditor = Become an auditor
+master.menu.user-account.auditor = Auditor data
 
 # master.menu.sponsor #########################################################
 
@@ -112,6 +118,12 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+master.menu.user-account.worker = Worker data
+master.menu.user-account.become-worker = Become a worker
+master.menu.user-account.employer = Employer data
+master.menu.user-account.become-employer = Become a employer
+master.menu.user-account.sponsor = Sponsor data
+master.menu.user-account.become-sponsor = Become a sponsor
 
 # master.footer ###############################################################
 

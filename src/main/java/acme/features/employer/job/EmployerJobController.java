@@ -14,7 +14,7 @@ import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-@RequestMapping("/employer/job")
+@RequestMapping("/employer/job/")
 public class EmployerJobController extends AbstractController<Employer, Job> {
 
 	// Internal state --------------------------------------------------------------
@@ -25,14 +25,30 @@ public class EmployerJobController extends AbstractController<Employer, Job> {
 	@Autowired
 	private EmployerJobShowService		showService;
 
+	@Autowired
+	private EmployerJobCreateService	createService;
+
+	@Autowired
+	private EmployerJobUpdateService	updateService;
+
+	@Autowired
+	private EmployerJobDeleteService	deleteService;
+
+	@Autowired
+	private EmployerJobPublishService	publishService;
+
 
 	// Contructors -----------------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
+		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 
 		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
+		super.addCustomCommand(CustomCommand.PUBLISH, BasicCommand.UPDATE, this.publishService);
 	}
 
 }
