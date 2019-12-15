@@ -101,6 +101,7 @@ master.menu.worker.application.list = Mis solicitudes
 master.menu.auditor = Auditor
 master.menu.auditor.job.list-auditored = Listar trabajos auditorados
 master.menu.auditor.job.list-not-auditored = Listar trabajos no auditorados
+master.menu.auditor.auditRecord.list-mine = Listar mis auditorías
 
 master.menu.user-account.become-auditor = Petición para auditor
 master.menu.user-account.auditor = Datos de auditor
