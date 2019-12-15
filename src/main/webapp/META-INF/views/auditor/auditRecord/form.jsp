@@ -24,7 +24,7 @@
 		<acme:form-submit code="auditor.auditRecord.form.button.publish" action="/auditor/audit-record/publish"/>
 	</jstl:if>
 	
-	<jstl:if test="${command == 'show' || command == 'delete'}">
+	<jstl:if test="${(command == 'show' && isMine == true) || command == 'delete'}">
 		<acme:form-submit code="auditor.auditRecord.form.button.delete" action="/auditor/audit-record/delete"/>
 	</jstl:if>
 	

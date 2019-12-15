@@ -51,6 +51,22 @@ public class AuditorAuditRecordShowService implements AbstractShowService<Audito
 		request.unbind(entity, model, "title", "body", "creationMoment", "status");
 		model.setAttribute("jobReference", entity.getJob().getReference());
 
+		// For delete button in form.jsp
+
+		boolean isMine = false;
+		Principal principal;
+		int auditorId;
+		Auditor auditor;
+
+		principal = request.getPrincipal();
+		auditorId = principal.getActiveRoleId();
+		auditor = this.repository.findOneAuditorById(auditorId);
+
+		if (entity.getAuditor().getId() == auditor.getId()) {
+			isMine = true;
+		}
+		model.setAttribute("isMine", isMine);
+
 	}
 
 	@Override
