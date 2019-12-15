@@ -387,6 +387,14 @@
 		<property name="userAccount" ref="sponsor2UserAccount"></property>
 	</bean>
 	
+	<!-- Request to become an auditor -->
+	<bean name="auditorRequest1" class="acme.entities.auditorRequests.AuditorRequest">
+		<property name="firm" value="Firm 01"/>
+		<property name="statement" value="A good statement"/>
+		<property name="status" value="Pending"/>
+		<property name="userAccount" ref="employer2UserAccount"/>
+	</bean>
+	
 	<!-- Comercial Banners -->
 	
 	<bean  id="comercialBanner01" class="acme.entities.banners.ComercialBanner">
@@ -536,37 +544,29 @@
 	
 	<!-- Jobs -->
 	
-	<bean name="descriptor1" class="acme.entities.descriptors.Descriptor">
-		<property name="description" value="Lorem ipsum sit dolor amet."/>
-	</bean>
-	
 	<bean name="job1" class="acme.entities.jobs.Job">
 		<property name="reference" value="EMP1-JOB1"></property>
 		<property name="title" value="Title 1"></property>
 		<property name="deadline" value="2030/12/11 18:59"></property>
 		<property name="salary" value="€ 15,000.98"></property>
+		<property name="description" value="Lorem ipsum sit dolor amet."/>
 		<property name="moreInfo" value="http://www.example.com"></property>
 		<property name="finalMode" value="true"></property>
 		<property name="employer" ref="employer1Employer"></property>
-		<property name="descriptor" ref="descriptor1"/>
 	</bean>
 	
 	<bean name="duty1" class="acme.entities.duties.Duty">
 		<property name="title" value="Duty 1"/>
 		<property name="description" value="Description of Duty 1"/>
 		<property name="percentage" value="40"/>
-		<property name="descriptor" ref="descriptor1"/>
+		<property name="job" ref="job1"/>
 	</bean>
 	
 	<bean name="duty2" class="acme.entities.duties.Duty">
 		<property name="title" value="Duty 2"/>
 		<property name="description" value="Description of Duty 2"/>
 		<property name="percentage" value="60"/>
-		<property name="descriptor" ref="descriptor1"/>
-	</bean>
-	
-	<bean name="descriptor2" class="acme.entities.descriptors.Descriptor">
-		<property name="description" value="Lorem ipsum sit dolor amet."/>
+		<property name="job" ref="job1"/>
 	</bean>
 	
 	<bean name="job2" class="acme.entities.jobs.Job">
@@ -574,21 +574,17 @@
 		<property name="title" value="Title 2"></property>
 		<property name="deadline" value="2030/12/11 19:59"></property>
 		<property name="salary" value="€ 20,000.00"></property>
+		<property name="description" value="Lorem ipsum sit dolor amet."/>
 		<property name="moreInfo" value="http://www.example.com"></property>
 		<property name="finalMode" value="false"></property>
 		<property name="employer" ref="employer1Employer"></property>
-		<property name="descriptor" ref="descriptor2"/>
 	</bean>
 	
 	<bean name="duty3" class="acme.entities.duties.Duty">
 		<property name="title" value="Duty 3"/>
 		<property name="description" value="Description of Duty 3"/>
 		<property name="percentage" value="100"/>
-		<property name="descriptor" ref="descriptor2"/>
-	</bean>
-	
-	<bean name="descriptor3" class="acme.entities.descriptors.Descriptor">
-		<property name="description" value="Lorem ipsum sit dolor amet."/>
+		<property name="job" ref="job2"/>
 	</bean>
 	
 	<bean name="job3" class="acme.entities.jobs.Job">
@@ -596,21 +592,17 @@
 		<property name="title" value="Title 3"></property>
 		<property name="deadline" value="2019/11/11 20:59"></property>
 		<property name="salary" value="€ 30,000.00"></property>
+		<property name="description" value="Lorem ipsum sit dolor amet."/>
 		<property name="moreInfo"><null/></property>
 		<property name="finalMode" value="false"></property>
 		<property name="employer" ref="employer2Employer"></property>
-		<property name="descriptor" ref="descriptor3"/>
 	</bean>
 	
 	<bean name="duty4" class="acme.entities.duties.Duty">
 		<property name="title" value="Duty 4"/>
 		<property name="description" value="Description of Duty 4"/>
 		<property name="percentage" value="100"/>
-		<property name="descriptor" ref="descriptor3"/>
-	</bean>
-	
-	<bean name="descriptor4" class="acme.entities.descriptors.Descriptor">
-		<property name="description" value="Lorem ipsum sit dolor amet."/>
+		<property name="job" ref="job3"/>
 	</bean>
 	
 	<bean name="job4" class="acme.entities.jobs.Job">
@@ -618,21 +610,17 @@
 		<property name="title" value="Title 4"></property>
 		<property name="deadline" value="2030/12/11 21:59"></property>
 		<property name="salary" value="€ 40,000.00"></property>
+		<property name="description" value="Lorem ipsum sit dolor amet."/>
 		<property name="moreInfo"><null/></property>
 		<property name="finalMode" value="true"></property>
 		<property name="employer" ref="employer2Employer"></property>
-		<property name="descriptor" ref="descriptor4"/>
 	</bean>
 	
 	<bean name="duty5" class="acme.entities.duties.Duty">
 		<property name="title" value="Duty 5"/>
 		<property name="description" value="Description of Duty 5"/>
 		<property name="percentage" value="100"/>
-		<property name="descriptor" ref="descriptor4"/>
-	</bean>
-	
-	<bean name="descriptor5" class="acme.entities.descriptors.Descriptor">
-		<property name="description" value="Lorem ipsum sit dolor amet."/>
+		<property name="job" ref="job4"/>
 	</bean>
 	
 	<bean name="job5" class="acme.entities.jobs.Job">
@@ -640,17 +628,17 @@
 		<property name="title" value="Title 5"></property>
 		<property name="deadline" value="2030/12/11 22:59"></property>
 		<property name="salary" value="€ 50,000.00"></property>
+		<property name="description" value="Lorem ipsum sit dolor amet."/>
 		<property name="moreInfo" value="http://www.example.com"></property>
 		<property name="finalMode" value="true"></property>
 		<property name="employer" ref="employer1Employer"></property>
-		<property name="descriptor" ref="descriptor5"/>
 	</bean>
 	
 	<bean name="duty6" class="acme.entities.duties.Duty">
 		<property name="title" value="Duty 6"/>
 		<property name="description" value="Description of Duty 6"/>
 		<property name="percentage" value="100"/>
-		<property name="descriptor" ref="descriptor5"/>
+		<property name="job" ref="job5"/>
 	</bean>
   
   <!-- Auditors -->
@@ -947,4 +935,36 @@
 		<property name="authenticated" ref="employer2Authenticated"></property>
 	</bean>
 	
+	
+	<!-- Participant -->
+	
+	<bean name="participant1" class="acme.entities.participants.Participant">
+		<property name="isOwner" value="true"></property>
+		<property name="messageThread" ref="message1Thread"></property>
+		<property name="authenticated" ref="worker1Authenticated"></property>
+	</bean>
+	
+	<bean name="participant2" class="acme.entities.participants.Participant">
+		<property name="isOwner" value="false"></property>
+		<property name="messageThread" ref="message1Thread"></property>
+		<property name="authenticated" ref="worker2Authenticated"></property>
+	</bean>
+	
+	<bean name="participant3" class="acme.entities.participants.Participant">
+		<property name="isOwner" value="false"></property>
+		<property name="messageThread" ref="message1Thread"></property>
+		<property name="authenticated" ref="employer2Authenticated"></property>
+	</bean>
+	
+	<bean name="participant4" class="acme.entities.participants.Participant">
+		<property name="isOwner" value="true"></property>
+		<property name="messageThread" ref="message2Thread"></property>
+		<property name="authenticated" ref="worker2Authenticated"></property>
+	</bean>
+	
+	<bean name="participant5" class="acme.entities.participants.Participant">
+		<property name="isOwner" value="true"></property>
+		<property name="messageThread" ref="message4Thread"></property>
+		<property name="authenticated" ref="employer2Authenticated"></property>
+	</bean>
 </beans>

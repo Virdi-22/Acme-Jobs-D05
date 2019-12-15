@@ -58,6 +58,16 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `auditor_request` (
+       `id` integer not null,
+        `version` integer not null,
+        `firm` varchar(255),
+        `statement` varchar(1024),
+        `status` varchar(255),
+        `user_account_id` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `authenticated` (
        `id` integer not null,
         `version` integer not null,
@@ -135,7 +145,7 @@
         `sector` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
-
+    
     create table `credit_card` (
        `id` integer not null,
         `version` integer not null,
@@ -144,21 +154,14 @@
         `expiration_date` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
-
-    create table `descriptor` (
-       `id` integer not null,
-        `version` integer not null,
-        `description` varchar(1024),
-        primary key (`id`)
-    ) engine=InnoDB;
-
+    
     create table `duty` (
        `id` integer not null,
         `version` integer not null,
         `description` varchar(1024),
         `percentage` integer not null,
         `title` varchar(255),
-        `descriptor_id` integer not null,
+        `job_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -185,13 +188,13 @@
        `id` integer not null,
         `version` integer not null,
         `deadline` datetime(6),
+        `description` varchar(1024),
         `final_mode` bit not null,
         `more_info` varchar(255),
         `reference` varchar(255),
         `salary_amount` double precision,
         `salary_currency` varchar(255),
         `title` varchar(255),
-        `descriptor_id` integer not null,
         `employer_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
@@ -203,8 +206,8 @@
         `moment` datetime(6),
         `tags` varchar(255),
         `title` varchar(255),
-        `authenticated_id` integer not null,
-        `message_thread_id` integer not null,
+        `authenticated_id` integer,
+        `message_thread_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -238,6 +241,15 @@
         `min_money_currency` varchar(255),
         `ticker` varchar(255),
         `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `participant` (
+       `id` integer not null,
+        `version` integer not null,
+        `is_owner` bit,
+        `authenticated_id` integer,
+        `message_thread_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -313,9 +325,6 @@ create index IDXfdmpnr8o4phmk81sqsano16r on `job` (`deadline`);
 create index IDXt84ibbldao4ngscmvo7ja0es on `job` (`final_mode`);
 
     alter table `job` 
-       add constraint UK_qpodqtu8nvqkof3olnqnqcv2l unique (`descriptor_id`);
-
-    alter table `job` 
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
 create index IDXq2o9psuqfuqmq59f0sq57x9uf on `offer` (`deadline`);
 create index IDXcp4664f36sgqsd0ihmirt0w0 on `offer` (`ticker`);
@@ -366,6 +375,11 @@ create index IDXq82g0jb2mlplkxoma94rvovh8 on `_request` (`ticker`);
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
+    alter table `auditor_request` 
+       add constraint `FKe7pjjdlehi2gl4wqda0druv4g` 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
     alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 
        foreign key (`user_account_id`) 
@@ -392,19 +406,14 @@ create index IDXq82g0jb2mlplkxoma94rvovh8 on `_request` (`ticker`);
        references `user_account` (`id`);
 
     alter table `duty` 
-       add constraint `FK3cc3garl37bl7gswreqwr7pj4` 
-       foreign key (`descriptor_id`) 
-       references `descriptor` (`id`);
+       add constraint `FKs2uoxh4i5ya8ptyefae60iao1` 
+       foreign key (`job_id`) 
+       references `job` (`id`);
 
     alter table `employer` 
        add constraint FK_na4dfobmeuxkwf6p75abmb2tr 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
-
-    alter table `job` 
-       add constraint `FKfqwyynnbcsq0htxho3vchpd2u` 
-       foreign key (`descriptor_id`) 
-       references `descriptor` (`id`);
 
     alter table `job` 
        add constraint `FK3rxjf8uh6fh2u990pe8i2at0e` 
@@ -425,6 +434,16 @@ create index IDXq82g0jb2mlplkxoma94rvovh8 on `_request` (`ticker`);
        add constraint FK_h7gdwb5bu1dvickx9h13sl2tj 
        foreign key (`sponsor_id`) 
        references `sponsor` (`id`);
+
+    alter table `participant` 
+       add constraint `FK80gruu22vbyiojed5sawtqc6a` 
+       foreign key (`authenticated_id`) 
+       references `authenticated` (`id`);
+
+    alter table `participant` 
+       add constraint `FK162v6eiogk4jr8ykjoe80255x` 
+       foreign key (`message_thread_id`) 
+       references `message_thread` (`id`);
 
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 

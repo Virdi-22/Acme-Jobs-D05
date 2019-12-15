@@ -8,6 +8,22 @@ employer.job.form.label.deadline = Deadline
 employer.job.form.label.salary = Salary
 employer.job.form.label.moreInfo = More Info (optional)
 employer.job.form.label.description = Description
+employer.job.form.label.finalMode = Final Mode
+
+employer.job.error.spam = The job must not contain any spam words
+employer.job.error.reference = There exists a job with that reference already
+employer.job.error.inFuture = The deadline must be at least a week in the future
+employer.job.error.salary = Salary must be specified in EURO
+employer.job.error.hasApplications = The job can't be deleted if it has any applications.
+
+employer.job.form.button.update = Update
+employer.job.form.button.delete = Delete
+employer.job.form.button.create = Create
+
+employer.job.form.button.create-duty = Create a Duty
+employer.job.form.button.publish = Publish
+
+employer.job.error.finalModeTest = To publish a job, it must have a total workload of 100% and does not have to be spam
 
 employer.job.form.button.linkDuties = Duties
 

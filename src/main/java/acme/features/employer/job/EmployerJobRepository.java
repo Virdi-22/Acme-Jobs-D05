@@ -6,7 +6,10 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.configurations.Configuration;
+import acme.entities.duties.Duty;
 import acme.entities.jobs.Job;
+import acme.entities.roles.Employer;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -17,5 +20,23 @@ public interface EmployerJobRepository extends AbstractRepository {
 
 	@Query("select j from Job j where j.employer.id = ?1")
 	Collection<Job> findManyByEmployerId(int employerId);
+
+	@Query("select j from Job j where j.reference = ?1")
+	Job findOneByReference(String reference);
+
+	@Query("select e from Employer e where e.id = ?1")
+	Employer findOneEmployerById(int id);
+
+	@Query("select d from Duty d where d.job.id = ?1")
+	Collection<Duty> findAllDutiesByJobId(int id);
+
+	@Query("select sum (d.percentage) from Duty d where d.job.id = ?1")
+	Integer findSumPercentageDutiesByJobId(int id);
+
+	@Query("select c from Configuration c")
+	Configuration findConfiguration();
+
+	@Query("select count(a) from Application a where a.job.id = ?1")
+	Integer findCountApplicationByJobId(int id);
 
 }

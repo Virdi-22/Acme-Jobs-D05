@@ -46,11 +46,11 @@ public class Message extends DomainEntity {
 
 	@NotNull
 	@Valid
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true)
 	private MessageThread		messageThread;
 
 	@NotNull
 	@Valid
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true)
 	private Authenticated		authenticated;
 }

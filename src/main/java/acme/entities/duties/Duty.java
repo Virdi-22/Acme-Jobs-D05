@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Range;
 
-import acme.entities.descriptors.Descriptor;
+import acme.entities.jobs.Job;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -33,7 +33,7 @@ public class Duty extends DomainEntity {
 	@Column(length = 1024)
 	private String				description;
 
-	@Range(min = 0, max = 100)
+	@Range(min = 1, max = 100)
 	private int					percentage;
 
 	// Relationships ------------------------------------------------------------
@@ -41,6 +41,6 @@ public class Duty extends DomainEntity {
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Descriptor			descriptor;
+	private Job					job;
 
 }

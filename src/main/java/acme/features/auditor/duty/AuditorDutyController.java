@@ -20,17 +20,17 @@ public class AuditorDutyController extends AbstractController<Auditor, Duty> {
 	// Internal state --------------------------------------------------------------
 
 	@Autowired
-	private AuditorDutyListByDescriptorService	listByDescriptorService;
+	private AuditorDutyListByJobService	listByJobService;
 
 	@Autowired
-	private AuditorDutyShowService				showService;
+	private AuditorDutyShowService		showService;
 
 
 	// Constructors ----------------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {
-		super.addCustomCommand(CustomCommand.LIST_BY_DESCRIPTOR, BasicCommand.LIST, this.listByDescriptorService);
+		super.addCustomCommand(CustomCommand.LIST_BY_JOB, BasicCommand.LIST, this.listByJobService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 	}
 
