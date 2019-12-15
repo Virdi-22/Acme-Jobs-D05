@@ -66,6 +66,8 @@ master.menu.administrator.company-record.create = Create Company Record
 master.menu.administrator.configuration.show = Configuration
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.shutdown = Shut down
+master.menu.administrator.credit-card.list = Credit Cards
+master.menu.administrator.credit-card.create = Create Credit Card
 
 master.menu.user-account.auditor-requests = Auditor requests
 
