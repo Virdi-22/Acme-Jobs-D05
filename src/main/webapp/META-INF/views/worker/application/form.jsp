@@ -6,10 +6,14 @@
 <acme:form>
 	<h4><acme:message code="worker.application.form.contextData1"/> <acme:print value="${jobReference}"/></h4><br>
 	<acme:form-textbox code="worker.application.form.label.reference" path="reference"/>
+	<jstl:if test="${command != 'create' }">
 	<acme:form-textbox code="worker.application.form.label.creationMoment" path="creationMoment"/>
 	<acme:form-textbox code="worker.application.form.label.status" path="status"/>
+	</jstl:if>
 	<acme:form-textbox code="worker.application.form.label.statement" path="statement"/>
 	<acme:form-textbox code="worker.application.form.label.skills" path="skills"/>
 	<acme:form-textarea code="worker.application.form.label.qualifications" path="qualifications"/>
+	
+	<acme:form-submit test="${command == 'create'}" code="worker.application.button.create" action= "/worker/application/create?jobId=${jobId}"/>
 	<acme:form-return code="worker.application.form.button.return"/>
 </acme:form>
