@@ -31,8 +31,10 @@ public class AuthenticatedParticipantListByMessageThreadService implements Abstr
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "authenticated");
-		model.setAttribute("messageThreadId", request.getModel().getInteger("messageThreadId"));
+		request.unbind(entity, model, "isOwner");
+		model.setAttribute("messageThreadId", entity.getMessageThread().getId());
+		model.setAttribute("messageThreadName", entity.getMessageThread().getTitle());
+		model.setAttribute("authenticatedName", entity.getAuthenticated().getUserAccount().getUsername());
 	}
 
 	@Override

@@ -11,5 +11,6 @@
 	<acme:form-textbox code="authenticated.message.form.label.tags" path="tags"/>
 	<acme:form-moment code="authenticated.message.form.label.moment" path="moment"/>
 	
+	<acme:form-submit code= "authenticated.message.form.button.create" action= "/authenticated/message/create?messageThreadId=${messageThreadId}"/>
 	<acme:form-return code="authenticated.message.form.button.return"/>
 </acme:form>
