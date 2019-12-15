@@ -19,7 +19,7 @@
 		action= "/administrator/comercial-banner/delete"/>
 	<acme:form-submit test="${command == 'create' }"
 		code= "administrator.comercialBanner.form.button.create"
-		action= "/administrator/comercial-banner/create"/>
+		action= "/administrator/comercial-banner/create?creditCardId=${creditCardId}"/>
 	<acme:form-submit test="${command == 'update' }"
 		code= "administrator.comercialBanner.form.button.update"
 		action= "/administrator/comercial-banner/update"/>

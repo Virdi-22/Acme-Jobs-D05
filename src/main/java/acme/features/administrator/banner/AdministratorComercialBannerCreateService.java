@@ -69,7 +69,8 @@ public class AdministratorComercialBannerCreateService implements AbstractCreate
 
 	@Override
 	public void create(final Request<ComercialBanner> request, final ComercialBanner entity) {
-
+		assert request != null;
+		assert entity != null;
 		this.repository.save(entity);
 	}
 
