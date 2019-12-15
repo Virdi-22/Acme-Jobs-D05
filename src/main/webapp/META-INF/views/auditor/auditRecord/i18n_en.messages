@@ -1,0 +1,19 @@
+auditor.auditRecord.list.label.creationMoment = Creation Moment
+auditor.auditRecord.list.label.title = Title
+auditor.auditRecord.list.label.body = Body
+
+auditor.auditRecord.list.button.return = Return
+
+auditor.auditRecord.contextData1 = Regarding job with reference
+
+auditor.auditRecord.form.label.title = Title
+auditor.auditRecord.form.label.status = Status
+auditor.auditRecord.form.label.creationMoment = Creation Moment
+auditor.auditRecord.form.label.body = Body
+
+auditor.auditRecord.form.button.create = Create
+auditor.auditRecord.form.button.update = Update
+auditor.auditRecord.form.button.publish = Publish
+auditor.auditRecord.form.button.delete = Delete
+
+auditor.auditRecord.form.button.return = Return

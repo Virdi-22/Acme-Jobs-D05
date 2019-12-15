@@ -12,6 +12,7 @@ import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractDeleteService;
 
 @Service
@@ -26,7 +27,20 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 	@Override
 	public boolean authorise(final Request<Job> request) {
 		assert request != null;
-		return true;
+
+		boolean result;
+		int jobId;
+		Job job;
+		Employer employer;
+		Principal principal;
+
+		jobId = request.getModel().getInteger("id");
+		job = this.repository.findOneJobById(jobId);
+		employer = job.getEmployer();
+		principal = request.getPrincipal();
+		result = job.isFinalMode() || !job.isFinalMode() && employer.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
 	}
 
 	@Override
@@ -67,6 +81,15 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 		assert entity != null;
 		assert errors != null;
 
+		boolean hasApplications;
+		int countApplications;
+
+		if (!errors.hasErrors()) {
+			countApplications = this.repository.findCountApplicationByJobId(entity.getId());
+			hasApplications = countApplications > 0;
+			errors.state(request, !hasApplications, "*", "employer.job.error.hasApplications");
+		}
+
 	}
 
 	@Override
@@ -76,11 +99,7 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 
 		Collection<Duty> dutiesPerJob = this.repository.findAllDutiesByJobId(entity.getId());
 
-		if (!dutiesPerJob.isEmpty()) {
-			for (Duty d : dutiesPerJob) {
-				this.repository.delete(d);
-			}
-		}
+		this.repository.deleteAll(dutiesPerJob);
 
 		this.repository.delete(entity);
 
