@@ -100,6 +100,7 @@ master.menu.worker.application.list = My applications
 master.menu.auditor = Auditor
 master.menu.auditor.job.list-auditored = List auditored jobs
 master.menu.auditor.job.list-not-auditored = List not auditored jobs
+master.menu.auditor.auditRecord.list-mine = List my audit records
 
 master.menu.user-account.become-auditor = Become an auditor
 master.menu.user-account.auditor = Auditor data
