@@ -100,7 +100,7 @@
         `sponsor_id` integer,
         `brand` varchar(255),
         `holder` varchar(255),
-        `credir_card_id` integer not null,
+        `credit_card_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -306,7 +306,7 @@ create index IDXof878cqun8l1ynh0ao94bw3au on `audit_record` (`status`);
 create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
 
     alter table `comercial_banner` 
-       add constraint UK_exlk37u8aehpqi2flcb6l9pbw unique (`credir_card_id`);
+       add constraint UK_iucl60khx3jj2imft43euh5uv unique (`credit_card_id`);
 create index IDX9pkce3d1y6w47wadap5s5xptc on `company_record` (`stars`);
 create index IDXk2t3uthe649ao1jllcuks0gv4 on `investor_record` (`stars`);
 create index IDXfdmpnr8o4phmk81sqsano16r on `job` (`deadline`);
@@ -377,8 +377,8 @@ create index IDXq82g0jb2mlplkxoma94rvovh8 on `_request` (`ticker`);
        references `sponsor` (`id`);
 
     alter table `comercial_banner` 
-       add constraint `FK1edavd2gauedoklid9k3qp90r` 
-       foreign key (`credir_card_id`) 
+       add constraint `FK8w7maugu1j4ohgbwjbgfatkru` 
+       foreign key (`credit_card_id`) 
        references `credit_card` (`id`);
 
     alter table `comercial_banner` 

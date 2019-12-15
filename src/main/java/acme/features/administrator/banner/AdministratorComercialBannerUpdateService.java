@@ -46,6 +46,7 @@ public class AdministratorComercialBannerUpdateService implements AbstractUpdate
 		assert model != null;
 
 		request.unbind(entity, model, "target", "slogan", "holder", "brand");
+		model.setAttribute("creditCardId", request.getModel().getInteger("creditCardId"));
 
 	}
 

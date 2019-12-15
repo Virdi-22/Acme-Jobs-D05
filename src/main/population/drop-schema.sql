@@ -37,7 +37,7 @@
 
     alter table `comercial_banner` 
        drop 
-       foreign key `FK1edavd2gauedoklid9k3qp90r`;
+       foreign key `FK8w7maugu1j4ohgbwjbgfatkru`;
 
     alter table `comercial_banner` 
        drop 

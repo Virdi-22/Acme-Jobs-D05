@@ -25,5 +25,5 @@ public class ComercialBanner extends Banner {
 
 	@OneToOne(optional = false)
 	@Valid
-	private CreditCard			credirCard;
+	private CreditCard			creditCard;
 }

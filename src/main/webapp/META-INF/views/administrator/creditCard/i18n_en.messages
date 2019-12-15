@@ -8,6 +8,9 @@ administrator.creditCard.form.button.return = Return
 administrator.comercialBanner.list.label.creditCardNumber = Credit Card Number
 administrator.comercialBanner.list.label.expirationDate = Expiration Date
 
+administrator.creditCard.form.button.linkBanner = Comercial Banners
+administrator.creditCard.form.button.create-banner = Create Comercial Banner
+
 administrator.creditCard.form.button.update = Update
 administrator.creditCard.form.button.delete = Delete
 administrator.creditCard.form.button.create = Create

@@ -30,8 +30,7 @@ public class AdministratorComercialBannerShowService implements AbstractShowServ
 		assert model != null;
 
 		request.unbind(entity, model, "target", "slogan", "holder", "brand");
-		model.setAttribute("creditCardNumber", entity.getSponsor().getCreditCard().getCreditCardNumber());
-		model.setAttribute("expirationDate", entity.getSponsor().getCreditCard().getExpirationDate());
+		model.setAttribute("creditCardId", entity.getCreditCard().getId());
 
 	}
 
