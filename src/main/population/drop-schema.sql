@@ -71,6 +71,14 @@
        drop 
        foreign key FK_h7gdwb5bu1dvickx9h13sl2tj;
 
+    alter table `participant` 
+       drop 
+       foreign key `FK80gruu22vbyiojed5sawtqc6a`;
+
+    alter table `participant` 
+       drop 
+       foreign key `FK162v6eiogk4jr8ykjoe80255x`;
+
     alter table `provider` 
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
@@ -126,6 +134,8 @@
     drop table if exists `non_comercial_banner`;
 
     drop table if exists `offer`;
+
+    drop table if exists `participant`;
 
     drop table if exists `provider`;
 

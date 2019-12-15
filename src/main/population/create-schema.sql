@@ -198,8 +198,8 @@
         `moment` datetime(6),
         `tags` varchar(255),
         `title` varchar(255),
-        `authenticated_id` integer not null,
-        `message_thread_id` integer not null,
+        `authenticated_id` integer,
+        `message_thread_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -233,6 +233,15 @@
         `min_money_currency` varchar(255),
         `ticker` varchar(255),
         `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `participant` (
+       `id` integer not null,
+        `version` integer not null,
+        `is_owner` bit,
+        `authenticated_id` integer,
+        `message_thread_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -409,6 +418,16 @@ create index IDXq82g0jb2mlplkxoma94rvovh8 on `_request` (`ticker`);
        add constraint FK_h7gdwb5bu1dvickx9h13sl2tj 
        foreign key (`sponsor_id`) 
        references `sponsor` (`id`);
+
+    alter table `participant` 
+       add constraint `FK80gruu22vbyiojed5sawtqc6a` 
+       foreign key (`authenticated_id`) 
+       references `authenticated` (`id`);
+
+    alter table `participant` 
+       add constraint `FK162v6eiogk4jr8ykjoe80255x` 
+       foreign key (`message_thread_id`) 
+       references `message_thread` (`id`);
 
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 

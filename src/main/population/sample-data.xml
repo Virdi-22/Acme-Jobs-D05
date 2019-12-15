@@ -931,4 +931,36 @@
 		<property name="authenticated" ref="employer2Authenticated"></property>
 	</bean>
 	
+	
+	<!-- Participant -->
+	
+	<bean name="participant1" class="acme.entities.participants.Participant">
+		<property name="isOwner" value="true"></property>
+		<property name="messageThread" ref="message1Thread"></property>
+		<property name="authenticated" ref="worker1Authenticated"></property>
+	</bean>
+	
+	<bean name="participant2" class="acme.entities.participants.Participant">
+		<property name="isOwner" value="false"></property>
+		<property name="messageThread" ref="message1Thread"></property>
+		<property name="authenticated" ref="worker2Authenticated"></property>
+	</bean>
+	
+	<bean name="participant3" class="acme.entities.participants.Participant">
+		<property name="isOwner" value="false"></property>
+		<property name="messageThread" ref="message1Thread"></property>
+		<property name="authenticated" ref="employer2Authenticated"></property>
+	</bean>
+	
+	<bean name="participant4" class="acme.entities.participants.Participant">
+		<property name="isOwner" value="true"></property>
+		<property name="messageThread" ref="message2Thread"></property>
+		<property name="authenticated" ref="worker2Authenticated"></property>
+	</bean>
+	
+	<bean name="participant5" class="acme.entities.participants.Participant">
+		<property name="isOwner" value="true"></property>
+		<property name="messageThread" ref="message4Thread"></property>
+		<property name="authenticated" ref="employer2Authenticated"></property>
+	</bean>
 </beans>
