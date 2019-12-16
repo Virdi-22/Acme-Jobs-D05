@@ -44,9 +44,6 @@ public class AuthenticatedParticipantShowService implements AbstractShowService<
 		owner = this.repository.findOwner(messageThreadId);
 		principal = request.getPrincipal();
 
-		Boolean primero = owner.getAuthenticated().getId() == principal.getActiveRoleId();
-		Boolean segundo = !entity.getIsOwner();
-
 		if (owner.getAuthenticated().getId() == principal.getActiveRoleId() && !entity.getIsOwner()) {
 			isMine = true;
 		}

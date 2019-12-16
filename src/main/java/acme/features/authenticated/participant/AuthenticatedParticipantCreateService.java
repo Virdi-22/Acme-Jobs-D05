@@ -1,6 +1,8 @@
 
 package acme.features.authenticated.participant;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -54,8 +56,6 @@ public class AuthenticatedParticipantCreateService implements AbstractCreateServ
 
 		request.unbind(entity, model);
 		Integer messageThreadId = request.getModel().getInteger("messageThreadId");
-		String userAccount = request.getModel().getString("userAccount");
-		model.setAttribute("userAccount", userAccount);
 		model.setAttribute("messageThreadId", messageThreadId);
 		model.setAttribute("messageThreadName", this.repository.findMessageThreadById(messageThreadId).getTitle());
 		model.setAttribute("usersInvolved", this.repository.findInvolvedUsers(messageThreadId));
@@ -69,6 +69,7 @@ public class AuthenticatedParticipantCreateService implements AbstractCreateServ
 		result.setIsOwner(false);
 		Integer messageThreadId = request.getModel().getInteger("messageThreadId");
 		result.setMessageThread(this.repository.findMessageThreadById(messageThreadId));
+		result.setAuthenticated(this.repository.findAuthenticatedById(request.getPrincipal().getActiveRoleId()));
 
 		return result;
 	}
@@ -85,7 +86,8 @@ public class AuthenticatedParticipantCreateService implements AbstractCreateServ
 
 			String userName = request.getModel().getString("userName");
 			UserAccount aux = this.repository.findUserByName(userName);
-			isNull = aux == null;
+			List<String> isAlreadyAParticipant = (List<String>) this.repository.findInvolvedUsers(request.getModel().getInteger("messageThreadId"));
+			isNull = aux == null || isAlreadyAParticipant.contains(aux.getUsername());
 			errors.state(request, !isNull, "*", "authenticated.participant.error.name");
 		}
 

@@ -3,7 +3,7 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<acme:form>
+<acme:form readonly = "false">
 	<jstl:if test="${command != 'create' }">
 	<h4><acme:message code="authenticated.messageThread.form.contextData1"/> <acme:print value="${usersInvolved}"/></h4><br>
 	<acme:form-moment code="authenticated.messageThread.form.label.moment" path="moment"/>

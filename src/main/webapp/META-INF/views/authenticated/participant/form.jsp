@@ -6,10 +6,9 @@
 <acme:form>
 	<acme:form-hidden path="messageThreadId"/>
 	
+	<jstl:if test="${command != 'create' }">
 	<h4><acme:message code="authenticated.participant.form.contextData1"/> <acme:print value="${messageThreadName}"/></h4><br>
 	<h4><acme:message code="authenticated.participant.form.contextData2"/> <acme:print value="${usersInvolved}"/></h4><br>
-	
-	<jstl:if test="${command != 'create' }">
 	<acme:form-textbox code="authenticated.participant.form.label.is-owner" path="isOwner"/>
 	</jstl:if>
 	
@@ -18,8 +17,8 @@
 	</jstl:if>
 	
 	<jstl:if test="${command == 'create' }">
-	<acme:form-submit method="get" code= "authenticated.participant.form.button.create" action= "/authenticated/participant/create"/>
-	<acme:form-textbox code="authenticated.participant.form.label.user" path="UserName"/>
+		<acme:form-textbox code="authenticated.participant.form.label.user" path="userName"/>
+	<acme:form-submit code= "authenticated.participant.form.button.create" action= "/authenticated/participant/create"/>
 	</jstl:if>
 	
 	<acme:form-return code="authenticated.participant.form.button.return"/>

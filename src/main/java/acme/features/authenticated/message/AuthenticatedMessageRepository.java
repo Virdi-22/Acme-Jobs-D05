@@ -32,4 +32,10 @@ public interface AuthenticatedMessageRepository extends AbstractRepository {
 
 	@Query("select c from Configuration c")
 	Configuration findConfiguration();
+
+	@Query("select u.username from UserAccount u where u.id in (select a.userAccount.id from Authenticated a where a.id in (select m.authenticated.id from Participant m where m.messageThread.id = ?1))")
+	Collection<String> findInvolvedUsers(int messageThreadId);
+
+	@Query("select a from Authenticated a where a.userAccount.id = ?1")
+	Authenticated findAuthenticatedByAccountId(int id);
 }

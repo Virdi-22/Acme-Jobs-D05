@@ -1,7 +1,9 @@
 
 package acme.features.authenticated.message;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,7 @@ import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractCreateService;
 
 @Service
@@ -26,8 +29,17 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 	@Override
 	public boolean authorise(final Request<Message> request) {
 		assert request != null;
+		boolean result;
+		Principal principal;
+		List<String> isAParticipant = new ArrayList<>();
+		String userName;
 
-		return true;
+		principal = request.getPrincipal();
+		userName = principal.getUsername();
+		isAParticipant = (List<String>) this.repository.findInvolvedUsers(request.getModel().getInteger("messageThreadId"));
+		result = isAParticipant.contains(userName);
+
+		return result;
 	}
 
 	@Override

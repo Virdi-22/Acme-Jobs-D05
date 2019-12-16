@@ -30,7 +30,7 @@ public interface AuthenticatedParticipantRepository extends AbstractRepository {
 	@Query("select a from Authenticated a where a.id=?1")
 	Authenticated findAuthenticatedById(int id);
 
-	@Query("select u.username from UserAccount u where u.id in (select a.userAccount.id from Authenticated a where a.id in (select m.authenticated.id from Message m where m.messageThread.id = ?1))")
+	@Query("select u.username from UserAccount u where u.id in (select a.userAccount.id from Authenticated a where a.id in (select m.authenticated.id from Participant m where m.messageThread.id = ?1))")
 	Collection<String> findInvolvedUsers(int messageThreadId);
 
 	@Query("select u from UserAccount u where u.username = ?1")
