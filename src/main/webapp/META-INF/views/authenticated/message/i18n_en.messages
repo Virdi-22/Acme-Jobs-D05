@@ -6,6 +6,9 @@ authenticated.message.form.label.moment = Moment
 authenticated.message.form.contextData1 = User
 authenticated.message.form.contextData2 = Regarding message thread
 
+authenticated.message.form.button.create = Create
+authenticated.message.form.label.checkbox = I'm concerned that messages cannot be deleted
+
 authenticated.message.form.button.return = Return
 
 authenticated.message.list.label.title = Title

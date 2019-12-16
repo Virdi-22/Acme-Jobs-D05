@@ -10,6 +10,7 @@ import acme.components.CheckSpam;
 import acme.entities.configurations.Configuration;
 import acme.entities.message.Message;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
@@ -47,6 +48,12 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 
 		request.unbind(entity, model, "title", "body", "tags");
 		model.setAttribute("messageThreadId", request.getModel().getInteger("messageThreadId"));
+
+		if (request.isMethod(HttpMethod.GET)) {
+			model.setAttribute("check", "false");
+		} else {
+			request.transfer(model, "check");
+		}
 	}
 
 	@Override
@@ -71,7 +78,7 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 		assert entity != null;
 		assert errors != null;
 
-		boolean isSpam;
+		boolean isSpam, isAccepted;
 
 		if (!errors.hasErrors()) {
 			Configuration configuration = this.repository.findConfiguration();
@@ -79,6 +86,12 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 			isSpam = CheckSpam.checkSpam(configuration, text);
 			errors.state(request, !isSpam, "*", "employer.job.error.spam");
 		}
+
+		// Validating the checkbox
+
+		String res = request.getModel().getString("check");
+		isAccepted = res.equals("true");
+		errors.state(request, isAccepted, "check", "provider.request.error.must-accept");
 
 	}
 

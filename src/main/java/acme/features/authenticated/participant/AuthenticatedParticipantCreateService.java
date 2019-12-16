@@ -10,6 +10,7 @@ import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
 import acme.framework.entities.Principal;
+import acme.framework.entities.UserAccount;
 import acme.framework.services.AbstractCreateService;
 
 @Service
@@ -52,7 +53,9 @@ public class AuthenticatedParticipantCreateService implements AbstractCreateServ
 		assert model != null;
 
 		request.unbind(entity, model);
-		Integer messageThreadId = model.getInteger("messageThreadId");
+		Integer messageThreadId = request.getModel().getInteger("messageThreadId");
+		String userAccount = request.getModel().getString("userAccount");
+		model.setAttribute("userAccount", userAccount);
 		model.setAttribute("messageThreadId", messageThreadId);
 		model.setAttribute("messageThreadName", this.repository.findMessageThreadById(messageThreadId).getTitle());
 		model.setAttribute("usersInvolved", this.repository.findInvolvedUsers(messageThreadId));
@@ -64,7 +67,6 @@ public class AuthenticatedParticipantCreateService implements AbstractCreateServ
 		Participant result = new Participant();
 
 		result.setIsOwner(false);
-		result.setAuthenticated(this.repository.findAuthenticatedById(request.getPrincipal().getActiveRoleId()));
 		Integer messageThreadId = request.getModel().getInteger("messageThreadId");
 		result.setMessageThread(this.repository.findMessageThreadById(messageThreadId));
 
@@ -77,10 +79,25 @@ public class AuthenticatedParticipantCreateService implements AbstractCreateServ
 		assert entity != null;
 		assert errors != null;
 
+		boolean isNull;
+
+		if (!errors.hasErrors("userName")) {
+
+			String userName = request.getModel().getString("userName");
+			UserAccount aux = this.repository.findUserByName(userName);
+			isNull = aux == null;
+			errors.state(request, !isNull, "*", "authenticated.participant.error.name");
+		}
+
 	}
 
 	@Override
 	public void create(final Request<Participant> request, final Participant entity) {
+
+		String userName = request.getModel().getString("userName");
+		UserAccount aux = this.repository.findUserByName(userName);
+		Authenticated auth = this.repository.findAuthenticatedByAccountId(aux.getId());
+		entity.setAuthenticated(auth);
 
 		this.repository.save(entity);
 

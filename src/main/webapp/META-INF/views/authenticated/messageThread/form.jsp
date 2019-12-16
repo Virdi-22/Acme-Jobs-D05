@@ -18,7 +18,7 @@
 	<acme:form-submit method="get" code= "authenticated.messageThread.form.button.createParticipant" action= "/authenticated/participant/create?messageThreadId=${id}"/>
 	</jstl:if>
 	
-	<acme:form-submit test="${command == 'show'}" code= "authenticated.messageThread.form.button.createMessage" action= "/authenticated/message/create?messageThreadId=${id}"/>
+	<acme:form-submit test="${command == 'show'}" method="get" code= "authenticated.messageThread.form.button.createMessage" action= "/authenticated/message/create?messageThreadId=${id}"/>
 	
 	<acme:form-return code="authenticated.messageThread.form.button.return"/>
 </acme:form>

@@ -17,8 +17,10 @@
 	<acme:form-submit code= "authenticated.participant.form.button.delete" action= "/authenticated/participant/delete"/>
 	</jstl:if>
 	
-	
-	<acme:form-submit test="${command = 'create'}" code= "authenticated.participant.form.button.create" action= "/authenticated/participant/create"/>
+	<jstl:if test="${command == 'create' }">
+	<acme:form-submit method="get" code= "authenticated.participant.form.button.create" action= "/authenticated/participant/create"/>
+	<acme:form-textbox code="authenticated.participant.form.label.user" path="UserName"/>
+	</jstl:if>
 	
 	<acme:form-return code="authenticated.participant.form.button.return"/>
 </acme:form>

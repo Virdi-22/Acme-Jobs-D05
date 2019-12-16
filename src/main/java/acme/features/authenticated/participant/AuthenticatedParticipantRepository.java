@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import acme.entities.messageThread.MessageThread;
 import acme.entities.participants.Participant;
 import acme.framework.entities.Authenticated;
+import acme.framework.entities.UserAccount;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -31,4 +32,10 @@ public interface AuthenticatedParticipantRepository extends AbstractRepository {
 
 	@Query("select u.username from UserAccount u where u.id in (select a.userAccount.id from Authenticated a where a.id in (select m.authenticated.id from Message m where m.messageThread.id = ?1))")
 	Collection<String> findInvolvedUsers(int messageThreadId);
+
+	@Query("select u from UserAccount u where u.username = ?1")
+	UserAccount findUserByName(String userName);
+
+	@Query("select a from Authenticated a where a.userAccount.id = ?1")
+	Authenticated findAuthenticatedByAccountId(int id);
 }
