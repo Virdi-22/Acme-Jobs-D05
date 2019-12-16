@@ -395,7 +395,7 @@
 		<property name="userAccount" ref="employer2UserAccount"/>
 	</bean>
 	
-	<!-- Comercial Banners -->
+	<!-- Comercial Banners 
 	
 	<bean  id="comercialBanner01" class="acme.entities.banners.ComercialBanner">
 		<property name="slogan" value="Banner test 01"/>
@@ -435,7 +435,7 @@
 		<property name="sponsor" ref="sponsor1Sponsor"/>
 		<property name="holder" value="sponsor1"/>
 		<property name="brand" value="VISA"/>
-	</bean>
+	</bean> -->
 	
 	<!-- Non Comercial Banners -->
 	

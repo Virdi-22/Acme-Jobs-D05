@@ -145,7 +145,7 @@
         `sector` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
-    
+
     create table `credit_card` (
        `id` integer not null,
         `version` integer not null,
@@ -154,7 +154,7 @@
         `expiration_date` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
-    
+
     create table `duty` (
        `id` integer not null,
         `version` integer not null,
