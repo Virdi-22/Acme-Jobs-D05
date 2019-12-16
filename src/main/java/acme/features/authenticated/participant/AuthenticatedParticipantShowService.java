@@ -1,10 +1,9 @@
 
-package acme.features.authenticated.messageThread;
+package acme.features.authenticated.participant;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.messageThread.MessageThread;
 import acme.entities.participants.Participant;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -13,29 +12,27 @@ import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AuthenticatedMessageThreadShowService implements AbstractShowService<Authenticated, MessageThread> {
-
-	// Internal state -----------------------------------------------------------
+public class AuthenticatedParticipantShowService implements AbstractShowService<Authenticated, Participant> {
 
 	@Autowired
-	AuthenticatedMessageThreadRepository repository;
+	AuthenticatedParticipantRepository repository;
 
 
 	@Override
-	public boolean authorise(final Request<MessageThread> request) {
+	public boolean authorise(final Request<Participant> request) {
 		assert request != null;
 		return true;
 	}
 
 	@Override
-	public void unbind(final Request<MessageThread> request, final MessageThread entity, final Model model) {
+	public void unbind(final Request<Participant> request, final Participant entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "moment");
-		Integer messageThreadId = entity.getId();
-		model.setAttribute("messageThreadId", entity.getId());
+		request.unbind(entity, model, "isOwner");
+		Integer messageThreadId = entity.getMessageThread().getId();
+		model.setAttribute("messageThreadName", entity.getMessageThread().getTitle());
 		model.setAttribute("usersInvolved", this.repository.findInvolvedUsers(messageThreadId));
 
 		// For delete button in form.jsp
@@ -44,22 +41,21 @@ public class AuthenticatedMessageThreadShowService implements AbstractShowServic
 		Participant owner;
 		Principal principal;
 
-		owner = this.repository.findOwner(entity.getId());
+		owner = this.repository.findOwner(messageThreadId);
 		principal = request.getPrincipal();
 
-		if (owner.getAuthenticated().getId() == principal.getActiveRoleId()) {
+		if (owner.getAuthenticated().getId() == principal.getActiveRoleId() && !entity.getIsOwner()) {
 			isMine = true;
 		}
 
 		model.setAttribute("isMine", isMine);
-
 	}
 
 	@Override
-	public MessageThread findOne(final Request<MessageThread> request) {
+	public Participant findOne(final Request<Participant> request) {
 		assert request != null;
 
-		MessageThread result;
+		Participant result;
 		int id;
 
 		id = request.getModel().getInteger("id");
