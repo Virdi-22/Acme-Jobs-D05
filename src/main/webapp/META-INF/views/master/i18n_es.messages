@@ -68,6 +68,8 @@ master.menu.administrator.company-record.create = Crear Compañía
 master.menu.administrator.configuration.show = Configuraciones
 master.menu.administrator.dashboard = Panel de Estadísticas
 master.menu.administrator.shutdown = Parar el sistema
+master.menu.administrator.credit-card.list = Tarjetas de crédito
+master.menu.administrator.credit-card.create = Crear trajeta de crédito
 
 master.menu.user-account.auditor-requests = Peticiones de auditor
 
@@ -96,12 +98,14 @@ master.menu.employer.application.list = Solicitudes a mis trabajos
 
 master.menu.worker = Trabajador
 master.menu.worker.application.list = Mis solicitudes
+master.menu.worker.job.list = Trabajos disponibles
 
 # master.menu.auditor #########################################################
 
 master.menu.auditor = Auditor
 master.menu.auditor.job.list-auditored = Listar trabajos auditorados
 master.menu.auditor.job.list-not-auditored = Listar trabajos no auditorados
+master.menu.auditor.auditRecord.list-mine = Listar mis auditorías
 
 master.menu.user-account.become-auditor = Petición para auditor
 master.menu.user-account.auditor = Datos de auditor

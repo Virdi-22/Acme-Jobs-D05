@@ -11,5 +11,6 @@ auditor.job.form.label.description = Descripción
 
 auditor.job.form.button.linkDuties = Obligaciones
 auditor.job.form.button.linkToAuditRecords = Auditorías
+auditor.job.form.button.createAuditRecord = Escribir una Auditoría
 
 auditor.job.form.button.return = Volver

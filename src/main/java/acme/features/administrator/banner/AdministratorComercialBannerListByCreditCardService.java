@@ -13,7 +13,7 @@ import acme.framework.entities.Administrator;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AdministratorComercialBannerListService implements AbstractListService<Administrator, ComercialBanner> {
+public class AdministratorComercialBannerListByCreditCardService implements AbstractListService<Administrator, ComercialBanner> {
 
 	@Autowired
 	AdministratorComercialBannerRepository repository;
@@ -31,7 +31,7 @@ public class AdministratorComercialBannerListService implements AbstractListServ
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "target", "slogan", "creditCardNumber", "expirationDate", "holder", "brand");
+		request.unbind(entity, model, "target", "slogan", "holder", "brand");
 
 	}
 
@@ -40,8 +40,10 @@ public class AdministratorComercialBannerListService implements AbstractListServ
 		assert request != null;
 
 		Collection<ComercialBanner> result;
+		int creditCardId;
 
-		result = this.repository.findManyAll();
+		creditCardId = request.getModel().getInteger("creditCardId");
+		result = this.repository.findManyByCredtCardId(creditCardId);
 
 		return result;
 	}

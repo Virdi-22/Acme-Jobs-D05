@@ -67,6 +67,8 @@ master.menu.administrator.company-record.create = Create Company Record
 master.menu.administrator.configuration.show = Configuration
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.shutdown = Shut down
+master.menu.administrator.credit-card.list = Credit Cards
+master.menu.administrator.credit-card.create = Create Credit Card
 
 master.menu.user-account.auditor-requests = Auditor requests
 
@@ -95,12 +97,14 @@ master.menu.employer.application.list = List my job's applications
 
 master.menu.worker = Worker
 master.menu.worker.application.list = My applications
+master.menu.worker.job.list = Available jobs
 
 # master.menu.auditor #########################################################
 
 master.menu.auditor = Auditor
 master.menu.auditor.job.list-auditored = List auditored jobs
 master.menu.auditor.job.list-not-auditored = List not auditored jobs
+master.menu.auditor.auditRecord.list-mine = List my audit records
 
 master.menu.user-account.become-auditor = Become an auditor
 master.menu.user-account.auditor = Auditor data
