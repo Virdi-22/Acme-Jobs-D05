@@ -113,6 +113,8 @@ master.menu.user-account.auditor = Auditor data
 master.menu.sponsor = Sponsor
 master.menu.sponsor.comercialBanner.list-mine = List my Comercial Banners
 master.menu.sponsor.nonNomercialBanner.list-mine = List my Non Commercial Banners
+master.menu.sponsor.credit-card.list = List my Credit Cards
+master.menu.sponsor.credit-card.create = Add a Credit Card
 
 # master.menu.user-account ####################################################
 

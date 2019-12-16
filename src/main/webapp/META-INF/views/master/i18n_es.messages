@@ -114,6 +114,8 @@ master.menu.user-account.auditor = Datos de auditor
 master.menu.sponsor = Patrocinador
 master.menu.sponsor.comercialBanner.list-mine = Mis Banners Comerciales
 master.menu.sponsor.nonNomercialBanner.list-mine = Mis Banners No Comerciales
+master.menu.sponsor.credit-card.list = Mis tarjetas de crédito
+master.menu.sponsor.credit-card.create = Añadir una tarjeta de créditos
 
 # master.menu.user-account ####################################################
 

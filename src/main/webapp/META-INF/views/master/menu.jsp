@@ -100,6 +100,8 @@
 		<acme:menu-option code="master.menu.sponsor" access="hasRole('Sponsor')">
 			<acme:menu-suboption code="master.menu.sponsor.comercialBanner.list-mine" action="/sponsor/comercial-banner/list-mine"/>
 			<acme:menu-suboption code="master.menu.sponsor.nonNomercialBanner.list-mine" action="/sponsor/non-comercial-banner/list-mine"/>
+			<acme:menu-suboption code="master.menu.sponsor.credit-card.list" action="/sponsor/credit-card/list"/>
+			<acme:menu-suboption code="master.menu.sponsor.credit-card.create" action="/sponsor/credit-card/create"/>
 		</acme:menu-option>
 	</acme:menu-left>
 
