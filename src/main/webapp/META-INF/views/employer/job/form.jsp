@@ -24,7 +24,7 @@
 			code="employer.job.form.button.publish"
 			action="/employer/job/publish"/>
 	</jstl:if>
-	<acme:form-submit test="${command == 'show'}"
+	<acme:form-submit test="${command == 'show' && owner == 'true'}"
 		code="employer.job.form.button.delete"
 		action="/employer/job/delete"/>
 	<acme:form-submit test="${command == 'create'}"

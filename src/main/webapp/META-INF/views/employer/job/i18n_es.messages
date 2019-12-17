@@ -24,6 +24,7 @@ employer.job.form.button.create-duty = Crea una Obligación
 employer.job.form.button.publish = Publicar
 
 employer.job.error.finalModeTest = Para publicar un trabajo, debe tener una carga de trabajo del 100% y no ser spam
+employer.job.error.noDuties = Para publicar un trabajo, deber tener obligaciones
 
 employer.job.form.button.linkDuties = Obligaciones
 

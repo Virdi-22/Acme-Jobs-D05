@@ -80,15 +80,20 @@ public class AuthenticatedParticipantCreateService implements AbstractCreateServ
 		assert entity != null;
 		assert errors != null;
 
-		boolean isNull;
+		boolean isNull = false, isEmpty = false;
 
 		if (!errors.hasErrors("userName")) {
 
 			String userName = request.getModel().getString("userName");
-			UserAccount aux = this.repository.findUserByName(userName);
-			List<String> isAlreadyAParticipant = (List<String>) this.repository.findInvolvedUsers(request.getModel().getInteger("messageThreadId"));
-			isNull = aux == null || isAlreadyAParticipant.contains(aux.getUsername());
+			if (userName.trim().isEmpty()) {
+				isEmpty = true;
+			} else {
+				UserAccount aux = this.repository.findUserByName(userName);
+				List<String> isAlreadyAParticipant = (List<String>) this.repository.findInvolvedUsers(request.getModel().getInteger("messageThreadId"));
+				isNull = aux == null || isAlreadyAParticipant.contains(aux.getUsername());
+			}
 			errors.state(request, !isNull, "*", "authenticated.participant.error.name");
+			errors.state(request, !isEmpty, "*", "authenticated.participant.error.emptyName");
 		}
 
 	}

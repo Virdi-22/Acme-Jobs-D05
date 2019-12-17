@@ -24,6 +24,7 @@ employer.job.form.button.create-duty = Create a Duty
 employer.job.form.button.publish = Publish
 
 employer.job.error.finalModeTest = To publish a job, it must have a total workload of 100% and does not have to be spam
+employer.job.error.noDuties = To publish a job, it must have duties
 
 employer.job.form.button.linkDuties = Duties
 
