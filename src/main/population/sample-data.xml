@@ -396,7 +396,7 @@
 	</bean>
 	
 	<!-- Comercial Banners -->
-	
+	<!-- 
 	<bean  id="comercialBanner01" class="acme.entities.banners.ComercialBanner">
 		<property name="slogan" value="Banner test 01"/>
 		<property name="target" value="https://drive.google.com/file/d/1GLE9rD9Rlt4iMz2ywFs5EEtbg_rjTuEm/view?usp=sharing"/>
@@ -436,7 +436,7 @@
 		<property name="holder" value="sponsor1"/>
 		<property name="brand" value="VISA"/>
 	</bean>
-	
+	-->
 	<!-- Non Comercial Banners -->
 	
 	<bean  id="nonComercialBanner01" class="acme.entities.banners.NonComercialBanner">

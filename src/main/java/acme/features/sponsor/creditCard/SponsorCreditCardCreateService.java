@@ -80,6 +80,10 @@ public class SponsorCreditCardCreateService implements AbstractCreateService<Spo
 
 	@Override
 	public void create(final Request<CreditCard> request, final CreditCard entity) {
+		assert request != null;
+		Sponsor sponsor;
+		sponsor = this.repository.findOneSponsorById(request.getPrincipal().getActiveRoleId());
+
 		this.repository.save(entity);
 
 	}
