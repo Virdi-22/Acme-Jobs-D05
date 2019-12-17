@@ -16,7 +16,8 @@ public interface SponsorCreditCardRepository extends AbstractRepository {
 	@Query("select c from CreditCard c where c.id = ?1")
 	CreditCard findOneById(int id);
 
-	@Query("select c from Sponsor s join s.creditCard c where s.id = ?1")
+	//@Query("select c from Sponsor s join s.creditCard c where s.id = ?1") not used
+	@Query("select c from CreditCard c where c.sponsor.id=?1")
 	Collection<CreditCard> findManyBySponsorId(int sponsorId);
 
 	@Query("Select s from Sponsor s where s.id=?1")

@@ -25,11 +25,15 @@ public class SponsorCreditCardController extends AbstractController<Sponsor, Cre
 	@Autowired
 	private SponsorCreditCardCreateService	createService;
 
+	@Autowired
+	private SponsorCreditCardDeleteService	deleteService;
+
 
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 	}
 }

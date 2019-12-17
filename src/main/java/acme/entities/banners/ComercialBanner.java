@@ -2,7 +2,7 @@
 package acme.entities.banners;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
@@ -23,7 +23,7 @@ public class ComercialBanner extends Banner {
 	@NotBlank
 	private String				brand;
 
-	@OneToOne(optional = false)
+	@ManyToOne(optional = false)
 	@Valid
 	private CreditCard			creditCard;
 }

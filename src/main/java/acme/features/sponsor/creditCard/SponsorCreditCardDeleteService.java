@@ -6,16 +6,17 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.creditCard.CreditCard;
 import acme.entities.roles.Sponsor;
+import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
-import acme.framework.services.AbstractShowService;
+import acme.framework.services.AbstractDeleteService;
 
 @Service
-public class SponsorCreditCardShowService implements AbstractShowService<Sponsor, CreditCard> {
+public class SponsorCreditCardDeleteService implements AbstractDeleteService<Sponsor, CreditCard> {
 
 	@Autowired
-	SponsorCreditCardRepository repository;
+	private SponsorCreditCardRepository repository;
 
 
 	@Override
@@ -37,6 +38,16 @@ public class SponsorCreditCardShowService implements AbstractShowService<Sponsor
 		}
 
 		return res;
+	}
+
+	@Override
+	public void bind(final Request<CreditCard> request, final CreditCard entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+
+		request.bind(entity, errors);
+
 	}
 
 	@Override
@@ -62,4 +73,21 @@ public class SponsorCreditCardShowService implements AbstractShowService<Sponsor
 		return result;
 	}
 
+	@Override
+	public void validate(final Request<CreditCard> request, final CreditCard entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+
+	}
+
+	@Override
+	public void delete(final Request<CreditCard> request, final CreditCard entity) {
+		assert request != null;
+		assert entity != null;
+
+		entity.setSponsor(null);
+		this.repository.save(entity);
+
+	}
 }

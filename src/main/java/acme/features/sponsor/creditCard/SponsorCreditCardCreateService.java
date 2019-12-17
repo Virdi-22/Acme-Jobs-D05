@@ -83,7 +83,7 @@ public class SponsorCreditCardCreateService implements AbstractCreateService<Spo
 		assert request != null;
 		Sponsor sponsor;
 		sponsor = this.repository.findOneSponsorById(request.getPrincipal().getActiveRoleId());
-
+		entity.setSponsor(sponsor);
 		this.repository.save(entity);
 
 	}

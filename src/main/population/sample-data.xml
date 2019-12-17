@@ -313,20 +313,6 @@
 		<property name="goldReward" value="EUR 40000"/>
 	</bean>
 	
-	 <!-- CraditCard -->
-	 
-	 <bean id="creditCard01" class="acme.entities.creditCard.CreditCard">
-		<property name="creditCardNumber" value="4617307392039794"/>
-		<property name="expirationDate" value="10/2050"/>
-		<property name="brand" value="Person01"/>
-	</bean>
-	
-	<bean id="creditCard02" class="acme.entities.creditCard.CreditCard">
-		<property name="creditCardNumber" value="4252347521322919"/>
-		<property name="expirationDate" value="10/2050"/>
-		<property name="brand" value="Person02"/>
-	</bean>
-	
 	 <!-- Sponsor -->
    
    <bean name="sponsor1UserAccount" class="acme.framework.entities.UserAccount">
@@ -350,7 +336,6 @@
 	
 	<bean name="sponsor1Sponsor" class="acme.entities.roles.Sponsor">
 		<property name="organizationName" value="Organization 1"></property>
-		<property name="creditCard" ref="creditCard01"></property>
 		<property name="userAccount" ref="sponsor1UserAccount"></property>
 	</bean>
 	
@@ -379,12 +364,27 @@
 	
 	<bean name="sponsor2Sponsor" class="acme.entities.roles.Sponsor">
 		<property name="organizationName" value="Organization 2"></property>
-		<property name="creditCard"><null/></property>
 		<property name="userAccount" ref="sponsor2UserAccount"></property>
 	</bean>
 	
 	<bean name="sponsor2Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="sponsor2UserAccount"></property>
+	</bean>
+	
+		 <!-- CraditCard -->
+	 
+	 <bean id="creditCard01" class="acme.entities.creditCard.CreditCard">
+		<property name="creditCardNumber" value="4617307392039794"/>
+		<property name="expirationDate" value="10/2050"/>
+		<property name="brand" value="Person01"/>
+		<property name="sponsor" ref="sponsor1Sponsor"></property>
+	</bean>
+	
+	<bean id="creditCard02" class="acme.entities.creditCard.CreditCard">
+		<property name="creditCardNumber" value="4252347521322919"/>
+		<property name="expirationDate" value="10/2050"/>
+		<property name="brand" value="Person02"/>
+		<property name="sponsor"><null/></property>
 	</bean>
 	
 	<!-- Request to become an auditor -->
@@ -396,13 +396,14 @@
 	</bean>
 	
 	<!-- Comercial Banners -->
-	<!-- 
+	
 	<bean  id="comercialBanner01" class="acme.entities.banners.ComercialBanner">
 		<property name="slogan" value="Banner test 01"/>
 		<property name="target" value="https://drive.google.com/file/d/1GLE9rD9Rlt4iMz2ywFs5EEtbg_rjTuEm/view?usp=sharing"/>
 		<property name="sponsor" ref="sponsor1Sponsor"/>
 		<property name="holder" value="sponsor1"/>
 		<property name="brand" value="MasterCard"/>
+		<property name="creditCard" ref="creditCard01"/>
 	</bean>
 	
 	<bean  id="comercialBanner02" class="acme.entities.banners.ComercialBanner">
@@ -411,6 +412,7 @@
 		<property name="sponsor" ref="sponsor1Sponsor"/>
 		<property name="holder" value="sponsor1"/>
 		<property name="brand" value="MasterCard"/>
+		<property name="creditCard" ref="creditCard01"/>
 	</bean>
 	
 	<bean  id="comercialBanner03" class="acme.entities.banners.ComercialBanner">
@@ -419,6 +421,7 @@
 		<property name="sponsor" ref="sponsor1Sponsor"/>
 		<property name="holder" value="sponsor1"/>
 		<property name="brand" value="MasterCard"/>
+		<property name="creditCard" ref="creditCard01"/>
 	</bean>
 	
 	<bean  id="comercialBanner04" class="acme.entities.banners.ComercialBanner">
@@ -427,6 +430,7 @@
 		<property name="sponsor" ref="sponsor1Sponsor"/>
 		<property name="holder" value="sponsor1"/>
 		<property name="brand" value="VISA"/>
+		<property name="creditCard" ref="creditCard01"/>
 	</bean>
 	
 	<bean  id="comercialBanner05" class="acme.entities.banners.ComercialBanner">
@@ -435,8 +439,9 @@
 		<property name="sponsor" ref="sponsor1Sponsor"/>
 		<property name="holder" value="sponsor1"/>
 		<property name="brand" value="VISA"/>
-	</bean>
-	-->
+		<property name="creditCard" ref="creditCard01"/>
+	</bean> 
+	
 	<!-- Non Comercial Banners -->
 	
 	<bean  id="nonComercialBanner01" class="acme.entities.banners.NonComercialBanner">

@@ -5,3 +5,10 @@ sponsor.nonComercialBanner.form.button.return = Return
 
 sponsor.nonComercialBanner.list.label.slogan = Slogan
 sponsor.nonComercialBanner.list.label.jingle = Jingle
+
+sponsor.nonComercialBanner.error.spam = The Non Comercial Banner must not contain any spam word
+
+sponsor.nonComercialBanner.form.button.update = Update
+sponsor.nonComercialBanner.form.button.delete = Delete
+sponsor.nonComercialBanner.form.button.create = Create
+sponsor.nonComercialBanner.form.button.update = Update

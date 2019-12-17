@@ -46,8 +46,6 @@
 			<acme:menu-suboption code="master.menu.administrator.announcement.list"  action="/administrator/announcement/list"/>
       		<acme:menu-suboption code="master.menu.administrator.announcement.create"  action="/administrator/announcement/create"/>
       		<acme:menu-separator/>
-    		<acme:menu-suboption code="master.menu.administrator.comercialBanner.list"  action="/administrator/comercial-banner/list"/>
-			 <acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.nonComercialBanner.list"  action="/administrator/non-comercial-banner/list"/>
 			<acme:menu-suboption code="master.menu.administrator.nonComercialBanner.create"  action="/administrator/non-comercial-banner/create"/>
 			 <acme:menu-separator/>
@@ -100,6 +98,7 @@
 		<acme:menu-option code="master.menu.sponsor" access="hasRole('Sponsor')">
 			<acme:menu-suboption code="master.menu.sponsor.comercialBanner.list-mine" action="/sponsor/comercial-banner/list-mine"/>
 			<acme:menu-suboption code="master.menu.sponsor.nonNomercialBanner.list-mine" action="/sponsor/non-comercial-banner/list-mine"/>
+			<acme:menu-suboption code="master.menu.sponsor.nonNomercialBanner.create" action="/sponsor/non-comercial-banner/create"/>
 			<acme:menu-suboption code="master.menu.sponsor.credit-card.list" action="/sponsor/credit-card/list"/>
 			<acme:menu-suboption code="master.menu.sponsor.credit-card.create" action="/sponsor/credit-card/create"/>
 		</acme:menu-option>
