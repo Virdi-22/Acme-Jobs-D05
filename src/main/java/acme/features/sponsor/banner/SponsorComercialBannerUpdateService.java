@@ -57,7 +57,7 @@ public class SponsorComercialBannerUpdateService implements AbstractUpdateServic
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "target", "slogan", "holder", "brand");
+		request.unbind(entity, model, "target", "slogan");
 
 	}
 
@@ -82,7 +82,7 @@ public class SponsorComercialBannerUpdateService implements AbstractUpdateServic
 		boolean isSpam;
 		if (!errors.hasErrors()) {
 			Configuration configuration = this.repository.findConfiguration();
-			String text = entity.getBrand() + "," + entity.getHolder() + "," + entity.getSlogan() + "," + entity.getTarget();
+			String text = entity.getSlogan() + "," + entity.getTarget();
 			isSpam = CheckSpam.checkSpam(configuration, text);
 			errors.state(request, !isSpam, "*", "sponsor.nonComercialBanner.error.spam");
 		}

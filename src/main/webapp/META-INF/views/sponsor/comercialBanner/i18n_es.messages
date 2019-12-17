@@ -1,15 +1,13 @@
 sponsor.comercialBanner.form.label.slogan = Eslogan
 sponsor.comercialBanner.form.label.referenceCreditCardNumber = Número de tarjeta de crédito
 sponsor.comercialBanner.form.label.target = Enlace
-sponsor.comercialBanner.form.label.holder = Titular
-sponsor.comercialBanner.form.label.brand = Compañía
 sponsor.banner.error.date = En formato de la fecha de caducidad no es el adecuado (ej: MM/YYYY)
 sponsor.comercialBanner.form.label.referenceExpirationDate = Fecha de caducidad
 sponsor.comercialbanner.error.inFuture =La fecha de caducidad debe ser una fecha en el futuro para ser válida
 sponsor.banner.form.button.return = Volver
 
-sponsor.banner.list.label.slogan = Eslogan
-sponsor.comercialBanner.list.label.brand = Compañía
+sponsor.comercialBanner.list.label.slogan = Eslogan
+sponsor.comercialBanner.list.label.target = Target
 
 sponsor.banner.form.button.update = Actualizar
 sponsor.banner.form.button.delete = Borrar

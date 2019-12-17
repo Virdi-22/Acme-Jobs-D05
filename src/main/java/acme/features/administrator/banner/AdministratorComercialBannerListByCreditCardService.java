@@ -31,7 +31,7 @@ public class AdministratorComercialBannerListByCreditCardService implements Abst
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "target", "slogan", "holder", "brand");
+		request.unbind(entity, model, "target", "slogan");
 
 	}
 

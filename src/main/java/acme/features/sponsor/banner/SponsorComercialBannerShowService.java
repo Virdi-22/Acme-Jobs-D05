@@ -43,7 +43,7 @@ public class SponsorComercialBannerShowService implements AbstractShowService<Sp
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "target", "slogan", "holder", "brand");
+		request.unbind(entity, model, "target", "slogan");
 		model.setAttribute("creditCardNumber", entity.getCreditCard().getCreditCardNumber());
 		model.setAttribute("expirationDate", entity.getCreditCard().getExpirationDate());
 
