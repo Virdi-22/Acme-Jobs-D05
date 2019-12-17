@@ -64,6 +64,7 @@ public class EmployerApplicationUpdateRejectService implements AbstractUpdateSer
 		assert entity != null;
 		assert errors != null;
 
+		errors.state(request, entity.getReasonRejected() != null, "reasonRejected", "employer.application.reasonRejected.error");
 	}
 
 	@Override
