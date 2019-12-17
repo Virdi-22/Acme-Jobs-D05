@@ -80,38 +80,44 @@ public class EmployerJobPublishService implements AbstractUpdateService<Employer
 		boolean allDuties100 = false;
 		boolean isSpam = true;
 
-		if (!errors.hasErrors("finalMode")) {
+		if (!errors.hasErrors("*")) {
 
 			// Checking the description: it's already checked in the Create Service
 
 			// Checking the workload
 
-			int workload;
+			Integer workload = 0;
 			int jobId;
 
-			jobId = entity.getId();
+			jobId = request.getModel().getInteger("id");
+
 			workload = this.repository.findSumPercentageDutiesByJobId(jobId);
 
-			allDuties100 = workload == 100;
+			if (workload != null) {
+
+				allDuties100 = workload == 100;
+
+				// Checking the spam
+
+				Configuration configuration = this.repository.findConfiguration();
+
+				// For reference, title, description and moreInfo
+
+				String text = entity.getReference() + "," + entity.getTitle() + "," + entity.getDescription() + "," + entity.getMoreInfo();
+
+				isSpam = CheckSpam.checkSpam(configuration, text);
+
+				// The error if setting to final mode is not possible
+
+				if (!allDuties100 && isSpam) {
+					entity.setFinalMode(false);
+				}
+
+				errors.state(request, !isSpam && allDuties100, "*", "employer.job.error.finalModeTest");
+			} else {
+				errors.state(request, workload != null, "*", "employer.job.error.noDuties");
+			}
 		}
-
-		// Checking the spam
-
-		Configuration configuration = this.repository.findConfiguration();
-
-		// For reference, title, description and moreInfo
-
-		String text = entity.getReference() + "," + entity.getTitle() + "," + entity.getDescription() + "," + entity.getMoreInfo();
-
-		isSpam = CheckSpam.checkSpam(configuration, text);
-
-		// The error if setting to final mode is not possible
-
-		if (!allDuties100 && isSpam) {
-			entity.setFinalMode(false);
-		}
-
-		errors.state(request, !isSpam && allDuties100, "*", "employer.job.error.finalModeTest");
 
 	}
 

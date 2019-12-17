@@ -12,6 +12,7 @@ import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
 import acme.framework.entities.Principal;
 import acme.framework.entities.UserAccount;
+import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractCreateService;
 
 @Service
@@ -29,14 +30,9 @@ public class AuthenticatedAuditorRequestCreateService implements AbstractCreateS
 
 		boolean result;
 		Principal principal;
-		int userAccountId;
-		UserAccount userAccount;
 
 		principal = request.getPrincipal();
-		userAccountId = principal.getAccountId();
-		userAccount = this.repository.findOneUserAccountById(userAccountId);
-
-		result = !userAccount.hasRole(Auditor.class);
+		result = !principal.hasRole(Auditor.class);
 
 		return result;
 	}
@@ -58,6 +54,29 @@ public class AuthenticatedAuditorRequestCreateService implements AbstractCreateS
 		assert model != null;
 
 		request.unbind(entity, model, "firm", "statement", "status");
+
+		Principal principal;
+		int userAccountId;
+		AuditorRequest existing;
+
+		principal = request.getPrincipal();
+		userAccountId = principal.getAccountId();
+		existing = this.repository.findOneAuditorRequestByUserAccountId(userAccountId);
+
+		if (existing != null) {
+			if (existing.getStatus().equals("Rejected")) {
+				model.setAttribute("alreadyRejected", true);
+			} else if (existing.getStatus().equals("Accepted")) {
+				model.setAttribute("alreadyAccepted", true);
+			} else {
+				model.setAttribute("alreadyRejected", false);
+			}
+			model.setAttribute("alreadyRequested", true);
+		} else {
+			model.setAttribute("alreadyRequested", false);
+		}
+
+		PrincipalHelper.handleUpdate();
 
 	}
 
@@ -87,19 +106,6 @@ public class AuthenticatedAuditorRequestCreateService implements AbstractCreateS
 		assert entity != null;
 		assert errors != null;
 
-		UserAccount userAccount;
-		int userAccountId;
-		AuditorRequest existing;
-		boolean alreadyRequested;
-
-		if (!errors.hasErrors()) {
-			userAccount = entity.getUserAccount();
-			userAccountId = userAccount.getId();
-			existing = this.repository.findOneAuditorRequestByUserAccountId(userAccountId);
-			alreadyRequested = existing == null;
-			errors.state(request, alreadyRequested, "*", "authenticated.auditorRequest.error.alreadyRequested");
-		}
-
 	}
 
 	@Override
@@ -107,6 +113,7 @@ public class AuthenticatedAuditorRequestCreateService implements AbstractCreateS
 		assert request != null;
 		assert entity != null;
 
+		entity.setStatus("Pending");
 		this.repository.save(entity);
 
 	}
