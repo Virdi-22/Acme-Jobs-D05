@@ -10,3 +10,8 @@ sponsor.banner.form.button.return = Volver
 
 sponsor.banner.list.label.slogan = Eslogan
 sponsor.comercialBanner.list.label.brand = Compañía
+
+sponsor.banner.form.button.update = Actualizar
+sponsor.banner.form.button.delete = Borrar
+sponsor.banner.form.button.create = Crear
+sponsor.banner.form.button.update = Actualizar

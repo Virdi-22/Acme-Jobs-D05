@@ -11,6 +11,6 @@ sponsor.creditCard.list.label.expirationDate = Expiration Date
 sponsor.creditCard.form.button.linkBanner = Comercial Banners
 sponsor.creditCard.form.button.create-banner = Create Comercial Banner
 
-sponsor.creditCard.form.button.update = Update
-sponsor.credtCard.form.button.delete = Delete
-sponsor.creditCard.form.button.create = Create
+sponsor.creditCard.form.button.update = Actualizar
+sponsor.credtCard.form.button.delete = Borrar
+sponsor.creditCard.form.button.create = Crear

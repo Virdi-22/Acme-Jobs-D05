@@ -5,12 +5,14 @@ acme.validation.creditCard.expirationDate.pattern = Patrón inválido, debe cuum
 sponsor.creditCard.inFuture = The expiration date must be in future to be valid
 sponsor.creditCard.form.button.return = Return
 
-sponsor.creditCard.list.label.creditCardNumber = Credit Card Number
-sponsor.creditCard.list.label.expirationDate = Expiration Date
+sponsor.creditCard.list.label.creditCardNumber = Número de la Tarjeta de Crédito
+sponsor.creditCard.list.label.expirationDate = Fecha de Caducidad
 
 sponsor.creditCard.form.button.linkBanner = Banners Comerciales
 sponsor.creditCard.form.button.create-banner = Crear Banner Comercial
 
-sponsor.creditCard.form.button.update = Update
-sponsor.credtCard.form.button.delete = Delete
-sponsor.creditCard.form.button.create = Create
+sponsor.creditCard.error.inFuture = La Fecha de Caducidad debe estar en el Futuro
+
+sponsor.creditCard.form.button.update = Actualizar
+sponsor.credtCard.form.button.delete = Borrar
+sponsor.creditCard.form.button.create = Crear

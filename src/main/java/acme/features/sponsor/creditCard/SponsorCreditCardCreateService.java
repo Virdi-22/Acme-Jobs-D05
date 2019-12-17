@@ -73,7 +73,7 @@ public class SponsorCreditCardCreateService implements AbstractCreateService<Spo
 			String date = fecha[0].trim() + "/" + fecha[1].trim() + "/01 00:00";
 			Date deadline = new Date(date);
 			boolean isInFuture = deadline.after(minimumDeadline);
-			errors.state(request, isInFuture, "expirationDate", "administrator.creditCard.error.inFuture");
+			errors.state(request, isInFuture, "expirationDate", "sponsor.creditCard.error.inFuture");
 		}
 
 	}

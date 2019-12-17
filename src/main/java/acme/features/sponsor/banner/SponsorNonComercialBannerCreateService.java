@@ -75,7 +75,7 @@ public class SponsorNonComercialBannerCreateService implements AbstractCreateSer
 	@Override
 	public void create(final Request<NonComercialBanner> request, final NonComercialBanner entity) {
 		Principal principal = request.getPrincipal();
-		Sponsor sponsor = this.repository.finOneSponsorById(principal.getAccountId());
+		Sponsor sponsor = this.repository.finOneSponsorById(principal.getActiveRoleId());
 		entity.setSponsor(sponsor);
 		this.repository.save(entity);
 

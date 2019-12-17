@@ -402,7 +402,7 @@
 		<property name="target" value="https://drive.google.com/file/d/1GLE9rD9Rlt4iMz2ywFs5EEtbg_rjTuEm/view?usp=sharing"/>
 		<property name="sponsor" ref="sponsor1Sponsor"/>
 		<property name="holder" value="sponsor1"/>
-		<property name="brand" value="MasterCard"/>
+		<property name="brand" value="Universidad deSevilla"/>
 		<property name="creditCard" ref="creditCard01"/>
 	</bean>
 	
@@ -411,7 +411,7 @@
 		<property name="target" value="https://drive.google.com/file/d/1GLE9rD9Rlt4iMz2ywFs5EEtbg_rjTuEm/view?usp=sharing"/>
 		<property name="sponsor" ref="sponsor1Sponsor"/>
 		<property name="holder" value="sponsor1"/>
-		<property name="brand" value="MasterCard"/>
+		<property name="brand" value="Coca Cola"/>
 		<property name="creditCard" ref="creditCard01"/>
 	</bean>
 	
@@ -420,7 +420,7 @@
 		<property name="target" value="https://drive.google.com/file/d/1GLE9rD9Rlt4iMz2ywFs5EEtbg_rjTuEm/view?usp=sharing"/>
 		<property name="sponsor" ref="sponsor1Sponsor"/>
 		<property name="holder" value="sponsor1"/>
-		<property name="brand" value="MasterCard"/>
+		<property name="brand" value="Git Hub"/>
 		<property name="creditCard" ref="creditCard01"/>
 	</bean>
 	
@@ -429,7 +429,7 @@
 		<property name="target" value="https://drive.google.com/file/d/1GLE9rD9Rlt4iMz2ywFs5EEtbg_rjTuEm/view?usp=sharing"/>
 		<property name="sponsor" ref="sponsor1Sponsor"/>
 		<property name="holder" value="sponsor1"/>
-		<property name="brand" value="VISA"/>
+		<property name="brand" value="ElasticSearch"/>
 		<property name="creditCard" ref="creditCard01"/>
 	</bean>
 	
@@ -438,7 +438,7 @@
 		<property name="target" value="https://drive.google.com/file/d/1GLE9rD9Rlt4iMz2ywFs5EEtbg_rjTuEm/view?usp=sharing"/>
 		<property name="sponsor" ref="sponsor1Sponsor"/>
 		<property name="holder" value="sponsor1"/>
-		<property name="brand" value="VISA"/>
+		<property name="brand" value="Acme-Jobs"/>
 		<property name="creditCard" ref="creditCard01"/>
 	</bean> 
 	

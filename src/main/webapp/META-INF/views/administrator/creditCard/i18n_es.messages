@@ -11,6 +11,8 @@ administrator.creditCard.list.label.expirationDate = Expiration Date
 administrator.creditCard.form.button.linkBanner = Banners Comerciales
 administrator.creditCard.form.button.create-banner = Crear Banner Comercial
 
+sponsor.creditCard.error.inFuture = La Fecah de Caducidad debe estar en el Futuro
+
 administrator.creditCard.form.button.update = Update
 administrator.creditCard.form.button.delete = Delete
 administrator.creditCard.form.button.create = Create

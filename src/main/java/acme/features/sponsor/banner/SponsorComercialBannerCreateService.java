@@ -47,6 +47,8 @@ public class SponsorComercialBannerCreateService implements AbstractCreateServic
 
 		request.unbind(entity, model, "target", "slogan", "holder", "brand");
 		model.setAttribute("creditCardId", request.getModel().getInteger("creditCardId"));
+		model.setAttribute("creditCardNumber", entity.getCreditCard().getCreditCardNumber());
+		model.setAttribute("expirationDate", entity.getCreditCard().getExpirationDate());
 
 	}
 
@@ -83,7 +85,7 @@ public class SponsorComercialBannerCreateService implements AbstractCreateServic
 		assert request != null;
 		assert entity != null;
 		Principal principal = request.getPrincipal();
-		Sponsor sponsor = this.repository.finOneSponsorById(principal.getAccountId());
+		Sponsor sponsor = this.repository.finOneSponsorById(principal.getActiveRoleId());
 		entity.setSponsor(sponsor);
 		this.repository.save(entity);
 

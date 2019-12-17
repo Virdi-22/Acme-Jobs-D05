@@ -9,5 +9,7 @@
 	<acme:form-textbox code="sponsor.creditCard.form.label.expirationDate" placeholder="MM/YYYY" path="expirationDate"/>
 	<acme:form-submit test="${command == 'create'}" code="sponsor.creditCard.form.button.create" action="/sponsor/credit-card/create"/>
 	<acme:form-submit test="${command == 'show' }" code="sponsor.credtCard.form.button.delete" action="/sponsor/credit-card/delete"/>
-	<acme:form-return code="administrator.creditCard.form.button.return"/>
+	<acme:form-submit test="${command != 'create'}" 
+		method="get" code="sponsor.creditCard.form.button.create-banner" action="/sponsor/comercial-banner/create?creditCardId=${id}"/>
+	<acme:form-return code="sponsor.creditCard.form.button.return"/>
 </acme:form>
