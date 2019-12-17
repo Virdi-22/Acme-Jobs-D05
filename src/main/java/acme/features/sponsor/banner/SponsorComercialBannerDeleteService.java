@@ -1,32 +1,42 @@
 
-package acme.features.administrator.banner;
-
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
+package acme.features.sponsor.banner;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.banners.ComercialBanner;
+import acme.entities.roles.Sponsor;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Administrator;
-import acme.framework.services.AbstractUpdateService;
+import acme.framework.entities.Principal;
+import acme.framework.services.AbstractDeleteService;
 
 @Service
-public class AdministratorComercialBannerUpdateService implements AbstractUpdateService<Administrator, ComercialBanner> {
+public class SponsorComercialBannerDeleteService implements AbstractDeleteService<Sponsor, ComercialBanner> {
 
 	@Autowired
-	AdministratorComercialBannerRepository repository;
+	SponsorComercialBannerRepository repository;
 
 
 	@Override
 	public boolean authorise(final Request<ComercialBanner> request) {
 		assert request != null;
+		boolean res;
 
-		return true;
+		int comercialBannerId = request.getModel().getInteger("id");
+		ComercialBanner comercialBanner = this.repository.findOneById(comercialBannerId); //Banner sobre la que se realiza la opercion
+
+		Principal principal = request.getPrincipal();
+		Sponsor sponsor = this.repository.finOneSponsorById(principal.getActiveRoleId()); //Sponsor que realiza la operacion
+
+		if (comercialBanner.getSponsor().getId() != sponsor.getId()) {
+			res = false;
+		} else {
+			res = true;
+		}
+
+		return res;
 	}
 
 	@Override
@@ -46,7 +56,6 @@ public class AdministratorComercialBannerUpdateService implements AbstractUpdate
 		assert model != null;
 
 		request.unbind(entity, model, "target", "slogan", "holder", "brand");
-		model.setAttribute("creditCardId", request.getModel().getInteger("creditCardId"));
 
 	}
 
@@ -58,6 +67,7 @@ public class AdministratorComercialBannerUpdateService implements AbstractUpdate
 		int id;
 
 		id = request.getModel().getInteger("id");
+
 		result = this.repository.findOneById(id);
 
 		return result;
@@ -68,25 +78,15 @@ public class AdministratorComercialBannerUpdateService implements AbstractUpdate
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		Calendar calendar;
-		Date minimumDeadline;
-		if (!errors.hasErrors("expirationDate")) {
-			calendar = new GregorianCalendar();
-			minimumDeadline = calendar.getTime();
-			String[] fecha = entity.getCreditCard().getExpirationDate().split("/");
-			String date = fecha[0].trim() + "/" + fecha[1].trim() + "/01 00:00";
-			Date deadline = new Date(date);
-			boolean isInFuture = deadline.after(minimumDeadline);
-			errors.state(request, isInFuture, "expirationDate", "administrator.comercialbanner.error.inFuture");
-		}
+
 	}
 
 	@Override
-	public void update(final Request<ComercialBanner> request, final ComercialBanner entity) {
+	public void delete(final Request<ComercialBanner> request, final ComercialBanner entity) {
 		assert request != null;
 		assert entity != null;
 
-		this.repository.save(entity);
+		this.repository.delete(entity);
 
 	}
 

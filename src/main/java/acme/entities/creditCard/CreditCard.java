@@ -2,11 +2,14 @@
 package acme.entities.creditCard;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.CreditCardNumber;
 
+import acme.entities.roles.Sponsor;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,5 +31,9 @@ public class CreditCard extends DomainEntity {
 
 	@NotBlank
 	private String				brand;
+
+	@Valid
+	@ManyToOne(optional = true)
+	private Sponsor				sponsor;
 
 }

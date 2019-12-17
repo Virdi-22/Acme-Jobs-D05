@@ -1,0 +1,16 @@
+sponsor.creditCard.form.label.creditCardNumber = Credit Card Number
+sponsor.creditCard.form.label.expirationDate = Expiration Date
+sponsor.creditCard.form.label.brand = Brand
+acme.validation.creditCard.expirationDate.pattern = Invalid pattern, must be MM/YYYY
+sponsor.creditCard.inFuture = The expiration date must be in future to be valid
+sponsor.creditCard.form.button.return = Return
+
+sponsor.creditCard.list.label.creditCardNumber = Credit Card Number
+sponsor.creditCard.list.label.expirationDate = Expiration Date
+
+sponsor.creditCard.form.button.linkBanner = Comercial Banners
+sponsor.creditCard.form.button.create-banner = Create Comercial Banner
+
+sponsor.creditCard.form.button.update = Actualizar
+sponsor.credtCard.form.button.delete = Borrar
+sponsor.creditCard.form.button.create = Crear

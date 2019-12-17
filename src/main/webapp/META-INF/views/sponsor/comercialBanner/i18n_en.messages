@@ -10,3 +10,9 @@ sponsor.comercialBanner.form.button.return = Return
 
 sponsor.comercialBanner.list.label.slogan = Slogan
 sponsor.comercialBanner.list.label.brand = Brand
+
+sponsor.creditCard.error.inFuture = The Expiration Date must be in Future
+
+sponsor.comercialBanner.form.button.update = Update
+sponsor.comercialBanner.form.button.delete = Delete
+sponsor.comercialBanner.form.button.create = Create

@@ -11,6 +11,8 @@ administrator.comercialBanner.list.label.expirationDate = Expiration Date
 administrator.creditCard.form.button.linkBanner = Comercial Banners
 administrator.creditCard.form.button.create-banner = Create Comercial Banner
 
+administrator.creditCard.error.inFuture = The Expiration Date must be in Future
+
 administrator.creditCard.form.button.update = Update
 administrator.creditCard.form.button.delete = Delete
 administrator.creditCard.form.button.create = Create
