@@ -8,6 +8,8 @@ import java.util.GregorianCalendar;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.CheckSpam;
+import acme.entities.configurations.Configuration;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
@@ -28,6 +30,7 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 	@Override
 	public boolean authorise(final Request<Job> request) {
 		assert request != null;
+
 		return true;
 	}
 
@@ -75,7 +78,16 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		Date minimumDeadline;
 		Money salary = entity.getSalary();
 
-		boolean otherWithSameReference, isInFuture, isEUR;
+		boolean otherWithSameReference, isInFuture, isEUR, isSpam;
+
+		// Checking if it's spam
+
+		if (!errors.hasErrors()) {
+			Configuration configuration = this.repository.findConfiguration();
+			String text = entity.getReference() + "," + entity.getTitle() + "," + entity.getDescription() + "," + entity.getMoreInfo();
+			isSpam = CheckSpam.checkSpam(configuration, text);
+			errors.state(request, !isSpam, "*", "employer.job.error.spam");
+		}
 
 		// Checking the reference
 
@@ -88,6 +100,7 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 
 		if (!errors.hasErrors("deadline")) {
 			calendar = new GregorianCalendar();
+			calendar.add(Calendar.DAY_OF_WEEK, 7);
 			minimumDeadline = calendar.getTime();
 			isInFuture = entity.getDeadline().after(minimumDeadline);
 			errors.state(request, isInFuture, "deadline", "employer.job.error.inFuture");

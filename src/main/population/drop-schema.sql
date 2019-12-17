@@ -27,6 +27,10 @@
        drop 
        foreign key FK_clqcq9lyspxdxcp6o4f3vkelj;
 
+    alter table `auditor_request` 
+       drop 
+       foreign key `FKe7pjjdlehi2gl4wqda0druv4g`;
+
     alter table `authenticated` 
        drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
@@ -34,6 +38,10 @@
     alter table `banner` 
        drop 
        foreign key `FKjoxwdnjr54soq3j89kt3fgrtj`;
+
+    alter table `comercial_banner` 
+       drop 
+       foreign key `FK8w7maugu1j4ohgbwjbgfatkru`;
 
     alter table `comercial_banner` 
        drop 
@@ -67,9 +75,21 @@
        drop 
        foreign key FK_h7gdwb5bu1dvickx9h13sl2tj;
 
+    alter table `participant` 
+       drop 
+       foreign key `FK80gruu22vbyiojed5sawtqc6a`;
+
+    alter table `participant` 
+       drop 
+       foreign key `FK162v6eiogk4jr8ykjoe80255x`;
+
     alter table `provider` 
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
+
+    alter table `sponsor` 
+       drop 
+       foreign key `FK28mvxtnmfjcwiw34vs8ryqkpa`;
 
     alter table `sponsor` 
        drop 
@@ -91,6 +111,8 @@
 
     drop table if exists `auditor`;
 
+    drop table if exists `auditor_request`;
+
     drop table if exists `authenticated`;
 
     drop table if exists `banner`;
@@ -104,6 +126,8 @@
     drop table if exists `configuration`;
 
     drop table if exists `consumer`;
+
+    drop table if exists `credit_card`;
 
     drop table if exists `duty`;
 
@@ -120,6 +144,8 @@
     drop table if exists `non_comercial_banner`;
 
     drop table if exists `offer`;
+
+    drop table if exists `participant`;
 
     drop table if exists `provider`;
 

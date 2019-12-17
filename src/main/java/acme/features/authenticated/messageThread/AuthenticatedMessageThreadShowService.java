@@ -5,9 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.messageThread.MessageThread;
+import acme.entities.participants.Participant;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -35,6 +37,22 @@ public class AuthenticatedMessageThreadShowService implements AbstractShowServic
 		Integer messageThreadId = entity.getId();
 		model.setAttribute("messageThreadId", entity.getId());
 		model.setAttribute("usersInvolved", this.repository.findInvolvedUsers(messageThreadId));
+
+		// For delete button in form.jsp
+
+		boolean isMine = false;
+		Participant owner;
+		Principal principal;
+
+		owner = this.repository.findOwner(entity.getId());
+		principal = request.getPrincipal();
+
+		if (owner.getAuthenticated().getId() == principal.getActiveRoleId()) {
+			isMine = true;
+		}
+
+		model.setAttribute("isMine", isMine);
+
 	}
 
 	@Override

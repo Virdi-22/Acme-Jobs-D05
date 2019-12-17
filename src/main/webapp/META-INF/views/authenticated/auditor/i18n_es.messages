@@ -1,0 +1,9 @@
+authenticated.auditor.form.title.create = Datos de auditor
+
+authenticated.auditor.form.label.firm = Empresa
+authenticated.auditor.form.label.responsibilityStatement = Declaración de reponsibilidad
+
+authenticated.auditor.error.isCreated = Ya ha hecho la petición de auditor.
+
+authenticated.auditor.form.button.update = Actualizar
+authenticated.auditor.form.button.return = Volver

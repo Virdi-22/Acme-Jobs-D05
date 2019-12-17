@@ -59,6 +59,16 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `auditor_request` (
+       `id` integer not null,
+        `version` integer not null,
+        `firm` varchar(255),
+        `statement` varchar(1024),
+        `status` varchar(255),
+        `user_account_id` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `authenticated` (
        `id` integer not null,
         `version` integer not null,
@@ -71,7 +81,7 @@
         `version` integer not null,
         `slogan` varchar(255),
         `target` varchar(255),
-        `sponsor_id` integer not null,
+        `sponsor_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -98,11 +108,10 @@
         `version` integer not null,
         `slogan` varchar(255),
         `target` varchar(255),
-        `sponsor_id` integer not null,
+        `sponsor_id` integer,
         `brand` varchar(255),
-        `credit_card_number` varchar(255),
-        `expiration_date` varchar(255),
         `holder` varchar(255),
+        `credit_card_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -135,6 +144,15 @@
         `user_account_id` integer,
         `company` varchar(255),
         `sector` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `credit_card` (
+       `id` integer not null,
+        `version` integer not null,
+        `brand` varchar(255),
+        `credit_card_number` varchar(255),
+        `expiration_date` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -189,8 +207,8 @@
         `moment` datetime(6),
         `tags` varchar(255),
         `title` varchar(255),
-        `authenticated_id` integer not null,
-        `message_thread_id` integer not null,
+        `authenticated_id` integer,
+        `message_thread_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -207,7 +225,7 @@
         `version` integer not null,
         `slogan` varchar(255),
         `target` varchar(255),
-        `sponsor_id` integer not null,
+        `sponsor_id` integer,
         `jingle` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
@@ -227,6 +245,15 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `participant` (
+       `id` integer not null,
+        `version` integer not null,
+        `is_owner` bit,
+        `authenticated_id` integer,
+        `message_thread_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `provider` (
        `id` integer not null,
         `version` integer not null,
@@ -240,8 +267,8 @@
        `id` integer not null,
         `version` integer not null,
         `user_account_id` integer,
-        `credit_card_number` varchar(255),
         `organization_name` varchar(255),
+        `credit_card_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -290,6 +317,9 @@ create index IDXnhikaa2dj3la6o2o7e9vo01y0 on `announcement` (`moment`);
        add constraint UK_ct7r18vvxl5g4c4k7aefpa4do unique (`reference`);
 create index IDXof878cqun8l1ynh0ao94bw3au on `audit_record` (`status`);
 create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
+
+    alter table `comercial_banner` 
+       add constraint UK_iucl60khx3jj2imft43euh5uv unique (`credit_card_id`);
 create index IDX9pkce3d1y6w47wadap5s5xptc on `company_record` (`stars`);
 create index IDXk2t3uthe649ao1jllcuks0gv4 on `investor_record` (`stars`);
 create index IDXfdmpnr8o4phmk81sqsano16r on `job` (`deadline`);
@@ -346,6 +376,11 @@ create index IDXq82g0jb2mlplkxoma94rvovh8 on `_request` (`ticker`);
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
+    alter table `auditor_request` 
+       add constraint `FKe7pjjdlehi2gl4wqda0druv4g` 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
     alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 
        foreign key (`user_account_id`) 
@@ -355,6 +390,11 @@ create index IDXq82g0jb2mlplkxoma94rvovh8 on `_request` (`ticker`);
        add constraint `FKjoxwdnjr54soq3j89kt3fgrtj` 
        foreign key (`sponsor_id`) 
        references `sponsor` (`id`);
+
+    alter table `comercial_banner` 
+       add constraint `FK8w7maugu1j4ohgbwjbgfatkru` 
+       foreign key (`credit_card_id`) 
+       references `credit_card` (`id`);
 
     alter table `comercial_banner` 
        add constraint FK_2uqsobmmc3lje3k58op7dsyvw 
@@ -396,10 +436,25 @@ create index IDXq82g0jb2mlplkxoma94rvovh8 on `_request` (`ticker`);
        foreign key (`sponsor_id`) 
        references `sponsor` (`id`);
 
+    alter table `participant` 
+       add constraint `FK80gruu22vbyiojed5sawtqc6a` 
+       foreign key (`authenticated_id`) 
+       references `authenticated` (`id`);
+
+    alter table `participant` 
+       add constraint `FK162v6eiogk4jr8ykjoe80255x` 
+       foreign key (`message_thread_id`) 
+       references `message_thread` (`id`);
+
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `sponsor` 
+       add constraint `FK28mvxtnmfjcwiw34vs8ryqkpa` 
+       foreign key (`credit_card_id`) 
+       references `credit_card` (`id`);
 
     alter table `sponsor` 
        add constraint FK_20xk0ev32hlg96kqynl6laie2 

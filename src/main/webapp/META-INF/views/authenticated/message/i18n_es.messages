@@ -6,6 +6,9 @@ authenticated.message.form.label.moment = Momento
 authenticated.message.form.contextData1 = Usuario
 authenticated.message.form.contextData2 = En relación a la cadena
 
+authenticated.message.form.button.create = Crear
+authenticated.message.form.label.checkbox = Acepto que los mensajes no pueden ser borrados
+
 authenticated.message.form.button.return = Volver
 
 authenticated.message.list.label.title = Título

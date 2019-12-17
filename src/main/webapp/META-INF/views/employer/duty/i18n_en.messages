@@ -7,7 +7,7 @@ employer.duty.form.label.title = Title
 employer.duty.form.label.description = Description
 employer.duty.form.label.percentage = Percentage
 
-employer.duty.error.percentage = Job workload must not be more than 100%
+employer.duty.error.spam = The duty must not contain any spam words
 
 employer.duty.form.button.update = Update
 employer.duty.form.button.create = Create

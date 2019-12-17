@@ -37,6 +37,7 @@
 			<acme:menu-suboption code="master.menu.authenticated.challenge.list" action="/authenticated/challenge/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.job.list" action="/authenticated/job/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.message-thread.list" action="/authenticated/message-thread/list-mine"/>
+			<acme:menu-suboption code="master.menu.authenticated.message-thread.create" action="/authenticated/message-thread/create"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
@@ -47,7 +48,6 @@
       		<acme:menu-suboption code="master.menu.administrator.announcement.create"  action="/administrator/announcement/create"/>
       		<acme:menu-separator/>
     		<acme:menu-suboption code="master.menu.administrator.comercialBanner.list"  action="/administrator/comercial-banner/list"/>
-			<acme:menu-suboption code="master.menu.administrator.comercialBanner.create"  action="/administrator/comercial-banner/create"/>
 			 <acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.nonComercialBanner.list"  action="/administrator/non-comercial-banner/list"/>
 			<acme:menu-suboption code="master.menu.administrator.nonComercialBanner.create"  action="/administrator/non-comercial-banner/create"/>
@@ -57,6 +57,9 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.company-record.list"  action="/administrator/company-record/list"/>
 			<acme:menu-suboption code="master.menu.administrator.company-record.create"  action="/administrator/company-record/create"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.credit-card.list"  action="/administrator/credit-card/list"/>
+			<acme:menu-suboption code="master.menu.administrator.credit-card.create"  action="/administrator/credit-card/create"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.configuration.show" action="/administrator/configuration/show"/>
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>
@@ -86,11 +89,13 @@
 		
 		<acme:menu-option code="master.menu.worker" access="hasRole('Worker')">
 			<acme:menu-suboption code="master.menu.worker.application.list" action="/worker/application/list"/>
+			<acme:menu-suboption code="master.menu.worker.job.list" action="/worker/job/list"/>		
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
 			<acme:menu-suboption code="master.menu.auditor.job.list-auditored" action="/auditor/job/list-auditored"/>
 			<acme:menu-suboption code="master.menu.auditor.job.list-not-auditored" action="/auditor/job/list-not-auditored"/>
+			<acme:menu-suboption code="master.menu.auditor.auditRecord.list-mine" action="/auditor/audit-record/list-mine"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.sponsor" access="hasRole('Sponsor')">
@@ -113,8 +118,11 @@
 			<acme:menu-suboption code="master.menu.user-account.worker" action="/authenticated/worker/update" access="hasRole('Worker')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-employer" action="/authenticated/employer/create" access="!hasRole('Employer')"/>
 			<acme:menu-suboption code="master.menu.user-account.employer" action="/authenticated/employer/update" access="hasRole('Employer')"/>
+			<acme:menu-suboption code="master.menu.user-account.become-auditor" action="/authenticated/auditor-request/create" access="!hasRole('Auditor')"/>
+			<acme:menu-suboption code="master.menu.user-account.auditor" action="/authenticated/auditor/update" access="hasRole('Auditor')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-sponsor" action="/authenticated/sponsor/create" access="!hasRole('Sponsor')"/>
 			<acme:menu-suboption code="master.menu.user-account.sponsor" action="/authenticated/sponsor/update" access="hasRole('Sponsor')"/>
+      <acme:menu-suboption code="master.menu.user-account.auditor-requests" action="/administrator/auditor-request/list" access="hasRole('Administrator')"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()"/>

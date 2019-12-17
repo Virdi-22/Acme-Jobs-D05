@@ -1,0 +1,14 @@
+authenticated.participant.list.label.isOwner = ¿Es el propietario/a?
+authenticated.participant.list.label.messageThreadName = Nombre del hilo
+authenticated.participant.list.label.authenticatedName = Nombre de Usuario
+
+authenticated.participant.form.contextData1 = Hilo con título: 
+authenticated.participant.form.contextData2 = Usuarios involucrados:
+authenticated.participant.form.label.is-owner = ¿Es el propietario/a?
+
+authenticated.participant.error.name = El usuario no existe o ya participa en el hilo.
+
+authenticated.participant.form.label.user = Nombre de usuario
+authenticated.participant.form.button.delete = Eliminar
+authenticated.participant.form.button.create = Añadir participante
+authenticated.participant.form.button.return = Volver

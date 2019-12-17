@@ -11,4 +11,5 @@ worker.application.form.label.qualifications = Cualificaciones
 worker.application.form.contextData1 = En relación al trabajo con referencia
 worker.application.form.label.reasonRejected = Causa del rechazo
 
+worker.application.button.create = Crear
 worker.application.form.button.return = Volver

@@ -1,0 +1,9 @@
+authenticated.auditorRequest.form.title.create = Petición a rol de Auditor
+
+authenticated.auditorRequest.form.label.firm = Empresa
+authenticated.auditorRequest.form.label.responsibilityStatement = Declaración de reponsibilidad
+
+authenticated.auditorRequest.error.alreadyRequested = Ya ha solicitado el rol de auditor
+
+authenticated.auditorRequest.form.button.create = Hacer la petición
+authenticated.auditorRequest.form.button.return = Volver
