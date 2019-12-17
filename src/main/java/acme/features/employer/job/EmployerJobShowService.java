@@ -48,6 +48,21 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 		assert model != null;
 
 		request.unbind(entity, model, "reference", "title", "deadline", "salary", "description", "moreInfo", "finalMode");
+
+		Principal principal;
+		Employer employer;
+
+		employer = entity.getEmployer();
+		principal = request.getPrincipal();
+
+		boolean owner = false;
+
+		if (employer.getUserAccount().getId() == principal.getAccountId()) {
+			owner = true;
+		}
+
+		model.setAttribute("owner", owner);
+
 	}
 
 	@Override

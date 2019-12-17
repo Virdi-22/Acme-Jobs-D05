@@ -16,9 +16,25 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<br/><acme:form-textbox code="authenticated.auditorRequest.form.label.firm" path="firm"/>
-	<acme:form-textarea code="authenticated.auditorRequest.form.label.responsibilityStatement" path="statement"/>
+
+	<jstl:if test="${alreadyAccepted == 'true'}">
+		<h4><acme:message code="authenticated.auditorRequest.form.accepted"/></h4><br/>
+	</jstl:if>
+
+	<jstl:if test="${alreadyRequested == 'true' && alreadyRejected == 'false'}">
+		<h4><acme:message code="authenticated.auditorRequest.form.pending"/></h4><br/>
+	</jstl:if>
 	
-	<acme:form-submit test="${command == 'create'}" code="authenticated.auditorRequest.form.button.create" action="/authenticated/auditor-request/create"/>
+	<jstl:if test="${alreadyRequested == 'true' && alreadyRejected == 'true'}">
+		<h4><acme:message code="authenticated.auditorRequest.form.rejected"/></h4><br/>
+	</jstl:if>
+	
+	<jstl:if test="${alreadyRequested == 'false'}">	
+		<br/><acme:form-textbox code="authenticated.auditorRequest.form.label.firm" path="firm"/>
+		<acme:form-textarea code="authenticated.auditorRequest.form.label.responsibilityStatement" path="statement"/>
+	
+		<acme:form-submit test="${command == 'create'}" code="authenticated.auditorRequest.form.button.create" action="/authenticated/auditor-request/create"/>
+	</jstl:if>
+	
 	<acme:form-return code="authenticated.auditorRequest.form.button.return"/>
 </acme:form>

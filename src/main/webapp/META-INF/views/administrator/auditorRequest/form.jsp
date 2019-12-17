@@ -17,9 +17,9 @@
 
 <acme:form>
 	<h4><acme:message code="administrator.auditorRequest.contextData"/> <acme:print value="${username}"/></h4><br>
-	<acme:form-textbox code="administrator.auditorRequest.form.label.username" path="username"/>
-	<acme:form-textbox code="administrator.auditorRequest.form.label.firm" path="firm"/>
-	<acme:form-textarea code="administrator.auditorRequest.form.label.responsibilityStatement" path="statement"/>
+	<acme:form-textbox code="administrator.auditorRequest.form.label.username" path="username" readonly="true"/>
+	<acme:form-textbox code="administrator.auditorRequest.form.label.firm" path="firm" readonly="true"/>
+	<acme:form-textarea code="administrator.auditorRequest.form.label.responsibilityStatement" path="statement" readonly="true"/>
 	
 	<jstl:if test="${status == 'Pending'}">
 		<acme:form-submit code="administrator.auditorRequest.form.button.accept" action="/administrator/auditor-request/accept"/>
