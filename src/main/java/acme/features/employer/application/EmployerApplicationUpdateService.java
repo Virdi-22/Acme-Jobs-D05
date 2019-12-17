@@ -44,6 +44,8 @@ public class EmployerApplicationUpdateService implements AbstractUpdateService<E
 		assert errors != null;
 
 		request.bind(entity, errors);
+		request.getModel().setAttribute("jobReference", entity.getJob().getReference());
+		request.getModel().setAttribute("jobInfo", entity.getJob().getMoreInfo());
 
 	}
 
@@ -54,7 +56,6 @@ public class EmployerApplicationUpdateService implements AbstractUpdateService<E
 		assert model != null;
 
 		request.unbind(entity, model, "status", "reasonRejected");
-
 	}
 
 	@Override

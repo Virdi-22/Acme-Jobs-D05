@@ -18,6 +18,6 @@ employer.application.form.button.update = Update Application
 
 employer.application.form.label.statusAccepted = Accept
 employer.application.form.label.statusRejected = Reject
-employer.application.form.label.statusPending = Peinding
+employer.application.form.label.statusPending = Pending
 
 employer.application.form.button.return = Return
