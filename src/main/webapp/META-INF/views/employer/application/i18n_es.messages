@@ -14,7 +14,10 @@ employer.application.form.label.reasonRejected = Razón para el rechazo
 
 employer.application.reasonRejected.error = Para rechazar una solucitud debe dar una razón
 
-employer.application.form.button.accept = Aceptar solicitud
-employer.application.form.button.reject = Rechazar solicitud
+employer.application.form.button.update = Actualizar solicitud
+
+employer.application.form.label.statusAccepted = Aceptar
+employer.application.form.label.statusRejected = Rechazar
+employer.application.form.label.statusPending = Pendiente
 
 employer.application.form.button.return = Volver
