@@ -18,11 +18,23 @@ import acme.framework.entities.Authenticated;
 public class AuthenticatedParticipantController extends AbstractController<Authenticated, Participant> {
 
 	@Autowired
-	private AuthenticatedParticipantListByMessageThreadService listByMessageThreadService;
+	private AuthenticatedParticipantListByMessageThreadService	listByMessageThreadService;
+
+	@Autowired
+	private AuthenticatedParticipantCreateService				createService;
+
+	@Autowired
+	private AuthenticatedParticipantDeleteService				deleteService;
+
+	@Autowired
+	private AuthenticatedParticipantShowService					showService;
 
 
 	@PostConstruct
 	private void initialise() {
 		super.addCustomCommand(CustomCommand.LIST_BY_MESSAGE_THREAD, BasicCommand.LIST, this.listByMessageThreadService);
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
+		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 	}
 }

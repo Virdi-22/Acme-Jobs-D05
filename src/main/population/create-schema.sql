@@ -28,6 +28,7 @@
         `version` integer not null,
         `creation_moment` datetime(6),
         `qualifications` varchar(1024),
+        `reason_rejected` varchar(255),
         `reference` varchar(255),
         `skills` varchar(1024),
         `statement` varchar(1024),

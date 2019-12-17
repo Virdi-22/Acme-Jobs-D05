@@ -55,6 +55,8 @@ public class Application extends DomainEntity {
 	@Column(length = 1024)
 	private String				qualifications;
 
+	private String				reasonRejected;
+
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)

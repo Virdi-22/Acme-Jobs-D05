@@ -7,5 +7,8 @@ authenticated.messageThread.form.label.moment = Momento
 authenticated.messageThread.form.contextData1 = Usuarios involucrados
 
 authenticated.messageThread.form.button.linkMessages = Mensajes
-
+authenticated.messageThread.form.button.linkParticipants = Participantes
+authenticated.messageThread.form.button.create = Crear
+authenticated.messageThread.form.button.createParticipant = Añadir participante
+authenticated.messageThread.form.button.createMessage = Añadir mensaje
 authenticated.messageThread.form.button.return = Volver

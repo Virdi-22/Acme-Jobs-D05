@@ -819,7 +819,7 @@
 	<bean name="application1" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APPL01"></property>
 		<property name="creationMoment" value="2019/11/03 10:00"></property>
-		<property name="status" value="Accepted"></property>
+		<property name="status" value="Pending"></property>
 		<property name="statement" value="I want to work"></property>
 		<property name="skills" value="Good programmer"></property>
 		<property name="qualifications" value="JAVA, Python"></property>
@@ -829,7 +829,7 @@
 	<bean name="application2" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APPL02"></property>
 		<property name="creationMoment" value="2018/11/03 10:00"></property>
-		<property name="status" value="Accepted"></property>
+		<property name="status" value="Pending"></property>
 		<property name="statement" value="Can you hire me?"></property>
 		<property name="skills" value="Great work in a team."></property>
 		<property name="qualifications" value="Not being a Leslie"></property>
@@ -849,7 +849,7 @@
 	<bean name="application4" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APPL04"></property>
 		<property name="creationMoment" value="2015/12/03 10:00"></property>
-		<property name="status" value="Rejected"></property>
+		<property name="status" value="Pending"></property>
 		<property name="statement" value="Hire me!"></property>
 		<property name="skills" value="Worst skills."></property>
 		<property name="qualifications" value="Whatever..."></property>
@@ -859,7 +859,7 @@
 	<bean name="application5" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APPL05"></property>
 		<property name="creationMoment" value="2016/05/03 10:00"></property>
-		<property name="status" value="Rejected"></property>
+		<property name="status" value="Pending"></property>
 		<property name="statement" value="I don't see the point of this."></property>
 		<property name="skills" value="Best buddy."></property>
 		<property name="qualifications" value="Awesome jokes."></property>

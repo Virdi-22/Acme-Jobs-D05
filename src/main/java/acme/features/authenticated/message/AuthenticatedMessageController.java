@@ -25,6 +25,9 @@ public class AuthenticatedMessageController extends AbstractController<Authentic
 	@Autowired
 	private AuthenticatedMessageShowService				showService;
 
+	@Autowired
+	private AuthenticatedMessageCreateService			createService;
+
 
 	// Contructors -----------------------------------------------------------------
 
@@ -33,6 +36,8 @@ public class AuthenticatedMessageController extends AbstractController<Authentic
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 
 		super.addCustomCommand(CustomCommand.LIST_BY_MESSAGE, BasicCommand.LIST, this.listByMessageService);
+
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 	}
 
 }

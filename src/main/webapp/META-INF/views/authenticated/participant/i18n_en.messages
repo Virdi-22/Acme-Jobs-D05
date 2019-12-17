@@ -1,1 +1,18 @@
 authenticated.participant.list.label.isOwner = ¿Is he/she the owner?
+authenticated.participant.list.label.messageThreadName = Thread name
+authenticated.participant.list.label.authenticatedName = User Name
+
+authenticated.participant.form.contextData1 = Message Thread named: 
+authenticated.participant.form.contextData2 = Users Involved:
+authenticated.participant.form.label.is-owner = ¿Is he/she the owner?
+
+authenticated.participant.error.name = The user either doesn't exist or is already a participant.
+authenticated.participant.error.emptyName = The user name can not be blank.
+
+authenticated.participant.form.label.user = Username
+
+authenticated.participant.form.button.delete = Delete
+authenticated.participant.form.button.create = Add participant
+authenticated.participant.form.button.return = Return
+
+authenticated.participant.list.button.return = Return

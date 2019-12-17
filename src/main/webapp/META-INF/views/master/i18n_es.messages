@@ -47,6 +47,7 @@ master.menu.authenticated.offer.list = Ofertas
 master.menu.authenticated.challenge.list = Retos
 master.menu.authenticated.job.list = Trabajos activos
 master.menu.authenticated.message-thread.list = Panel de mensajeria
+master.menu.authenticated.message-thread.create = Crear panel
 
 # master.menu.administrator ###################################################
 
