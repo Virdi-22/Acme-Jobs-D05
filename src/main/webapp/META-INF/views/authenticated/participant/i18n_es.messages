@@ -7,8 +7,11 @@ authenticated.participant.form.contextData2 = Usuarios involucrados:
 authenticated.participant.form.label.is-owner = ¿Es el propietario/a?
 
 authenticated.participant.error.name = El usuario no existe o ya participa en el hilo.
+authenticated.participant.error.emptyName = El nombre de usuario no puede estar vacio.
 
 authenticated.participant.form.label.user = Nombre de usuario
 authenticated.participant.form.button.delete = Eliminar
 authenticated.participant.form.button.create = Añadir participante
 authenticated.participant.form.button.return = Volver
+
+authenticated.participant.list.button.return = Volver
