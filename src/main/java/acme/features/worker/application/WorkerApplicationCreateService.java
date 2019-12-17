@@ -81,6 +81,7 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		if (!errors.hasErrors("reference")) {
 			otherWithSameReference = this.repository.findOneByReference(reference) == null;
 			errors.state(request, otherWithSameReference, "reference", "worker.application.error.reference");
+
 		}
 
 	}

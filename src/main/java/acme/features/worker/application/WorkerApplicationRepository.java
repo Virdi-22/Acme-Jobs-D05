@@ -31,4 +31,5 @@ public interface WorkerApplicationRepository extends AbstractRepository {
 
 	@Query("select a from Application a where a.reference = ?1")
 	Application findOneByReference(String reference);
+
 }
