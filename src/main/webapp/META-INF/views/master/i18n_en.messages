@@ -113,6 +113,7 @@ master.menu.user-account.auditor = Auditor data
 master.menu.sponsor = Sponsor
 master.menu.sponsor.comercialBanner.list-mine = List my Comercial Banners
 master.menu.sponsor.nonNomercialBanner.list-mine = List my Non Commercial Banners
+master.menu.sponsor.nonNomercialBanner.create = Create Non Comercial Banner
 
 # master.menu.user-account ####################################################
 

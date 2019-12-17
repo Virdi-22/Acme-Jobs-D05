@@ -6,3 +6,8 @@ sponsor.nonComercialBanner.form.button.return = Volver
 
 sponsor.nonComercialBanner.list.label.slogan = Eslogan
 sponsor.nonComercialBanner.list.label.jingle = Sonido
+
+sponsor.nonComercialBanner.form.button.update = Actualizar
+sponsor.nonComercialBanner.form.button.delete = Borrar
+sponsor.nonComercialBanner.form.button.create = Crear
+sponsor.nonComercialBanner.form.button.update = Actualizar

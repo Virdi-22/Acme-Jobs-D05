@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.banners.ComercialBanner;
+import acme.entities.configurations.Configuration;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -17,4 +18,7 @@ public interface SponsorComercialBannerRepository extends AbstractRepository {
 
 	@Query("select b from ComercialBanner b where b.sponsor.id = ?1")
 	Collection<ComercialBanner> findManyBySponsorId(int sponsorId);
+	
+	@Query("select c from Configuration c")
+	Configuration findConfiguration();
 }

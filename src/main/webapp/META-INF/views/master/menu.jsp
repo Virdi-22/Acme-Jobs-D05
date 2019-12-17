@@ -100,6 +100,7 @@
 		<acme:menu-option code="master.menu.sponsor" access="hasRole('Sponsor')">
 			<acme:menu-suboption code="master.menu.sponsor.comercialBanner.list-mine" action="/sponsor/comercial-banner/list-mine"/>
 			<acme:menu-suboption code="master.menu.sponsor.nonNomercialBanner.list-mine" action="/sponsor/non-comercial-banner/list-mine"/>
+			<acme:menu-suboption code="master.menu.sponsor.nonNomercialBanner.create" action="/sponsor/non-comercial-banner/create"/>
 		</acme:menu-option>
 	</acme:menu-left>
 
