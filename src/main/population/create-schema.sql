@@ -317,9 +317,6 @@ create index IDXnhikaa2dj3la6o2o7e9vo01y0 on `announcement` (`moment`);
        add constraint UK_ct7r18vvxl5g4c4k7aefpa4do unique (`reference`);
 create index IDXof878cqun8l1ynh0ao94bw3au on `audit_record` (`status`);
 create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
-
-    alter table `comercial_banner` 
-       add constraint UK_iucl60khx3jj2imft43euh5uv unique (`credit_card_id`);
 create index IDX9pkce3d1y6w47wadap5s5xptc on `company_record` (`stars`);
 create index IDXk2t3uthe649ao1jllcuks0gv4 on `investor_record` (`stars`);
 create index IDXfdmpnr8o4phmk81sqsano16r on `job` (`deadline`);

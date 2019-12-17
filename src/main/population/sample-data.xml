@@ -395,7 +395,7 @@
 		<property name="userAccount" ref="employer2UserAccount"/>
 	</bean>
 	
-	<!-- Comercial Banners 
+	<!-- Comercial Banners -->
 	
 	<bean  id="comercialBanner01" class="acme.entities.banners.ComercialBanner">
 		<property name="slogan" value="Banner test 01"/>
@@ -403,6 +403,7 @@
 		<property name="sponsor" ref="sponsor1Sponsor"/>
 		<property name="holder" value="sponsor1"/>
 		<property name="brand" value="MasterCard"/>
+		<property name="creditCard" ref="creditCard01"/>
 	</bean>
 	
 	<bean  id="comercialBanner02" class="acme.entities.banners.ComercialBanner">
@@ -411,6 +412,7 @@
 		<property name="sponsor" ref="sponsor1Sponsor"/>
 		<property name="holder" value="sponsor1"/>
 		<property name="brand" value="MasterCard"/>
+		<property name="creditCard" ref="creditCard01"/>
 	</bean>
 	
 	<bean  id="comercialBanner03" class="acme.entities.banners.ComercialBanner">
@@ -419,6 +421,7 @@
 		<property name="sponsor" ref="sponsor1Sponsor"/>
 		<property name="holder" value="sponsor1"/>
 		<property name="brand" value="MasterCard"/>
+		<property name="creditCard" ref="creditCard01"/>
 	</bean>
 	
 	<bean  id="comercialBanner04" class="acme.entities.banners.ComercialBanner">
@@ -427,6 +430,7 @@
 		<property name="sponsor" ref="sponsor1Sponsor"/>
 		<property name="holder" value="sponsor1"/>
 		<property name="brand" value="VISA"/>
+		<property name="creditCard" ref="creditCard01"/>
 	</bean>
 	
 	<bean  id="comercialBanner05" class="acme.entities.banners.ComercialBanner">
@@ -435,7 +439,8 @@
 		<property name="sponsor" ref="sponsor1Sponsor"/>
 		<property name="holder" value="sponsor1"/>
 		<property name="brand" value="VISA"/>
-	</bean> -->
+		<property name="creditCard" ref="creditCard01"/>
+	</bean> 
 	
 	<!-- Non Comercial Banners -->
 	

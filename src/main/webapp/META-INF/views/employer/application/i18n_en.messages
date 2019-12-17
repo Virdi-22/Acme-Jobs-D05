@@ -14,7 +14,10 @@ employer.application.form.label.reasonRejected = Reason why rejected
 
 employer.application.reasonRejected.error = To reject an application you must give a reason
 
-employer.application.form.button.accept = Accept Application
-employer.application.form.button.reject = Reject Application
+employer.application.form.button.update = Update Application
+
+employer.application.form.label.statusAccepted = Accept
+employer.application.form.label.statusRejected = Reject
+employer.application.form.label.statusPending = Peinding
 
 employer.application.form.button.return = Return
