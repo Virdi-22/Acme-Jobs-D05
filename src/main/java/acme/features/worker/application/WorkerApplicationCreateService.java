@@ -75,7 +75,18 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		//Referencia unica
+
+		String reference = entity.getReference().trim();
+
+		boolean otherWithSameReference;
+
+		// Checking the reference
+
+		if (!errors.hasErrors("reference")) {
+			otherWithSameReference = this.repository.findOneByReference(reference) == null;
+			errors.state(request, otherWithSameReference, "reference", "worker.application.error.reference");
+
+		}
 
 	}
 
