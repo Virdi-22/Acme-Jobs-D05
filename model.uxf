@@ -720,17 +720,18 @@ Worker
       <x>693</x>
       <y>539</y>
       <w>280</w>
-      <h>105</h>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Application
 --
 +reference: String{Unique, NotBlank, Length(min=5, max=15)}
-+creationMoment: Date{Temporal{TIMESTAMP}, Past, NotNull}
++creationMoment: Date{Temporal(TIMESTAMP), Past, NotNull}
 +status: String{Regexp="^Accepted|Rejected|Pending$"}
 +statement: String{NotBlank, Length=1024}
 +skills: String{NotBlank, Length=1024}
 +qualifications: String{NotBlank, Length=1024}
-+reasonRejected: String</panel_attributes>
++reasonRejected: String
++lastUpdate: Date {Temporal(TIMESTAMP), Past}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
