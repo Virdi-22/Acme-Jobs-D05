@@ -2,6 +2,7 @@
 package acme.forms;
 
 import java.io.Serializable;
+import java.util.List;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -43,4 +44,12 @@ public class Dashboard implements Serializable {
 	Object[]					averageJobsByStatus;
 	Object[]					applicationStatus;
 	Object[]					averageApplicationsByStatus;
+
+	// D05 Complex Editing
+
+	List<Integer>				acceptedApplicationsPerDay;
+	List<Integer>				rejectedApplicationsPerDay;
+	List<Integer>				pendingApplicationsPerDay;
+
+	List<String>				closestDays;
 }
