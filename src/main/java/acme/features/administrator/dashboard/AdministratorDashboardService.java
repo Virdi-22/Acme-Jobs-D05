@@ -107,18 +107,23 @@ public class AdministratorDashboardService implements AbstractShowService<Admini
 		List<Integer> rejectedApplications = new ArrayList<Integer>();
 		List<String> closestDays = new ArrayList<String>();
 
-		Calendar beginning = new GregorianCalendar();
+		Calendar dateIterator = new GregorianCalendar();
 		Calendar end = new GregorianCalendar();
-		beginning.add(Calendar.DAY_OF_MONTH, -28);
-		Calendar dateIterator = beginning;
+		Calendar dateIterator2 = new GregorianCalendar();
+		dateIterator.add(Calendar.DAY_OF_MONTH, -28);
+		dateIterator2.add(Calendar.DAY_OF_MONTH, -29);
+
+		int acceptedCount = 0;
+		int pendingCount = 0;
+		int rejectedCount = 0;
 
 		while (dateIterator.before(end)) {
-			int acceptedCount = 0;
-			int pendingCount = 0;
-			int rejectedCount = 0;
+			acceptedCount = 0;
+			pendingCount = 0;
+			rejectedCount = 0;
 
 			List<Application> applicationsIterator = new ArrayList<Application>();
-			applicationsIterator.addAll(this.repository.findAllApplications(dateIterator.getTime()));
+			applicationsIterator.addAll(this.repository.findAllApplicationsByDay(dateIterator.getTime(), dateIterator2.getTime()));
 
 			for (Application a : applicationsIterator) {
 				switch (a.getStatus()) {
@@ -132,13 +137,13 @@ public class AdministratorDashboardService implements AbstractShowService<Admini
 					rejectedCount++;
 				}
 			}
-
 			closestDays.add(dateIterator.get(Calendar.MONTH) + 1 + "-" + dateIterator.get(Calendar.DATE));
 			acceptedApplications.add(acceptedCount);
 			pendingApplications.add(pendingCount);
 			rejectedApplications.add(rejectedCount);
 
 			dateIterator.add(Calendar.DAY_OF_MONTH, 1);
+			dateIterator2.add(Calendar.DAY_OF_MONTH, 1);
 		}
 		result.setAcceptedApplicationsPerDay(acceptedApplications);
 		result.setRejectedApplicationsPerDay(rejectedApplications);
