@@ -1,9 +1,13 @@
 
 package acme.features.administrator.dashboard;
 
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.applications.Application;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -81,4 +85,9 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	@Query("select count(a) from Application a group by a.status")
 	Object[] getAverageApplicationsByStatus();
+
+	// D05 Complex Edition
+
+	@Query("select a from Application a where a.creationMoment < ?1")
+	List<Application> findAllApplications(Date currentMinusAMonth);
 }

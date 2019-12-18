@@ -68,6 +68,22 @@
 		<acme:message code="administrator.dashboard.form.application.status"/>
 	</h4>
 	<canvas id="canvas4"></canvas>
+	<h4>
+		<acme:message code="administrator.dashboard.form.pending-applications"/>
+	</h4>
+	<canvas id="canvas5"></canvas>
+	<br>
+	<h4>
+		<acme:message code="administrator.dashboard.form.accepted-applications"/>
+	</h4>
+	<canvas id="canvas6"></canvas>
+	<br>
+	<h4>
+		<acme:message code="administrator.dashboard.form.rejected-applications"/>
+	</h4>
+	<canvas id="canvas7"></canvas>
+	<br>
+	
 </div>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -84,6 +100,13 @@
 		var dashboardDataApplication = [];
 		//
 	
+		var dashboardLabelsPendingApplication = [];
+		var dashboardLabelsAcceptedApplication = [];
+		var dashboardLabelsRejectedApplication = [];
+		var dashboardDataPendingApplication = [];
+		var dashboardDataAcceptedApplication = [];
+		var dashboardDataRejectedApplication = [];
+		
 		<jstl:forEach items="${companySectors}" var = "sector">
 			dashboardLabelsCompany.push("${sector}");
 		</jstl:forEach>
@@ -111,6 +134,24 @@
 			dashboardDataApplication.push("${average}");
 		</jstl:forEach>
 		//
+		
+		<jstl:forEach items="${closestDays}" var = "Days" varStatus="loop">
+			dashboardLabelsPendingApplication.push("${Days}");
+			dashboardLabelsRejectedApplication.push("${Days}");
+			dashboardLabelsAcceptedApplication.push("${Days}");
+		</jstl:forEach>
+		
+		<jstl:forEach items="${pendingApplicationsPerDay}" var = "TimeSeries" varStatus="loop">
+			dashboardDataPendingApplication.push("${TimeSeries}");
+		</jstl:forEach>
+		
+		<jstl:forEach items="${acceptedApplicationsPerDay}" var = "TimeSeries" varStatus="loop">
+			dashboardDataAcceptedApplication.push("${TimeSeries}");
+		</jstl:forEach>
+		
+		<jstl:forEach items="${rejectedApplicationsPerDay}" var = "TimeSeries" varStatus="loop">
+			dashboardDataRejectedApplication.push("${TimeSeries}");
+		</jstl:forEach>
 		
 		var data1 = {
 				labels : dashboardLabelsCompany,
@@ -190,6 +231,83 @@
 		};
 		//
 		
+		var data5 = {
+				labels : dashboardLabelsPendingApplication,
+				datasets : [
+					{
+						label: "Pending Applications"
+						fill: false,
+						data : dashboardDataPendingApplication
+					}
+				]
+		};
+		var options5 = {
+				scales : {
+					yAxes : [
+						{
+							ticks : {
+								suggestedMin : 0.0,
+								suggestedMax : 5.0
+							}
+						}
+					]
+				},
+				legend : {
+					display : true
+				}
+		};
+		
+		var data6 = {
+				labels : dashboardLabelsAcceptedApplication,
+				datasets : [
+					{
+						label: "Accepted Applications"
+						fill: false,
+						data : dashboardDataAcceptedApplication
+					}
+				]
+		};
+		var options6 = {
+				scales : {
+					yAxes : [
+						{
+							ticks : {
+								suggestedMin : 0.0,
+								suggestedMax : 5.0
+							}
+						}
+					]
+				},
+				legend : {
+					display : true
+				}
+		};
+		
+		var data7 = {
+				labels : dashboardLabelsRejectedApplication,
+				datasets : [
+					{
+						label: "Rejected Applications"
+						fill: false,
+						data : dashboardDataRejectedApplication
+					}
+				]
+		};
+		var options7 = {
+				scales : {
+					yAxes : [
+						{
+							ticks : {
+								suggestedMin : 0.0,
+								suggestedMax : 5.0
+							}
+						}
+					]
+				},
+				legend : {
+					display : true
+				}
+		};
 		
 		var canvas1, context1;
 		
@@ -211,6 +329,7 @@
 			options : options2
 		});
 		
+		//
 		var canvas3, context3;
 		
 		canvas3 = document.getElementById("canvas3");
@@ -229,6 +348,37 @@
 			type : "pie",
 			data : data4,
 			options : options4
+		});
+		//
+		
+		var canvas5, context5;
+		
+		canvas5 = document.getElementById("canvas5");
+		context5 = canvas5.getContext("2d");
+		new Chart(context5, {
+			type : "line",
+			data : data5,
+			options : options5
+		});
+		
+		var canvas6, context6;
+		
+		canvas6 = document.getElementById("canvas6");
+		context6 = canvas6.getContext("2d");
+		new Chart(context6, {
+			type : "line",
+			data : data6,
+			options : options6
+		});
+		
+		var canvas7, context7;
+		
+		canvas7 = document.getElementById("canvas7");
+		context7 = canvas7.getContext("2d");
+		new Chart(context7, {
+			type : "line",
+			data : data7,
+			options : options7
 		});
 	});
 	</script>
