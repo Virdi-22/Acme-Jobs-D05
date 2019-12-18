@@ -16,12 +16,16 @@ import acme.framework.entities.Authenticated;
 @RequestMapping("/authenticated/job/")
 public class AuthenticatedJobController extends AbstractController<Authenticated, Job> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	private AuthenticatedJobListService	listService;
 
 	@Autowired
 	private AuthenticatedJobShowService	showService;
 
+
+	// Constructors ------------------------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {

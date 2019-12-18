@@ -14,9 +14,13 @@ import acme.framework.services.AbstractShowService;
 @Service
 public class SponsorCreditCardShowService implements AbstractShowService<Sponsor, CreditCard> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	SponsorCreditCardRepository repository;
 
+
+	// AbstractShowService<Sponsor, CreditCard> interface ----------------------------------
 
 	@Override
 	public boolean authorise(final Request<CreditCard> request) {
@@ -25,12 +29,12 @@ public class SponsorCreditCardShowService implements AbstractShowService<Sponsor
 		boolean res;
 
 		Principal principal = request.getPrincipal();
-		int sponsorId = principal.getActiveRoleId(); //El id del sponsor que realiza la operacion sobre la trjeta
+		int sponsorId = principal.getActiveRoleId(); //The id of the sponsor making the change to the credit card
 
 		CreditCard creditCard = this.repository.findOneById(request.getModel().getInteger("id"));
-		int sponsorCreditCardId = creditCard.getSponsor().getId(); //El id del sponsor al que pertenece la trajeta
+		int sponsorCreditCardId = creditCard.getSponsor().getId(); //The id of the sponsor who own the credit card
 
-		if (sponsorId != sponsorCreditCardId) { //Comprueba si los ids son iguales
+		if (sponsorId != sponsorCreditCardId) { //Check if they are the same
 			res = false;
 		} else {
 			res = true;

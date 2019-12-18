@@ -16,6 +16,8 @@ import acme.framework.entities.Authenticated;
 @RequestMapping("/authenticated/investor-record")
 public class AuthenticatedInvestorRecordController extends AbstractController<Authenticated, InvestorRecord> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	private AuthenticatedInvestorRecordListService	listService;
 
@@ -23,7 +25,7 @@ public class AuthenticatedInvestorRecordController extends AbstractController<Au
 	private AuthenticatedInvestorRecordShowService	showService;
 
 
-	// Constructors
+	// Constructors ------------------------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {

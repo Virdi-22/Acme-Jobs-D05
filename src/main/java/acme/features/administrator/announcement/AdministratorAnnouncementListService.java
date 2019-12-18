@@ -15,9 +15,13 @@ import acme.framework.services.AbstractListService;
 @Service
 public class AdministratorAnnouncementListService implements AbstractListService<Administrator, Announcement> {
 
+	// Internal state -------------------------------------------------
+
 	@Autowired
 	AdministratorAnnouncementRepository repository;
 
+
+	// AbstractListService<Administrator, Announcement> interface -----
 
 	@Override
 	public boolean authorise(final Request<Announcement> request) {

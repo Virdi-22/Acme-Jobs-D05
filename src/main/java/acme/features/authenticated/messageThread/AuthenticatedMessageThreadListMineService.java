@@ -21,6 +21,8 @@ public class AuthenticatedMessageThreadListMineService implements AbstractListSe
 	AuthenticatedMessageThreadRepository repository;
 
 
+	// AbstractListService<Authenticated, MessageThread> interface ---------------------
+
 	@Override
 	public boolean authorise(final Request<MessageThread> request) {
 		assert request != null;

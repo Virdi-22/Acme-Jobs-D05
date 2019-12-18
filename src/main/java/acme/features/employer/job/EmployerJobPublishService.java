@@ -23,6 +23,8 @@ public class EmployerJobPublishService implements AbstractUpdateService<Employer
 	private EmployerJobRepository repository;
 
 
+	// AbstractUpdateService<Employer, Job> interface ---------------------------------
+
 	@Override
 	public boolean authorise(final Request<Job> request) {
 		assert request != null;

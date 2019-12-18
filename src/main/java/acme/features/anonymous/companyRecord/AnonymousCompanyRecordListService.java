@@ -15,9 +15,13 @@ import acme.framework.services.AbstractListService;
 @Service
 public class AnonymousCompanyRecordListService implements AbstractListService<Anonymous, CompanyRecord> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	AnonymousCompanyRecordRepository repository;
 
+
+	// AbstractListService<Anonymous, CompanyRecord> interface -----------------------------
 
 	@Override
 	public boolean authorise(final Request<CompanyRecord> request) {

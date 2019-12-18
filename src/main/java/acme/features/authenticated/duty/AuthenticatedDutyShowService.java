@@ -19,6 +19,8 @@ public class AuthenticatedDutyShowService implements AbstractShowService<Authent
 	AuthenticatedDutyRepository repository;
 
 
+	// AbstractShowService<Authenticated, Duty> interface -----------------------
+
 	@Override
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;

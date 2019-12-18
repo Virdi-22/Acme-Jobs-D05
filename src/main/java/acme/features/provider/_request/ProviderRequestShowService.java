@@ -13,9 +13,13 @@ import acme.framework.services.AbstractShowService;
 @Service
 public class ProviderRequestShowService implements AbstractShowService<Provider, _Request> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	private ProviderRequestRepository repository;
 
+
+	// AbstractShowService<Provider, _Request> interface -----------------------------------
 
 	@Override
 	public boolean authorise(final Request<_Request> request) {

@@ -15,9 +15,13 @@ import acme.framework.services.AbstractDeleteService;
 @Service
 public class AuthenticatedParticipantDeleteService implements AbstractDeleteService<Authenticated, Participant> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	AuthenticatedParticipantRepository repository;
 
+
+	// AbstractDeleteService<Authenticated, Participant> interface -------------------------
 
 	@Override
 	public boolean authorise(final Request<Participant> request) {

@@ -16,12 +16,16 @@ import acme.framework.entities.Authenticated;
 @RequestMapping("/authenticated/sponsor/")
 public class AuthenticatedSponsorController extends AbstractController<Authenticated, Sponsor> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	private AuthenticatedSponsorCreateService	createService;
 
 	@Autowired
 	private AuthenticatedSponsorUpdateService	updateService;
 
+
+	// Constructors ------------------------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {

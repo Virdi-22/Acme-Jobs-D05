@@ -19,7 +19,7 @@ public class WorkerJobShowService implements AbstractShowService<Worker, Job> {
 	WorkerJobRepository repository;
 
 
-	// AbstractShowService<Employer, Job> interface ----------------------------
+	// AbstractShowService<Worker, Job> interface ----------------------------
 
 	@Override
 	public boolean authorise(final Request<Job> request) {

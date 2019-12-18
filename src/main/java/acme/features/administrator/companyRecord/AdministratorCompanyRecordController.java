@@ -16,6 +16,8 @@ import acme.framework.entities.Administrator;
 @RequestMapping("/administrator/company-record/")
 public class AdministratorCompanyRecordController extends AbstractController<Administrator, CompanyRecord> {
 
+	// Internal state -------------------------------------------------------------
+
 	@Autowired
 	private AdministratorCompanyRecordListService	listService;
 
@@ -31,6 +33,8 @@ public class AdministratorCompanyRecordController extends AbstractController<Adm
 	@Autowired
 	private AdministratorCompanyRecordUpdateService	updateService;
 
+
+	// Constructors ---------------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {

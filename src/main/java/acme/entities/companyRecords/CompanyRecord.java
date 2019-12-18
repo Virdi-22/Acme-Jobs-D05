@@ -24,7 +24,11 @@ import lombok.Setter;
 })
 public class CompanyRecord extends DomainEntity {
 
+	// Serialisation identifier ----------------------------------------------------
+
 	private static final long	serialVersionUID	= 1L;
+
+	// Attributes ------------------------------------------------------------------
 
 	@NotBlank
 	private String				companyName;

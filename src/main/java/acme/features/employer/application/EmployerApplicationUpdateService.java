@@ -16,9 +16,13 @@ import acme.framework.services.AbstractUpdateService;
 @Service
 public class EmployerApplicationUpdateService implements AbstractUpdateService<Employer, Application> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	EmployerApplicationRepository repository;
 
+
+	// AbstractUpdateService<Employer, Application> interface ------------------------------
 
 	@Override
 	public boolean authorise(final Request<Application> request) {

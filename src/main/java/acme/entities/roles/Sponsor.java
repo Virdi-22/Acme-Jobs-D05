@@ -13,9 +13,13 @@ import lombok.Setter;
 @Setter
 public class Sponsor extends UserRole {
 
-	private static final long	serialVersionUID	= 1L;
+	// Serialisation identifier ----------------------------------------
+
+	private static final long serialVersionUID = 1L;
+
+	// Attributes ------------------------------------------------------
 
 	@NotBlank
-	private String				organizationName;
+	private String organizationName;
 
 }

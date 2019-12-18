@@ -19,7 +19,11 @@ import lombok.Setter;
 @Setter
 public class CreditCard extends DomainEntity {
 
+	// Serialisation identifier -----------------------------------------------------
+
 	private static final long	serialVersionUID	= 1L;
+
+	// Attributes -------------------------------------------------------------------
 
 	@NotBlank
 	@CreditCardNumber
@@ -34,6 +38,8 @@ public class CreditCard extends DomainEntity {
 
 	@NotBlank
 	private String				holder;
+
+	// Relationships ----------------------------------------------------------------
 
 	@Valid
 	@ManyToOne(optional = true)

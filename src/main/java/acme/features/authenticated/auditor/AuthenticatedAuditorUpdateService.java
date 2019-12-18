@@ -24,6 +24,8 @@ public class AuthenticatedAuditorUpdateService implements AbstractUpdateService<
 	private AuthenticatedAuditorRepository repository;
 
 
+	// AbstractUpdateService<Authenticated, Auditor> interface --------------------------
+
 	@Override
 	public boolean authorise(final Request<Auditor> request) {
 		assert request != null;

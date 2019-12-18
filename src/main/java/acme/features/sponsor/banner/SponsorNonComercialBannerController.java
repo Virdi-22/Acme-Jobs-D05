@@ -17,6 +17,8 @@ import acme.framework.controllers.AbstractController;
 @RequestMapping("/sponsor/non-comercial-banner/")
 public class SponsorNonComercialBannerController extends AbstractController<Sponsor, NonComercialBanner> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	private SponsorNonComercialBannerListMineService	listMineService;
 
@@ -32,6 +34,8 @@ public class SponsorNonComercialBannerController extends AbstractController<Spon
 	@Autowired
 	private SponsorNonComercialBannerDeleteService		deleteService;
 
+
+	// Constructors ------------------------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {

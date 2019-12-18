@@ -22,6 +22,8 @@ public class AuditorJobListNotAuditoredService implements AbstractListService<Au
 	AuditorJobRepository repository;
 
 
+	// AbstractListService<Auditor, Job> interface -----------
+
 	@Override
 	public boolean authorise(final Request<Job> request) {
 		assert request != null;

@@ -16,7 +16,7 @@ import acme.framework.controllers.AbstractController;
 @RequestMapping("/provider/_-request/")
 public class ProviderRequestController extends AbstractController<Provider, _Request> {
 
-	// Internal state
+	// Internal state --------------------------------------------------------------------
 
 	@Autowired
 	private ProviderRequestListService		listService;
@@ -28,7 +28,7 @@ public class ProviderRequestController extends AbstractController<Provider, _Req
 	private ProviderRequestCreateService	createService;
 
 
-	// Constructors
+	// Constructors ----------------------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {

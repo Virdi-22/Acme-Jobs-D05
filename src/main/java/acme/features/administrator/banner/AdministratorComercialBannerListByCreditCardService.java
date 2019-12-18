@@ -15,9 +15,13 @@ import acme.framework.services.AbstractListService;
 @Service
 public class AdministratorComercialBannerListByCreditCardService implements AbstractListService<Administrator, ComercialBanner> {
 
+	// Internal state ----------------------------------------------------------
+
 	@Autowired
 	AdministratorComercialBannerRepository repository;
 
+
+	// AbstractListService<Administrator, ComercialBanner> interface -----------
 
 	@Override
 	public boolean authorise(final Request<ComercialBanner> request) {

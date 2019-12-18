@@ -25,7 +25,11 @@ import lombok.Setter;
 })
 public class Announcement extends DomainEntity {
 
+	// Serialisation identifier -------------------
+
 	private static final long	serialVersionUID	= 1L;
+
+	// Attribute ----------------------------------
 
 	@NotBlank
 	private String				title;

@@ -27,7 +27,11 @@ import lombok.Setter;
 @Setter
 public class Application extends DomainEntity {
 
+	// Serialisation identifier -------------------------------
+
 	private static final long	serialVersionUID	= 1L;
+
+	// Attributes ---------------------------------------------
 
 	@Column(unique = true)
 	@NotBlank
@@ -56,6 +60,8 @@ public class Application extends DomainEntity {
 	private String				qualifications;
 
 	private String				reasonRejected;
+
+	// Relationships ------------------------------------------
 
 	@NotNull
 	@Valid

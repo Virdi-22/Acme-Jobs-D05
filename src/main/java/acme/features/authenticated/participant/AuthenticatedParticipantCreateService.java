@@ -18,9 +18,13 @@ import acme.framework.services.AbstractCreateService;
 @Service
 public class AuthenticatedParticipantCreateService implements AbstractCreateService<Authenticated, Participant> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	AuthenticatedParticipantRepository repository;
 
+
+	// AbstractCreateService<Authenticated, Participant> interface -------------------------
 
 	@Override
 	public boolean authorise(final Request<Participant> request) {

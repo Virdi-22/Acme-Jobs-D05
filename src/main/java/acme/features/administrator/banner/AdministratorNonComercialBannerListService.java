@@ -15,9 +15,13 @@ import acme.framework.services.AbstractListService;
 @Service
 public class AdministratorNonComercialBannerListService implements AbstractListService<Administrator, NonComercialBanner> {
 
+	// Internal state ------------------------------------------------------------------------
+
 	@Autowired
 	AdministratorNonComercialBannerRepository repository;
 
+
+	// AbstractListService<Administrator,NonComercialBanner> interface -----------------------
 
 	@Override
 	public boolean authorise(final Request<NonComercialBanner> request) {

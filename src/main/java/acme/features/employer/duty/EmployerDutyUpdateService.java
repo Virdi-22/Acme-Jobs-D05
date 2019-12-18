@@ -23,6 +23,8 @@ public class EmployerDutyUpdateService implements AbstractUpdateService<Employer
 	private EmployerDutyRepository repository;
 
 
+	// AbstractUpdateService<Employer, Duty> interface -------------------------------------
+
 	@Override
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;

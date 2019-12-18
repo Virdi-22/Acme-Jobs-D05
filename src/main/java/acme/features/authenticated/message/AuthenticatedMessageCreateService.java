@@ -22,9 +22,13 @@ import acme.framework.services.AbstractCreateService;
 @Service
 public class AuthenticatedMessageCreateService implements AbstractCreateService<Authenticated, Message> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	AuthenticatedMessageRepository repository;
 
+
+	// AbstractCreateService<Authenticate, Message> interface ------------------------------
 
 	@Override
 	public boolean authorise(final Request<Message> request) {

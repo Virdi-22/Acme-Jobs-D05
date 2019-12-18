@@ -17,9 +17,13 @@ import acme.framework.services.AbstractUpdateService;
 @Service
 public class SponsorNonComercialBannerUpdateService implements AbstractUpdateService<Sponsor, NonComercialBanner> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	SponsorNonComercialBannerRepository repository;
 
+
+	// AbstractUpdateService<Sponsor, NonComercialBanner> interface ------------------------
 
 	@Override
 	public boolean authorise(final Request<NonComercialBanner> request) {
@@ -27,10 +31,10 @@ public class SponsorNonComercialBannerUpdateService implements AbstractUpdateSer
 		boolean res;
 
 		int nonComercialBannerId = request.getModel().getInteger("id");
-		NonComercialBanner nonComercialBanner = this.repository.findOneById(nonComercialBannerId); //Banner sobre la que se realiza la opercion
+		NonComercialBanner nonComercialBanner = this.repository.findOneById(nonComercialBannerId); //Banner which is being changed
 
 		Principal principal = request.getPrincipal();
-		Sponsor sponsor = this.repository.finOneSponsorById(principal.getActiveRoleId()); //Sponsor que realiza la operacion
+		Sponsor sponsor = this.repository.finOneSponsorById(principal.getActiveRoleId()); //Sponsor who is changing it
 
 		if (nonComercialBanner.getSponsor().getId() != sponsor.getId()) {
 			res = false;

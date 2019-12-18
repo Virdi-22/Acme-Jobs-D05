@@ -16,12 +16,16 @@ import acme.framework.entities.Authenticated;
 @RequestMapping("/authenticated/company-record/")
 public class AuthenticatedCompanyRecordController extends AbstractController<Authenticated, CompanyRecord> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	private AuthenticatedCompanyRecordListService	listService;
 
 	@Autowired
 	private AuthenticatedCompanyRecordShowService	showService;
 
+
+	// Constructors -----------------------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {

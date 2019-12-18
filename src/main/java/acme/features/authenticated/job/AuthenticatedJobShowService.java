@@ -13,9 +13,13 @@ import acme.framework.services.AbstractShowService;
 @Service
 public class AuthenticatedJobShowService implements AbstractShowService<Authenticated, Job> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	private AuthenticatedJobRepository repository;
 
+
+	// AbstractShowService<Authenticated, Job> interface -----------------------------------
 
 	@Override
 	public boolean authorise(final Request<Job> request) {

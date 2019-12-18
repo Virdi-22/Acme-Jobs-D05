@@ -16,6 +16,8 @@ import acme.framework.entities.Administrator;
 @RequestMapping("/administrator/announcement/")
 public class AdministratorAnnouncementController extends AbstractController<Administrator, Announcement> {
 
+	// Internal state ----------------------------------------------------
+
 	@Autowired
 	private AdministratorAnnouncementListService	listService;
 
@@ -31,6 +33,8 @@ public class AdministratorAnnouncementController extends AbstractController<Admi
 	@Autowired
 	private AdministratorAnnouncementDeleteService	deleteService;
 
+
+	// Constructors ------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {

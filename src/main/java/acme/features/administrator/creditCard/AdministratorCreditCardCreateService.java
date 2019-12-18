@@ -18,9 +18,13 @@ import acme.framework.services.AbstractCreateService;
 @Service
 public class AdministratorCreditCardCreateService implements AbstractCreateService<Administrator, CreditCard> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	AdministratorCreditCardRepository repository;
 
+
+	// AbstractCreateService<Administrator, CreditCard> interface --------------------------
 
 	@Override
 	public boolean authorise(final Request<CreditCard> request) {

@@ -17,6 +17,8 @@ import acme.framework.entities.Authenticated;
 @RequestMapping("/authenticated/participant/")
 public class AuthenticatedParticipantController extends AbstractController<Authenticated, Participant> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	private AuthenticatedParticipantListByMessageThreadService	listByMessageThreadService;
 
@@ -29,6 +31,8 @@ public class AuthenticatedParticipantController extends AbstractController<Authe
 	@Autowired
 	private AuthenticatedParticipantShowService					showService;
 
+
+	// Cosntructors ------------------------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {

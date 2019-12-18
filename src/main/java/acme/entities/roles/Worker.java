@@ -14,7 +14,11 @@ import lombok.Setter;
 @Setter
 public class Worker extends UserRole {
 
+	// Serialisation identifier --------------------------------------
+
 	private static final long	serialVersionUID	= 1L;
+
+	// Attributes ----------------------------------------------------
 
 	@NotBlank
 	@Column(length = 1024)

@@ -23,6 +23,8 @@ public class AuthenticatedMessageThreadCreateService implements AbstractCreateSe
 	AuthenticatedMessageThreadRepository repository;
 
 
+	// AbstractCreateService<Authenticated, MessageThread> interface -------------------
+
 	@Override
 	public boolean authorise(final Request<MessageThread> request) {
 		assert request != null;

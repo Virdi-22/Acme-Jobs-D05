@@ -16,9 +16,13 @@ import acme.framework.services.AbstractListService;
 @Service
 public class SponsorComercialBannerListMineService implements AbstractListService<Sponsor, ComercialBanner> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	SponsorComercialBannerRepository repository;
 
+
+	// AbstractListService<Sponsor, ComercialBanner> interface -----------------------------
 
 	@Override
 	public boolean authorise(final Request<ComercialBanner> request) {

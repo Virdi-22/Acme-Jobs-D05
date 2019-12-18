@@ -19,9 +19,13 @@ import acme.framework.services.AbstractCreateService;
 @Service
 public class AdministratorComercialBannerCreateService implements AbstractCreateService<Administrator, ComercialBanner> {
 
+	// Internal state -----------------------------------------------------------
+
 	@Autowired
 	AdministratorComercialBannerRepository repository;
 
+
+	// AbstractCreateService<Administrator, ComercialBanner> interface ---------
 
 	@Override
 	public boolean authorise(final Request<ComercialBanner> request) {
@@ -55,8 +59,10 @@ public class AdministratorComercialBannerCreateService implements AbstractCreate
 		ComercialBanner result;
 		int creditCardId;
 		CreditCard creditCard;
+
 		creditCardId = request.getModel().getInteger("creditCardId");
 		creditCard = this.repository.findCreditCardById(creditCardId);
+
 		result = new ComercialBanner();
 		result.setCreditCard(creditCard);
 
@@ -68,8 +74,10 @@ public class AdministratorComercialBannerCreateService implements AbstractCreate
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
 		Calendar calendar;
 		Date minimumDeadline;
+
 		if (!errors.hasErrors("expirationDate")) {
 			calendar = new GregorianCalendar();
 			minimumDeadline = calendar.getTime();
@@ -86,6 +94,7 @@ public class AdministratorComercialBannerCreateService implements AbstractCreate
 	public void create(final Request<ComercialBanner> request, final ComercialBanner entity) {
 		assert request != null;
 		assert entity != null;
+
 		this.repository.save(entity);
 	}
 

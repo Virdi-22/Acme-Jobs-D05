@@ -16,9 +16,13 @@ import acme.framework.services.AbstractListService;
 @Service
 public class SponsorCreditCardListService implements AbstractListService<Sponsor, CreditCard> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	SponsorCreditCardRepository repository;
 
+
+	// AbstractListService<Sponsor, CreditCard> interface ----------------------------------
 
 	@Override
 	public boolean authorise(final Request<CreditCard> request) {
