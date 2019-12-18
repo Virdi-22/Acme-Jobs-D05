@@ -45,7 +45,7 @@ public class SponsorCreditCardShowService implements AbstractShowService<Sponsor
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "creditCardNumber", "expirationDate", "brand");
+		request.unbind(entity, model, "creditCardNumber", "expirationDate", "brand", "holder");
 
 	}
 

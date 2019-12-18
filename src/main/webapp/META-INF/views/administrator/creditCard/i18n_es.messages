@@ -1,12 +1,13 @@
 administrator.creditCard.form.label.creditCardNumber = Número de la tarjeta de crédito
 administrator.creditCard.form.label.expirationDate = Fecha de caducidad
 administrator.creditCard.form.label.brand = Marca
+administrator.creditCard.form.label.holder = Propietario
 acme.validation.creditCard.expirationDate.pattern = Patrón inválido, debe cuumplir: MM/YYYY
 administrator.creditCard.inFuture = The expiration date must be in future to be valid
 administrator.creditCard.form.button.return = Return
 
-administrator.creditCard.list.label.creditCardNumber = Credit Card Number
-administrator.creditCard.list.label.expirationDate = Expiration Date
+administrator.creditCard.list.label.creditCardNumber = Número de la Tarjeta de Crédito
+administrator.creditCard.list.label.expirationDate = Fecha de Caducidad
 
 administrator.creditCard.form.button.linkBanner = Banners Comerciales
 administrator.creditCard.form.button.create-banner = Crear Banner Comercial

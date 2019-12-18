@@ -32,6 +32,9 @@ public class CreditCard extends DomainEntity {
 	@NotBlank
 	private String				brand;
 
+	@NotBlank
+	private String				holder;
+
 	@Valid
 	@ManyToOne(optional = true)
 	private Sponsor				sponsor;

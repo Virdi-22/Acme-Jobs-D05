@@ -55,7 +55,7 @@ public class SponsorComercialBannerDeleteService implements AbstractDeleteServic
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "target", "slogan", "holder", "brand");
+		request.unbind(entity, model, "target", "slogan");
 
 	}
 

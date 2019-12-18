@@ -45,7 +45,7 @@ public class SponsorComercialBannerCreateService implements AbstractCreateServic
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "target", "slogan", "holder", "brand");
+		request.unbind(entity, model, "target", "slogan");
 		model.setAttribute("creditCardId", request.getModel().getInteger("creditCardId"));
 		model.setAttribute("creditCardNumber", entity.getCreditCard().getCreditCardNumber());
 		model.setAttribute("expirationDate", entity.getCreditCard().getExpirationDate());
@@ -73,7 +73,7 @@ public class SponsorComercialBannerCreateService implements AbstractCreateServic
 		boolean isSpam;
 		if (!errors.hasErrors()) {
 			Configuration configuration = this.repository.findConfiguration();
-			String text = entity.getBrand() + "," + entity.getHolder() + "," + entity.getSlogan() + "," + entity.getTarget();
+			String text = entity.getSlogan() + "," + entity.getTarget();
 			isSpam = CheckSpam.checkSpam(configuration, text);
 			errors.state(request, !isSpam, "*", "sponsor.nonComercialBanner.error.spam");
 		}

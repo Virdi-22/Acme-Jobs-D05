@@ -109,8 +109,6 @@
         `slogan` varchar(255),
         `target` varchar(255),
         `sponsor_id` integer,
-        `brand` varchar(255),
-        `holder` varchar(255),
         `credit_card_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
@@ -153,6 +151,7 @@
         `brand` varchar(255),
         `credit_card_number` varchar(255),
         `expiration_date` varchar(255),
+        `holder` varchar(255),
         `sponsor_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
