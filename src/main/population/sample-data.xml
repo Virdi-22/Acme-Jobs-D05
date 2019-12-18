@@ -805,6 +805,63 @@
 		<property name="userAccount" ref="worker2UserAccount"></property>
 	</bean>
 	
+	<bean name="worker3UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="worker3"></property>
+		<property name="password" value="worker3"></property>
+		<property name="enabled" value="true"></property>
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Worker"></property>
+				<property name="surname" value="Three"></property>
+				<property name="email" value="worker3@acme.com"></property>
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="worker3Worker"></ref>
+				<ref bean="worker3Authenticated"></ref>
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="worker3Worker" class="acme.entities.roles.Worker">
+		<property name="skillRecord" value="Skills worker 3"></property>
+		<property name="qualificationRecord" value="Qualifications worker 3"></property>
+		<property name="userAccount" ref="worker3UserAccount"></property>
+	</bean>
+	
+	<bean name="worker3Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="worker3UserAccount"></property>
+	</bean>
+	
+	<bean name="worker4UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="worker4"></property>
+		<property name="password" value="worker4"></property>
+		<property name="enabled" value="true"></property>
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Worker"></property>
+				<property name="surname" value="Four"></property>
+				<property name="email" value="worker4@acme.com"></property>
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="worker4Worker"></ref>
+				<ref bean="worker4Authenticated"></ref>
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="worker4Worker" class="acme.entities.roles.Worker">
+		<property name="skillRecord" value="Skills worker 4"></property>
+		<property name="qualificationRecord" value="Qualifications worker 4"></property>
+		<property name="userAccount" ref="worker4UserAccount"></property>
+	</bean>
+	
+	<bean name="worker4Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="worker4UserAccount"></property>
+	</bean>
 	
 	<!-- Applications -->
 	
@@ -818,6 +875,7 @@
 		<property name="worker" ref="worker1Worker"></property>
 		<property name="job" ref="job1"></property>
 	</bean>
+	
 	<bean name="application2" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APPL02"></property>
 		<property name="creationMoment" value="2018/11/03 10:00"></property>
@@ -828,6 +886,7 @@
 		<property name="worker" ref="worker1Worker"></property>
 		<property name="job" ref="job1"></property>
 	</bean>
+	
 	<bean name="application3" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APPL03"></property>
 		<property name="creationMoment" value="2017/01/03 10:00"></property>
@@ -838,6 +897,7 @@
 		<property name="worker" ref="worker2Worker"></property>
 		<property name="job" ref="job4"></property>
 	</bean>
+	
 	<bean name="application4" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APPL04"></property>
 		<property name="creationMoment" value="2015/12/03 10:00"></property>
@@ -846,8 +906,9 @@
 		<property name="skills" value="Worst skills."></property>
 		<property name="qualifications" value="Whatever..."></property>
 		<property name="worker" ref="worker2Worker"></property>
-		<property name="job" ref="job3"></property>
+		<property name="job" ref="job1"></property>
 	</bean>
+	
 	<bean name="application5" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APPL05"></property>
 		<property name="creationMoment" value="2016/05/03 10:00"></property>
@@ -859,6 +920,115 @@
 		<property name="job" ref="job5"></property>
    </bean>
   
+  <bean name="application6" class="acme.entities.applications.Application">
+		<property name="reference" value="EMP1-APPL06"></property>
+		<property name="creationMoment" value="2019/11/03 10:00"></property>
+		<property name="status" value="Accepted"></property>
+		<property name="statement" value="I want to work"></property>
+		<property name="skills" value="Good programmer"></property>
+		<property name="qualifications" value="JAVA, Python"></property>
+		<property name="worker" ref="worker3Worker"></property>
+		<property name="job" ref="job1"></property>
+	</bean>
+	
+	<bean name="application7" class="acme.entities.applications.Application">
+		<property name="reference" value="EMP1-APPL07"></property>
+		<property name="creationMoment" value="2018/11/03 10:00"></property>
+		<property name="status" value="Accepted"></property>
+		<property name="statement" value="Can you hire me?"></property>
+		<property name="skills" value="Great work in a team."></property>
+		<property name="qualifications" value="Not being a Leslie"></property>
+		<property name="worker" ref="worker3Worker"></property>
+		<property name="job" ref="job5"></property>
+	</bean>
+	
+	<bean name="application8" class="acme.entities.applications.Application">
+		<property name="reference" value="EMP1-APPL08"></property>
+		<property name="creationMoment" value="2017/01/03 10:00"></property>
+		<property name="status" value="Rejected"></property>
+		<property name="statement" value="Bad statement."></property>
+		<property name="skills" value="Sleeping"></property>
+		<property name="qualifications" value="Great talker"></property>
+		<property name="worker" ref="worker3Worker"></property>
+		<property name="job" ref="job4"></property>
+	</bean>
+	
+	<bean name="application9" class="acme.entities.applications.Application">
+		<property name="reference" value="EMP1-APPL09"></property>
+		<property name="creationMoment" value="2015/12/03 10:00"></property>
+		<property name="status" value="Rejected"></property>
+		<property name="statement" value="Hire me!"></property>
+		<property name="skills" value="Worst skills."></property>
+		<property name="qualifications" value="Whatever..."></property>
+		<property name="worker" ref="worker4Worker"></property>
+		<property name="job" ref="job1"></property>
+	</bean>
+	
+	<bean name="application10" class="acme.entities.applications.Application">
+		<property name="reference" value="EMP1-APPL10"></property>
+		<property name="creationMoment" value="2016/05/03 10:00"></property>
+		<property name="status" value="Pending"></property>
+		<property name="statement" value="Regular statement."></property>
+		<property name="skills" value="Best buddy."></property>
+		<property name="qualifications" value="Awesome jokes."></property>
+		<property name="worker" ref="worker4Worker"></property>
+		<property name="job" ref="job5"></property>
+   </bean>
+   
+   <bean name="application11" class="acme.entities.applications.Application">
+		<property name="reference" value="EMP1-APPL11"></property>
+		<property name="creationMoment" value="2019/11/03 10:00"></property>
+		<property name="status" value="Rejected"></property>
+		<property name="statement" value="Worst statement"></property>
+		<property name="skills" value="Bad programmer"></property>
+		<property name="qualifications" value="JAVA, Python"></property>
+		<property name="worker" ref="worker1Worker"></property>
+		<property name="job" ref="job4"></property>
+	</bean>
+	
+	<bean name="application12" class="acme.entities.applications.Application">
+		<property name="reference" value="EMP1-APPL12"></property>
+		<property name="creationMoment" value="2018/11/03 10:00"></property>
+		<property name="status" value="Accepted"></property>
+		<property name="statement" value="Can you hire me?"></property>
+		<property name="skills" value="Great work in a team."></property>
+		<property name="qualifications" value="Not being a Leslie"></property>
+		<property name="worker" ref="worker4Worker"></property>
+		<property name="job" ref="job1"></property>
+	</bean>
+	
+	<bean name="application13" class="acme.entities.applications.Application">
+		<property name="reference" value="EMP1-APPL13"></property>
+		<property name="creationMoment" value="2017/01/03 10:00"></property>
+		<property name="status" value="Rejected"></property>
+		<property name="statement" value="Bruh, r u 4 real?"></property>
+		<property name="skills" value="Sleeping"></property>
+		<property name="qualifications" value="Great talker"></property>
+		<property name="worker" ref="worker3Worker"></property>
+		<property name="job" ref="job4"></property>
+	</bean>
+	
+	<bean name="application14" class="acme.entities.applications.Application">
+		<property name="reference" value="EMP1-APPL14"></property>
+		<property name="creationMoment" value="2015/12/03 10:00"></property>
+		<property name="status" value="Accepted"></property>
+		<property name="statement" value="Hire me!"></property>
+		<property name="skills" value="Regular skills."></property>
+		<property name="qualifications" value="Whatever..."></property>
+		<property name="worker" ref="worker1Worker"></property>
+		<property name="job" ref="job1"></property>
+	</bean>
+	
+	<bean name="application15" class="acme.entities.applications.Application">
+		<property name="reference" value="EMP1-APPL15"></property>
+		<property name="creationMoment" value="2016/05/03 10:00"></property>
+		<property name="status" value="Rejected"></property>
+		<property name="statement" value="Garbage."></property>
+		<property name="skills" value="Best buddy."></property>
+		<property name="qualifications" value="Awesome jokes."></property>
+		<property name="worker" ref="worker2Worker"></property>
+		<property name="job" ref="job5"></property>
+   </bean>
 	
 	<!-- Message Thread-->
 	<bean name="message1Thread" class="acme.entities.messageThread.MessageThread">
