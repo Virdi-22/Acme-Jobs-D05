@@ -15,9 +15,13 @@ import acme.framework.services.AbstractDeleteService;
 @Service
 public class SponsorComercialBannerDeleteService implements AbstractDeleteService<Sponsor, ComercialBanner> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	SponsorComercialBannerRepository repository;
 
+
+	// AbstractDeleteService<Sponsor, ComercialBanner> interface --------------------------
 
 	@Override
 	public boolean authorise(final Request<ComercialBanner> request) {

@@ -13,8 +13,12 @@ import acme.framework.services.AbstractShowService;
 @Service
 public class AdministratorNonComercialBannerShowService implements AbstractShowService<Administrator, NonComercialBanner> {
 
+	// Internal state -------------------------------------------------------------
+
 	@Autowired
 	private AdministratorNonComercialBannerRepository repository;
+
+	// AbstractShowService<Administrato, NonComercialBanner> interface ------------
 
 
 	@Override

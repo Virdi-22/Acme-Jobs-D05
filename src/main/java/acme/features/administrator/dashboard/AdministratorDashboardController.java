@@ -16,9 +16,13 @@ import acme.framework.entities.Administrator;
 @RequestMapping("/administrator/dashboard/")
 public class AdministratorDashboardController extends AbstractController<Administrator, Dashboard> {
 
+	// Internal state ------------------------------------------------------------------
+
 	@Autowired
 	private AdministratorDashboardService showService;
 
+
+	// Constructors --------------------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {

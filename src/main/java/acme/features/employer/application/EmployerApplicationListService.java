@@ -16,9 +16,13 @@ import acme.framework.services.AbstractListService;
 @Service
 public class EmployerApplicationListService implements AbstractListService<Employer, Application> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	EmployerApplicationRepository repository;
 
+
+	// AbstractListService<Employer, Application> interface --------------------------------
 
 	@Override
 	public boolean authorise(final Request<Application> request) {

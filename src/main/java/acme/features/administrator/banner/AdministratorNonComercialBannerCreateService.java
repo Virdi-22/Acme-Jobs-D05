@@ -14,9 +14,13 @@ import acme.framework.services.AbstractCreateService;
 @Service
 public class AdministratorNonComercialBannerCreateService implements AbstractCreateService<Administrator, NonComercialBanner> {
 
+	// Internal state -----------------------------------------------------------------
+
 	@Autowired
 	AdministratorNonComercialBannerRepository repository;
 
+
+	// AbstractCreateService<Administrator, NonComercialBanner> interface -------------
 
 	@Override
 	public boolean authorise(final Request<NonComercialBanner> request) {
@@ -64,6 +68,9 @@ public class AdministratorNonComercialBannerCreateService implements AbstractCre
 
 	@Override
 	public void create(final Request<NonComercialBanner> request, final NonComercialBanner entity) {
+		assert request != null;
+		assert entity != null;
+
 		this.repository.save(entity);
 
 	}

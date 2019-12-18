@@ -14,9 +14,13 @@ import acme.framework.services.AbstractCreateService;
 @Service
 public class AdministratorCompanyRecordCreateService implements AbstractCreateService<Administrator, CompanyRecord> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	AdministratorCompanyRecordRepository repository;
 
+
+	// AbstractCreateService<Administrator, CompanyRecord> interface -----------------------
 
 	@Override
 	public boolean authorise(final Request<CompanyRecord> request) {

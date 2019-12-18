@@ -16,7 +16,7 @@ import acme.framework.entities.Authenticated;
 @RequestMapping("/authenticated/_-request/")
 public class AuthenticatedRequestController extends AbstractController<Authenticated, _Request> {
 
-	// Internal state
+	// Internal state --------------------------------------------------
 
 	@Autowired
 	private AuthenticatedRequestListService	listService;
@@ -25,7 +25,7 @@ public class AuthenticatedRequestController extends AbstractController<Authentic
 	private AuthenticatedRequestShowService	showService;
 
 
-	// Constructors
+	// Constructors ---------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {

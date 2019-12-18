@@ -15,9 +15,13 @@ import acme.framework.services.AbstractListService;
 @Service
 public class AuthenticatedParticipantListByMessageThreadService implements AbstractListService<Authenticated, Participant> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	AuthenticatedParticipantRepository repository;
 
+
+	// AbstractListService<Authenticated, Participant> interface ---------------------------
 
 	@Override
 	public boolean authorise(final Request<Participant> request) {

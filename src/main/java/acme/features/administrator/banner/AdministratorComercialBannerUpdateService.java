@@ -18,9 +18,13 @@ import acme.framework.services.AbstractUpdateService;
 @Service
 public class AdministratorComercialBannerUpdateService implements AbstractUpdateService<Administrator, ComercialBanner> {
 
+	// Internal state --------------------------------------------------------
+
 	@Autowired
 	AdministratorComercialBannerRepository repository;
 
+
+	// AbstractUpdateService<Administrator, ComercialBanner> interface -------
 
 	@Override
 	public boolean authorise(final Request<ComercialBanner> request) {
@@ -68,8 +72,10 @@ public class AdministratorComercialBannerUpdateService implements AbstractUpdate
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
 		Calendar calendar;
 		Date minimumDeadline;
+
 		if (!errors.hasErrors("expirationDate")) {
 			calendar = new GregorianCalendar();
 			minimumDeadline = calendar.getTime();

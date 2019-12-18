@@ -21,6 +21,8 @@ public class WorkerDutyListByJobService implements AbstractListService<Worker, D
 	WorkerDutyRepository repository;
 
 
+	// AbstractListService<Worker, Duty> interface ------------------------------------
+
 	@Override
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;

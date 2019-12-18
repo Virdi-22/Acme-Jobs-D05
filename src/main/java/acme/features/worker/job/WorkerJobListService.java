@@ -21,7 +21,7 @@ public class WorkerJobListService implements AbstractListService<Worker, Job> {
 	WorkerJobRepository repository;
 
 
-	// AbstractListService<worker, Job> interface -------------------------------
+	// AbstractListService<Worker, Job> interface -------------------------------
 
 	@Override
 	public boolean authorise(final Request<Job> request) {

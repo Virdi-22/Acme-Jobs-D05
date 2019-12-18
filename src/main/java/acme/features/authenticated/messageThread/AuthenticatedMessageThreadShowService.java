@@ -21,6 +21,8 @@ public class AuthenticatedMessageThreadShowService implements AbstractShowServic
 	AuthenticatedMessageThreadRepository repository;
 
 
+	// AbstractShowService<Authenticated, MessageThread> interface --------------
+
 	@Override
 	public boolean authorise(final Request<MessageThread> request) {
 		assert request != null;

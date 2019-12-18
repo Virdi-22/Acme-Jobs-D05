@@ -19,6 +19,8 @@ public class WorkerDutyShowService implements AbstractShowService<Worker, Duty> 
 	WorkerDutyRepository repository;
 
 
+	// AbstractShowService<Worker, Duty> interface ------------------------------
+
 	@Override
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;

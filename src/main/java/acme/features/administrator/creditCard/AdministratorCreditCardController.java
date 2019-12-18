@@ -16,6 +16,8 @@ import acme.framework.entities.Administrator;
 @RequestMapping("/administrator/credit-card/")
 public class AdministratorCreditCardController extends AbstractController<Administrator, CreditCard> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	private AdministratorCreditCardListService		listService;
 
@@ -25,6 +27,8 @@ public class AdministratorCreditCardController extends AbstractController<Admini
 	@Autowired
 	private AdministratorCreditCardCreateService	createService;
 
+
+	// Constructors ------------------------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {

@@ -13,9 +13,13 @@ import acme.framework.services.AbstractShowService;
 @Service
 public class AuthenticatedCompanyRecordShowService implements AbstractShowService<Authenticated, CompanyRecord> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	private AuthenticatedCompanyRecordRepository repository;
 
+
+	// AbstractShowService<Authenticated, CompanyRecord> interface -------------------------
 
 	@Override
 	public boolean authorise(final Request<CompanyRecord> request) {

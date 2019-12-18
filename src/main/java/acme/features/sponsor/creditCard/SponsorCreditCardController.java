@@ -16,6 +16,8 @@ import acme.framework.controllers.AbstractController;
 @RequestMapping("/sponsor/credit-card/")
 public class SponsorCreditCardController extends AbstractController<Sponsor, CreditCard> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	private SponsorCreditCardListService	listService;
 
@@ -28,6 +30,8 @@ public class SponsorCreditCardController extends AbstractController<Sponsor, Cre
 	@Autowired
 	private SponsorCreditCardDeleteService	deleteService;
 
+
+	// Constructors -----------------------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {

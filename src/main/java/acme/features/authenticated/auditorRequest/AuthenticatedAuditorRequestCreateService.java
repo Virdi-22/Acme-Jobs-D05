@@ -24,6 +24,8 @@ public class AuthenticatedAuditorRequestCreateService implements AbstractCreateS
 	private AuthenticatedAuditorRequestRepository repository;
 
 
+	// AbstractCreateService<Authenticated, AuditorRequest> interface ----------------
+
 	@Override
 	public boolean authorise(final Request<AuditorRequest> request) {
 		assert request != null;

@@ -21,6 +21,8 @@ public class AuditorDutyListByJobService implements AbstractListService<Auditor,
 	AuditorDutyRepository repository;
 
 
+	// AbstractListService<Auditor, Duty> interface ------------------------------------
+
 	@Override
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;

@@ -27,6 +27,8 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 	private EmployerJobRepository repository;
 
 
+	// AbstractCreateService<Employer, Job> interface ----------------------------------
+
 	@Override
 	public boolean authorise(final Request<Job> request) {
 		assert request != null;

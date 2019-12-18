@@ -16,6 +16,8 @@ import acme.framework.controllers.AbstractController;
 @RequestMapping("/employer/application/")
 public class EmployerApplicationController extends AbstractController<Employer, Application> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	private EmployerApplicationListService		listService;
 
@@ -25,6 +27,8 @@ public class EmployerApplicationController extends AbstractController<Employer, 
 	@Autowired
 	private EmployerApplicationUpdateService	updateService;
 
+
+	// Constructors ------------------------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {

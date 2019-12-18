@@ -19,6 +19,8 @@ public class AuditorDutyShowService implements AbstractShowService<Auditor, Duty
 	AuditorDutyRepository repository;
 
 
+	// AbstractShowService<Auditor,Duty> interface ------------------------------
+
 	@Override
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;

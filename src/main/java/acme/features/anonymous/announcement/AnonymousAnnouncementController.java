@@ -16,12 +16,16 @@ import acme.framework.entities.Anonymous;
 @RequestMapping("/anonymous/announcement/")
 public class AnonymousAnnouncementController extends AbstractController<Anonymous, Announcement> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	private AnonymousAnnouncementListService	listService;
 
 	@Autowired
 	private AnonymousAnnouncementShowService	showService;
 
+
+	// Cosntructors ------------------------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {

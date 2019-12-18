@@ -15,9 +15,13 @@ import acme.framework.services.AbstractListService;
 @Service
 public class AuthenticatedInvestorRecordListService implements AbstractListService<Authenticated, InvestorRecord> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	AuthenticatedInvestorRecordRepository repository;
 
+
+	// AbstractListService<Authenticated, InvestorRecord> interface ------------------------
 
 	@Override
 	public boolean authorise(final Request<InvestorRecord> request) {

@@ -13,9 +13,13 @@ import acme.framework.services.AbstractShowService;
 @Service
 public class AdministratorDashboardService implements AbstractShowService<Administrator, Dashboard> {
 
+	// Internal state -------------------------------------------------------------------------------
+
 	@Autowired
 	private AdministratorDashboardRepository repository;
 
+
+	// AbstractShowService<Administrator, Dashboard> interface --------------------------------------
 
 	@Override
 	public boolean authorise(final Request<Dashboard> request) {
