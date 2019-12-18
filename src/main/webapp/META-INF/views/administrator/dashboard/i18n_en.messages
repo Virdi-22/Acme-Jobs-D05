@@ -22,3 +22,7 @@ administrator.dashboard.form.label.applications = Applications Statistics
 administrator.dashboard.form.label.average-by-worker = Average by worker
 administrator.dashboard.form.job.status = Job's status
 administrator.dashboard.form.application.status = Application's status
+
+administrator.dashboard.form.pending-applications = Pending Applications this month
+administrator.dashboard.form.accepted-applications = Accepted Applications this month
+administrator.dashboard.form.rejected-applications = Rejected Applications this month

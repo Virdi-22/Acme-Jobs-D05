@@ -23,3 +23,7 @@ administrator.dashboard.form.label.applications = Estadísticas sobre Aplicacion
 administrator.dashboard.form.label.average-by-worker = Media ponderada por Trabajador
 administrator.dashboard.form.job.status = Número de trabajos por estado
 administrator.dashboard.form.application.status = Número de aplicaciones por estado
+
+administrator.dashboard.form.pending-applications = Aplicaciones pendientes este mes
+administrator.dashboard.form.accepted-applications = Aplicaciones aceptadas este mes
+administrator.dashboard.form.rejected-applications = Aplicaciones rechazadas este mes
