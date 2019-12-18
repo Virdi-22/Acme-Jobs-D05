@@ -311,6 +311,9 @@
 
     insert into `hibernate_sequence` values ( 1 );
 create index IDXnhikaa2dj3la6o2o7e9vo01y0 on `announcement` (`moment`);
+create index IDX2q2747fhp099wkn3j2yt05fhs on `application` (`status`);
+create index IDX618is0hf6jk8mhi0qeume2hqw on `application` (`creation_moment`);
+create index IDXdwumdwpjcwdk1mef9ua69yc2p on `application` (`reference`);
 
     alter table `application` 
        add constraint UK_ct7r18vvxl5g4c4k7aefpa4do unique (`reference`);
@@ -323,6 +326,8 @@ create index IDXt84ibbldao4ngscmvo7ja0es on `job` (`final_mode`);
 
     alter table `job` 
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
+create index IDXeq5fhm2b5j1q3ex9vhpmvlwg0 on `message` (`moment`);
+create index IDXkyl36hj4o9e0butj9mrwv291d on `message_thread` (`moment`);
 create index IDXq2o9psuqfuqmq59f0sq57x9uf on `offer` (`deadline`);
 create index IDXcp4664f36sgqsd0ihmirt0w0 on `offer` (`ticker`);
 

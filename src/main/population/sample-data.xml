@@ -28,14 +28,14 @@
 	
 	<bean id="announcement02" class="acme.entities.announcements.Announcement">
 		<property name="title" value="Announcement 02"/>
-		<property name="moment" value="2019/11/03 10:00"/>
+		<property name="moment" value="2019/12/03 10:00"/>
 		<property name="moreInfo" value="http://google.es"/>
 		<property name="text" value="A not so old announcement"/>
 	</bean>
 	
 	<bean id="announcement03" class="acme.entities.announcements.Announcement">
 		<property name="title" value="Announcement 03"/>
-		<property name="moment" value="2019/11/01 10:00"/>
+		<property name="moment" value="2019/12/01 10:00"/>
 		<property name="moreInfo" value="http://example.es"/>
 		<property name="text" value="Normal announcement"/>
 	</bean>
@@ -867,7 +867,7 @@
 	
 	<bean name="application1" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APPL01"></property>
-		<property name="creationMoment" value="2019/11/03 10:00"></property>
+		<property name="creationMoment" value="2019/12/03 10:00"></property>
 		<property name="status" value="Pending"></property>
 		<property name="statement" value="I want to work"></property>
 		<property name="skills" value="Good programmer"></property>
@@ -878,7 +878,7 @@
 	
 	<bean name="application2" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APPL02"></property>
-		<property name="creationMoment" value="2018/11/03 10:00"></property>
+		<property name="creationMoment" value="2019/12/03 10:00"></property>
 		<property name="status" value="Pending"></property>
 		<property name="statement" value="Can you hire me?"></property>
 		<property name="skills" value="Great work in a team."></property>
@@ -889,7 +889,7 @@
 	
 	<bean name="application3" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APPL03"></property>
-		<property name="creationMoment" value="2017/01/03 10:00"></property>
+		<property name="creationMoment" value="2019/11/29 10:00"></property>
 		<property name="status" value="Pending"></property>
 		<property name="statement" value="Bruh, r u 4 real?"></property>
 		<property name="skills" value="Sleeping"></property>
@@ -911,7 +911,7 @@
 	
 	<bean name="application5" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APPL05"></property>
-		<property name="creationMoment" value="2016/05/03 10:00"></property>
+		<property name="creationMoment" value="2019/12/18 10:00"></property>
 		<property name="status" value="Pending"></property>
 		<property name="statement" value="I don't see the point of this."></property>
 		<property name="skills" value="Best buddy."></property>
@@ -922,7 +922,7 @@
   
   <bean name="application6" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APPL06"></property>
-		<property name="creationMoment" value="2019/11/03 10:00"></property>
+		<property name="creationMoment" value="2019/11/25 10:00"></property>
 		<property name="status" value="Accepted"></property>
 		<property name="statement" value="I want to work"></property>
 		<property name="skills" value="Good programmer"></property>
@@ -955,7 +955,7 @@
 	
 	<bean name="application9" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APPL09"></property>
-		<property name="creationMoment" value="2015/12/03 10:00"></property>
+		<property name="creationMoment" value="2019/12/10 10:00"></property>
 		<property name="status" value="Rejected"></property>
 		<property name="statement" value="Hire me!"></property>
 		<property name="skills" value="Worst skills."></property>
@@ -967,7 +967,7 @@
 	<bean name="application10" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APPL10"></property>
 		<property name="creationMoment" value="2016/05/03 10:00"></property>
-		<property name="status" value="Pending"></property>
+		<property name="status" value="Accepted"></property>
 		<property name="statement" value="Regular statement."></property>
 		<property name="skills" value="Best buddy."></property>
 		<property name="qualifications" value="Awesome jokes."></property>
@@ -978,7 +978,7 @@
    <bean name="application11" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APPL11"></property>
 		<property name="creationMoment" value="2019/11/03 10:00"></property>
-		<property name="status" value="Rejected"></property>
+		<property name="status" value="Accepted"></property>
 		<property name="statement" value="Worst statement"></property>
 		<property name="skills" value="Bad programmer"></property>
 		<property name="qualifications" value="JAVA, Python"></property>
@@ -988,7 +988,7 @@
 	
 	<bean name="application12" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APPL12"></property>
-		<property name="creationMoment" value="2018/11/03 10:00"></property>
+		<property name="creationMoment" value="2019/12/13 10:00"></property>
 		<property name="status" value="Accepted"></property>
 		<property name="statement" value="Can you hire me?"></property>
 		<property name="skills" value="Great work in a team."></property>
@@ -999,8 +999,8 @@
 	
 	<bean name="application13" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APPL13"></property>
-		<property name="creationMoment" value="2017/01/03 10:00"></property>
-		<property name="status" value="Rejected"></property>
+		<property name="creationMoment" value="2019/11/27 10:00"></property>
+		<property name="status" value="Accepted"></property>
 		<property name="statement" value="Bruh, r u 4 real?"></property>
 		<property name="skills" value="Sleeping"></property>
 		<property name="qualifications" value="Great talker"></property>
@@ -1010,7 +1010,7 @@
 	
 	<bean name="application14" class="acme.entities.applications.Application">
 		<property name="reference" value="EMP1-APPL14"></property>
-		<property name="creationMoment" value="2015/12/03 10:00"></property>
+		<property name="creationMoment" value="2019/12/13 10:00"></property>
 		<property name="status" value="Accepted"></property>
 		<property name="statement" value="Hire me!"></property>
 		<property name="skills" value="Regular skills."></property>
