@@ -235,7 +235,7 @@
 				labels : dashboardLabelsPendingApplication,
 				datasets : [
 					{
-						label: "Pending Applications"
+						label: "Pending Applications",
 						fill: false,
 						data : dashboardDataPendingApplication
 					}
@@ -261,7 +261,7 @@
 				labels : dashboardLabelsAcceptedApplication,
 				datasets : [
 					{
-						label: "Accepted Applications"
+						label: "Accepted Applications",
 						fill: false,
 						data : dashboardDataAcceptedApplication
 					}
@@ -287,7 +287,7 @@
 				labels : dashboardLabelsRejectedApplication,
 				datasets : [
 					{
-						label: "Rejected Applications"
+						label: "Rejected Applications",
 						fill: false,
 						data : dashboardDataRejectedApplication
 					}
