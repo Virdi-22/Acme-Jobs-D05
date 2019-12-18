@@ -52,6 +52,8 @@ public class AdministratorComercialBannerCreateService implements AbstractCreate
 
 		request.unbind(entity, model, "target", "slogan");
 		model.setAttribute("creditCardId", request.getModel().getInteger("creditCardId"));
+		model.setAttribute("creditCardNumber", entity.getCreditCard().getCreditCardNumber());
+		model.setAttribute("expirationDate", entity.getCreditCard().getExpirationDate());
 	}
 
 	@Override
