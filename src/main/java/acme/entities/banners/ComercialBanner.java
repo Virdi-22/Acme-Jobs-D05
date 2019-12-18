@@ -3,9 +3,8 @@ package acme.entities.banners;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import acme.entities.creditCard.CreditCard;
 import lombok.Getter;
@@ -16,15 +15,16 @@ import lombok.Setter;
 @Setter
 public class ComercialBanner extends Banner {
 
-	private static final long	serialVersionUID	= 1L;
+	// Serialisation identifier ------------------------------------
 
-	@NotBlank
-	private String				holder;
+	private static final long serialVersionUID = 1L;
 
-	@NotBlank
-	private String				brand;
+	// Attributes --------------------------------------------------
 
+	// Relationships -----------------------------------------------
+
+	@NotNull
 	@ManyToOne(optional = false)
 	@Valid
-	private CreditCard			creditCard;
+	private CreditCard creditCard;
 }

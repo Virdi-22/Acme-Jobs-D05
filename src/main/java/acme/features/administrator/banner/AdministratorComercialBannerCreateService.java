@@ -1,6 +1,10 @@
 
 package acme.features.administrator.banner;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,9 +19,13 @@ import acme.framework.services.AbstractCreateService;
 @Service
 public class AdministratorComercialBannerCreateService implements AbstractCreateService<Administrator, ComercialBanner> {
 
+	// Internal state -----------------------------------------------------------
+
 	@Autowired
 	AdministratorComercialBannerRepository repository;
 
+
+	// AbstractCreateService<Administrator, ComercialBanner> interface ---------
 
 	@Override
 	public boolean authorise(final Request<ComercialBanner> request) {
@@ -42,7 +50,7 @@ public class AdministratorComercialBannerCreateService implements AbstractCreate
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "target", "slogan", "holder", "brand");
+		request.unbind(entity, model, "target", "slogan");
 		model.setAttribute("creditCardId", request.getModel().getInteger("creditCardId"));
 	}
 
@@ -51,8 +59,10 @@ public class AdministratorComercialBannerCreateService implements AbstractCreate
 		ComercialBanner result;
 		int creditCardId;
 		CreditCard creditCard;
+
 		creditCardId = request.getModel().getInteger("creditCardId");
 		creditCard = this.repository.findCreditCardById(creditCardId);
+
 		result = new ComercialBanner();
 		result.setCreditCard(creditCard);
 
@@ -65,12 +75,26 @@ public class AdministratorComercialBannerCreateService implements AbstractCreate
 		assert entity != null;
 		assert errors != null;
 
+		Calendar calendar;
+		Date minimumDeadline;
+
+		if (!errors.hasErrors("expirationDate")) {
+			calendar = new GregorianCalendar();
+			minimumDeadline = calendar.getTime();
+			String[] fecha = entity.getCreditCard().getExpirationDate().split("/");
+			String date = fecha[0].trim() + "/" + fecha[1].trim() + "/01 00:00";
+			Date deadline = new Date(date);
+			boolean isInFuture = deadline.after(minimumDeadline);
+			errors.state(request, isInFuture, "expirationDate", "administrator.comercialbanner.error.inFuture");
+		}
+
 	}
 
 	@Override
 	public void create(final Request<ComercialBanner> request, final ComercialBanner entity) {
 		assert request != null;
 		assert entity != null;
+
 		this.repository.save(entity);
 	}
 

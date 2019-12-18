@@ -18,9 +18,13 @@ import acme.framework.services.AbstractUpdateService;
 @Service
 public class AdministratorComercialBannerUpdateService implements AbstractUpdateService<Administrator, ComercialBanner> {
 
+	// Internal state --------------------------------------------------------
+
 	@Autowired
 	AdministratorComercialBannerRepository repository;
 
+
+	// AbstractUpdateService<Administrator, ComercialBanner> interface -------
 
 	@Override
 	public boolean authorise(final Request<ComercialBanner> request) {
@@ -45,7 +49,7 @@ public class AdministratorComercialBannerUpdateService implements AbstractUpdate
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "target", "slogan", "holder", "brand");
+		request.unbind(entity, model, "target", "slogan");
 		model.setAttribute("creditCardId", request.getModel().getInteger("creditCardId"));
 
 	}
@@ -68,12 +72,14 @@ public class AdministratorComercialBannerUpdateService implements AbstractUpdate
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
 		Calendar calendar;
 		Date minimumDeadline;
+
 		if (!errors.hasErrors("expirationDate")) {
 			calendar = new GregorianCalendar();
 			minimumDeadline = calendar.getTime();
-			String[] fecha = entity.getSponsor().getCreditCard().getExpirationDate().split("/");
+			String[] fecha = entity.getCreditCard().getExpirationDate().split("/");
 			String date = fecha[0].trim() + "/" + fecha[1].trim() + "/01 00:00";
 			Date deadline = new Date(date);
 			boolean isInFuture = deadline.after(minimumDeadline);

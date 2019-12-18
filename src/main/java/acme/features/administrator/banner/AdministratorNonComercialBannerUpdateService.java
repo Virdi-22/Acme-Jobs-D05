@@ -14,9 +14,13 @@ import acme.framework.services.AbstractUpdateService;
 @Service
 public class AdministratorNonComercialBannerUpdateService implements AbstractUpdateService<Administrator, NonComercialBanner> {
 
+	// Internal state ----------------------------------------------------------------------------------
+
 	@Autowired
 	AdministratorNonComercialBannerRepository repository;
 
+
+	// AbstractUpdateService<Administrator, NonComercialBanner> interface ------------------------------
 
 	@Override
 	public boolean authorise(final Request<NonComercialBanner> request) {

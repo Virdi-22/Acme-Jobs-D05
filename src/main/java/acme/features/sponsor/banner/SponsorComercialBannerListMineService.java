@@ -16,9 +16,13 @@ import acme.framework.services.AbstractListService;
 @Service
 public class SponsorComercialBannerListMineService implements AbstractListService<Sponsor, ComercialBanner> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	SponsorComercialBannerRepository repository;
 
+
+	// AbstractListService<Sponsor, ComercialBanner> interface -----------------------------
 
 	@Override
 	public boolean authorise(final Request<ComercialBanner> request) {
@@ -33,7 +37,7 @@ public class SponsorComercialBannerListMineService implements AbstractListServic
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "target", "slogan", "holder", "brand");
+		request.unbind(entity, model, "target", "slogan");
 
 	}
 

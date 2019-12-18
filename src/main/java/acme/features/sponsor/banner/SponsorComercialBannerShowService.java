@@ -14,9 +14,13 @@ import acme.framework.services.AbstractShowService;
 @Service
 public class SponsorComercialBannerShowService implements AbstractShowService<Sponsor, ComercialBanner> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	SponsorComercialBannerRepository repository;
 
+
+	// AbstractShowService<Sponsor, ComercialBanner> interface -----------------------------
 
 	@Override
 	public boolean authorise(final Request<ComercialBanner> request) {
@@ -43,9 +47,9 @@ public class SponsorComercialBannerShowService implements AbstractShowService<Sp
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "target", "slogan", "holder", "brand");
-		model.setAttribute("creditCardNumber", entity.getSponsor().getCreditCard().getCreditCardNumber());
-		model.setAttribute("expirationDate", entity.getSponsor().getCreditCard().getExpirationDate());
+		request.unbind(entity, model, "target", "slogan");
+		model.setAttribute("creditCardNumber", entity.getCreditCard().getCreditCardNumber());
+		model.setAttribute("expirationDate", entity.getCreditCard().getExpirationDate());
 
 	}
 

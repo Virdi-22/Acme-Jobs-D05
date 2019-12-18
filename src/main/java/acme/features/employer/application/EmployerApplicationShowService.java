@@ -14,9 +14,13 @@ import acme.framework.services.AbstractShowService;
 @Service
 public class EmployerApplicationShowService implements AbstractShowService<Employer, Application> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	EmployerApplicationRepository repository;
 
+
+	// AbstractShowService<Employer, Application> interface --------------------------------
 
 	@Override
 	public boolean authorise(final Request<Application> request) {

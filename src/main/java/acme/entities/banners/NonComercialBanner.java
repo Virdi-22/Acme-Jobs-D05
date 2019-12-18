@@ -14,9 +14,15 @@ import lombok.Setter;
 @Setter
 public class NonComercialBanner extends Banner {
 
-	private static final long	serialVersionUID	= 1L;
+	// Serialisation identifier -------------------------------------
+
+	private static final long serialVersionUID = 1L;
+
+	// Attributes ---------------------------------------------------
 
 	@NotBlank
 	@URL
-	private String				jingle;
+	private String jingle;
+
+	// Relationships ------------------------------------------------
 }

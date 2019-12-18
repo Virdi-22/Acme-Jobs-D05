@@ -1,15 +1,13 @@
 administrator.comercialBanner.form.label.slogan = Eslogan
 administrator.comercialBanner.form.label.referenceCreditCardNumber = Número de tarjeta de crédito
 administrator.comercialBanner.form.label.target = Enlace
-administrator.comercialBanner.form.label.holder = Titular
-administrator.comercialBanner.form.label.brand = Compañía
 administrator.banner.error.date = En formato de la fecha de caducidad no es el adecuado (ej: MM/YYYY)
 administrator.comercialBanner.form.label.referenceExpirationDate = Fecha de caducidad
 administrator.comercialbanner.error.inFuture =La fecha de caducidad debe ser una fecha en el futuro para ser válida
 administrator.banner.form.button.return = Volver
 
-administrator.banner.list.label.slogan = Eslogan
-administrator.comercialBanner.list.label.brand = Compañía
+administrator.comercialBanner.list.label.slogan = Eslogan
+administrator.comercialBanner.list.label.target = Target
 
 administrator.banner.form.button.update = Actualizar
 administrator.banner.form.button.delete = Borrar

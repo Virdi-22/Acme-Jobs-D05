@@ -17,9 +17,13 @@ import acme.framework.services.AbstractCreateService;
 @Service
 public class WorkerApplicationCreateService implements AbstractCreateService<Worker, Application> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	private WorkerApplicationRepository repository;
 
+
+	// AbstractCreateService<Worker, Application> interface --------------------------------
 
 	@Override
 	public boolean authorise(final Request<Application> request) {

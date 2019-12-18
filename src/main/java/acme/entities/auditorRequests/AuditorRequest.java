@@ -19,6 +19,8 @@ import lombok.Setter;
 @Getter
 public class AuditorRequest extends DomainEntity {
 
+	// Serialisation identifier --------------------------------------
+
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes ----------------------------------------------------

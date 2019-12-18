@@ -14,9 +14,13 @@ import acme.framework.services.AbstractDeleteService;
 @Service
 public class AdministratorCompanyRecordDeleteService implements AbstractDeleteService<Administrator, CompanyRecord> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	AdministratorCompanyRecordRepository repository;
 
+
+	// AbstractDeleteService<Administrator, CompanyRecord> interface -----------------------
 
 	@Override
 	public boolean authorise(final Request<CompanyRecord> request) {

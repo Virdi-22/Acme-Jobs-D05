@@ -22,6 +22,8 @@ public class EmployerDutyDeleteService implements AbstractDeleteService<Employer
 	private EmployerDutyRepository repository;
 
 
+	// AbstractDeleteService<Employer, Duty> interface ------------------------------------
+
 	@Override
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;

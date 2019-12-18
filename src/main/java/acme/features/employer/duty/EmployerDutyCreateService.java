@@ -24,6 +24,8 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 	private EmployerDutyRepository repository;
 
 
+	// AbstractCreateService<Employer, Duty> interface -------------------------------
+
 	@Override
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;

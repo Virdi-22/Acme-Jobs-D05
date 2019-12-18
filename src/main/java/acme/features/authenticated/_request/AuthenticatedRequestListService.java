@@ -15,13 +15,13 @@ import acme.framework.services.AbstractListService;
 @Service
 public class AuthenticatedRequestListService implements AbstractListService<Authenticated, _Request> {
 
-	// Internal state ---------------------
+	// Internal state ----------------------------------------------------------
 
 	@Autowired
 	AuthenticatedRequestRepository repository;
 
 
-	// AbstractListService<Authenticated, JobRequest> interface ----------------
+	// AbstractListService<Authenticated, _Request> interface ----------------
 
 	@Override
 	public boolean authorise(final Request<_Request> request) {

@@ -21,6 +21,8 @@ public class EmployerDutyShowService implements AbstractShowService<Employer, Du
 	EmployerDutyRepository repository;
 
 
+	// AbstractShowService<Employer, Duty> interface ----------------------------
+
 	@Override
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;

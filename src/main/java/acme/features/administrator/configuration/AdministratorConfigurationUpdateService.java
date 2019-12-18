@@ -14,9 +14,13 @@ import acme.framework.services.AbstractUpdateService;
 @Service
 public class AdministratorConfigurationUpdateService implements AbstractUpdateService<Administrator, Configuration> {
 
+	// Internal state ----------------------------------------------------------------------
+
 	@Autowired
 	AdministratorConfigurationRepository repository;
 
+
+	// AbstractUpdateService<Administrator, Configuration> interface -----------------------
 
 	@Override
 	public boolean authorise(final Request<Configuration> request) {

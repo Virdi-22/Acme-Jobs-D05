@@ -21,7 +21,7 @@ public class ProviderRequestListService implements AbstractListService<Provider,
 	ProviderRequestRepository repository;
 
 
-	// AbstractListService<Authenticated, JobRequest> interface ----------------
+	// AbstractListService<Authenticated, _Request> interface ----------------
 
 	@Override
 	public boolean authorise(final Request<_Request> request) {
