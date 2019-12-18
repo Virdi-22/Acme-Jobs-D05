@@ -88,6 +88,9 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	// D05 Complex Edition
 
-	@Query("select a from Application a where a.creationMoment < ?1")
-	List<Application> findAllApplications(Date currentMinusAMonth);
+	@Query("select a from Application a where a.creationMoment >= ?2 and a.creationMoment < ?1")
+	List<Application> findAllApplicationsByDay(Date highRange, Date lowRange);
+
+	@Query("select a from Application a")
+	List<Application> findAllApplications();
 }

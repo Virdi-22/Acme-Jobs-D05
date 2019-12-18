@@ -874,6 +874,7 @@
 		<property name="qualifications" value="JAVA, Python"></property>
 		<property name="worker" ref="worker1Worker"></property>
 		<property name="job" ref="job1"></property>
+		<property name="lastUpdate"><null/></property>
 	</bean>
 	
 	<bean name="application2" class="acme.entities.applications.Application">
@@ -885,6 +886,7 @@
 		<property name="qualifications" value="Not being a Leslie"></property>
 		<property name="worker" ref="worker1Worker"></property>
 		<property name="job" ref="job1"></property>
+		<property name="lastUpdate"><null/></property>
 	</bean>
 	
 	<bean name="application3" class="acme.entities.applications.Application">
@@ -896,6 +898,7 @@
 		<property name="qualifications" value="Great talker"></property>
 		<property name="worker" ref="worker2Worker"></property>
 		<property name="job" ref="job4"></property>
+		<property name="lastUpdate"><null/></property>
 	</bean>
 	
 	<bean name="application4" class="acme.entities.applications.Application">
@@ -907,6 +910,7 @@
 		<property name="qualifications" value="Whatever..."></property>
 		<property name="worker" ref="worker2Worker"></property>
 		<property name="job" ref="job1"></property>
+		<property name="lastUpdate" value="2019/12/16 10:00"></property>
 	</bean>
 	
 	<bean name="application5" class="acme.entities.applications.Application">
@@ -918,6 +922,7 @@
 		<property name="qualifications" value="Awesome jokes."></property>
 		<property name="worker" ref="worker2Worker"></property>
 		<property name="job" ref="job5"></property>
+		<property name="lastUpdate"><null/></property>
    </bean>
   
   <bean name="application6" class="acme.entities.applications.Application">
@@ -929,6 +934,7 @@
 		<property name="qualifications" value="JAVA, Python"></property>
 		<property name="worker" ref="worker3Worker"></property>
 		<property name="job" ref="job1"></property>
+		<property name="lastUpdate"><null/></property>
 	</bean>
 	
 	<bean name="application7" class="acme.entities.applications.Application">
@@ -940,6 +946,7 @@
 		<property name="qualifications" value="Not being a Leslie"></property>
 		<property name="worker" ref="worker3Worker"></property>
 		<property name="job" ref="job5"></property>
+		<property name="lastUpdate"><null/></property>
 	</bean>
 	
 	<bean name="application8" class="acme.entities.applications.Application">
@@ -951,6 +958,7 @@
 		<property name="qualifications" value="Great talker"></property>
 		<property name="worker" ref="worker3Worker"></property>
 		<property name="job" ref="job4"></property>
+		<property name="lastUpdate"><null/></property>
 	</bean>
 	
 	<bean name="application9" class="acme.entities.applications.Application">
@@ -962,6 +970,7 @@
 		<property name="qualifications" value="Whatever..."></property>
 		<property name="worker" ref="worker4Worker"></property>
 		<property name="job" ref="job1"></property>
+		<property name="lastUpdate"><null/></property>
 	</bean>
 	
 	<bean name="application10" class="acme.entities.applications.Application">
@@ -973,6 +982,7 @@
 		<property name="qualifications" value="Awesome jokes."></property>
 		<property name="worker" ref="worker4Worker"></property>
 		<property name="job" ref="job5"></property>
+		<property name="lastUpdate" value="2019/12/16 10:00"></property>
    </bean>
    
    <bean name="application11" class="acme.entities.applications.Application">
@@ -984,6 +994,7 @@
 		<property name="qualifications" value="JAVA, Python"></property>
 		<property name="worker" ref="worker1Worker"></property>
 		<property name="job" ref="job4"></property>
+		<property name="lastUpdate"><null/></property>
 	</bean>
 	
 	<bean name="application12" class="acme.entities.applications.Application">
@@ -995,6 +1006,7 @@
 		<property name="qualifications" value="Not being a Leslie"></property>
 		<property name="worker" ref="worker4Worker"></property>
 		<property name="job" ref="job1"></property>
+		<property name="lastUpdate"><null/></property>
 	</bean>
 	
 	<bean name="application13" class="acme.entities.applications.Application">
@@ -1006,6 +1018,7 @@
 		<property name="qualifications" value="Great talker"></property>
 		<property name="worker" ref="worker3Worker"></property>
 		<property name="job" ref="job4"></property>
+		<property name="lastUpdate"><null/></property>
 	</bean>
 	
 	<bean name="application14" class="acme.entities.applications.Application">
@@ -1017,6 +1030,7 @@
 		<property name="qualifications" value="Whatever..."></property>
 		<property name="worker" ref="worker1Worker"></property>
 		<property name="job" ref="job1"></property>
+		<property name="lastUpdate"><null/></property>
 	</bean>
 	
 	<bean name="application15" class="acme.entities.applications.Application">
@@ -1028,6 +1042,7 @@
 		<property name="qualifications" value="Awesome jokes."></property>
 		<property name="worker" ref="worker2Worker"></property>
 		<property name="job" ref="job5"></property>
+		<property name="lastUpdate" value="2019/12/16 10:00"></property>
    </bean>
 	
 	<!-- Message Thread-->

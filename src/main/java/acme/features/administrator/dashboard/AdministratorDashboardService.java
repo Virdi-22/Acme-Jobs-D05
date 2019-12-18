@@ -107,29 +107,52 @@ public class AdministratorDashboardService implements AbstractShowService<Admini
 		List<Integer> rejectedApplications = new ArrayList<Integer>();
 		List<String> closestDays = new ArrayList<String>();
 
-		Calendar beginning = new GregorianCalendar();
+		Calendar dateIterator = new GregorianCalendar();
 		Calendar end = new GregorianCalendar();
-		beginning.add(Calendar.DAY_OF_MONTH, -28);
-		Calendar dateIterator = beginning;
+		Calendar dateIterator2 = new GregorianCalendar();
+		end.add(Calendar.DAY_OF_MONTH, 1);
+		dateIterator.add(Calendar.DAY_OF_MONTH, -28);
+		dateIterator2.add(Calendar.DAY_OF_MONTH, -29);
+
+		int acceptedCount = 0;
+		int pendingCount = 0;
+		int rejectedCount = 0;
 
 		while (dateIterator.before(end)) {
-			int acceptedCount = 0;
-			int pendingCount = 0;
-			int rejectedCount = 0;
+			acceptedCount = 0;
+			pendingCount = 0;
+			rejectedCount = 0;
 
 			List<Application> applicationsIterator = new ArrayList<Application>();
-			applicationsIterator.addAll(this.repository.findAllApplications(dateIterator.getTime()));
+			applicationsIterator.addAll(this.repository.findAllApplications());
 
 			for (Application a : applicationsIterator) {
-				switch (a.getStatus()) {
-				case "Pending":
-					pendingCount++;
-					break;
-				case "Accepted":
-					acceptedCount++;
-					break;
-				case "Rejected":
-					rejectedCount++;
+				if (a.getLastUpdate() != null) {
+
+					if (a.getLastUpdate().after(dateIterator2.getTime()) && a.getLastUpdate().before(dateIterator.getTime())) {
+						switch (a.getStatus()) {
+						case "Pending":
+							pendingCount++;
+							break;
+						case "Accepted":
+							acceptedCount++;
+							break;
+						case "Rejected":
+							rejectedCount++;
+						}
+					}
+				} else if (a.getCreationMoment().after(dateIterator2.getTime()) && a.getCreationMoment().before(dateIterator.getTime())) {
+
+					switch (a.getStatus()) {
+					case "Pending":
+						pendingCount++;
+						break;
+					case "Accepted":
+						acceptedCount++;
+						break;
+					case "Rejected":
+						rejectedCount++;
+					}
 				}
 			}
 
@@ -139,6 +162,7 @@ public class AdministratorDashboardService implements AbstractShowService<Admini
 			rejectedApplications.add(rejectedCount);
 
 			dateIterator.add(Calendar.DAY_OF_MONTH, 1);
+			dateIterator2.add(Calendar.DAY_OF_MONTH, 1);
 		}
 		result.setAcceptedApplicationsPerDay(acceptedApplications);
 		result.setRejectedApplicationsPerDay(rejectedApplications);
