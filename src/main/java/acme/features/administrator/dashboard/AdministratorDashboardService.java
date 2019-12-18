@@ -110,6 +110,7 @@ public class AdministratorDashboardService implements AbstractShowService<Admini
 		Calendar dateIterator = new GregorianCalendar();
 		Calendar end = new GregorianCalendar();
 		Calendar dateIterator2 = new GregorianCalendar();
+		end.add(Calendar.DAY_OF_MONTH, 1);
 		dateIterator.add(Calendar.DAY_OF_MONTH, -28);
 		dateIterator2.add(Calendar.DAY_OF_MONTH, -29);
 
@@ -123,20 +124,38 @@ public class AdministratorDashboardService implements AbstractShowService<Admini
 			rejectedCount = 0;
 
 			List<Application> applicationsIterator = new ArrayList<Application>();
-			applicationsIterator.addAll(this.repository.findAllApplicationsByDay(dateIterator.getTime(), dateIterator2.getTime()));
+			applicationsIterator.addAll(this.repository.findAllApplications());
 
 			for (Application a : applicationsIterator) {
-				switch (a.getStatus()) {
-				case "Pending":
-					pendingCount++;
-					break;
-				case "Accepted":
-					acceptedCount++;
-					break;
-				case "Rejected":
-					rejectedCount++;
+				if (a.getLastUpdate() != null) {
+
+					if (a.getLastUpdate().after(dateIterator2.getTime()) && a.getLastUpdate().before(dateIterator.getTime())) {
+						switch (a.getStatus()) {
+						case "Pending":
+							pendingCount++;
+							break;
+						case "Accepted":
+							acceptedCount++;
+							break;
+						case "Rejected":
+							rejectedCount++;
+						}
+					}
+				} else if (a.getCreationMoment().after(dateIterator2.getTime()) && a.getCreationMoment().before(dateIterator.getTime())) {
+
+					switch (a.getStatus()) {
+					case "Pending":
+						pendingCount++;
+						break;
+					case "Accepted":
+						acceptedCount++;
+						break;
+					case "Rejected":
+						rejectedCount++;
+					}
 				}
 			}
+
 			closestDays.add(dateIterator.get(Calendar.MONTH) + 1 + "-" + dateIterator.get(Calendar.DATE));
 			acceptedApplications.add(acceptedCount);
 			pendingApplications.add(pendingCount);

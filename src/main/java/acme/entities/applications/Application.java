@@ -66,6 +66,10 @@ public class Application extends DomainEntity {
 
 	private String				reasonRejected;
 
+	@Temporal(TemporalType.TIMESTAMP)
+	@Past
+	private Date				lastUpdate;
+
 	// Relationships ------------------------------------------
 
 	@NotNull

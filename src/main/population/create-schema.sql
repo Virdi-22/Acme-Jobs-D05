@@ -27,6 +27,7 @@
        `id` integer not null,
         `version` integer not null,
         `creation_moment` datetime(6),
+        `last_update` datetime(6),
         `qualifications` varchar(1024),
         `reason_rejected` varchar(255),
         `reference` varchar(255),
